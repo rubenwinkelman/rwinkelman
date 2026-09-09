@@ -24,10 +24,10 @@ export default function Workflow() {
     {
       step: '03',
       title: 'Enthousiast? Betalen & Tot in de Puntjes Afmaken',
-      subtitle: 'Bij € 299,- perfectioneren we alles',
+      subtitle: 'Bij € 399,- perfectioneren we alles',
       icon: Sparkles,
       leadTime: 'Stap 3',
-      description: 'Ben je enthousiast tijdens de demonstratie en wil je doorgaan? Dan betaal je eenmalig € 299,-. Vanaf dat moment werk ik de website tot in de puntjes compleet af: alle pagina’s, afbeeldingen, teksten en formulieren worden perfect ingericht.',
+      description: 'Ben je enthousiast tijdens de demonstratie en wil je doorgaan? Dan betaal je eenmalig € 399,-. Vanaf dat moment werk ik de website tot in de puntjes compleet af: alle pagina’s, afbeeldingen, teksten en formulieren worden perfect ingericht.',
       highlights: ['Betaling pas bij enthousiasme op locatie', 'Website tot in het kleinste detail afgewerkt', 'Niet overtuigd? Dan betaal je € 0,-']
     },
     {

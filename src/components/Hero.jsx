@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
-            Vraag vrijblijvend een offerte aan. Ik bouw een werkende voorbeeldwebsite om je enthousiast te maken en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het te laten zien. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 299,-</span> en maken we de website samen <span className="text-brand-sand font-semibold">tot in de puntjes compleet af</span>.
+            Vraag vrijblijvend een offerte aan. Ik bouw een werkende voorbeeldwebsite om je enthousiast te maken en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het te laten zien. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en maken we de website samen <span className="text-brand-sand font-semibold">tot in de puntjes compleet af</span>.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export default function Hero() {
             href="#werkwijze"
             className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-base transition-all duration-200 hover:border-white/20"
           >
-            <span>Bekijk hoe ik werk (€ 299,-)</span>
+            <span>Bekijk hoe ik werk (€ 399,-)</span>
           </a>
         </div>
 
@@ -167,7 +167,7 @@ export default function Hero() {
                     Persoonlijke demo &bull; Pas betalen bij enthousiasme
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 299,- en maken we de website samen tot in de puntjes compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
+                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 399,- en maken we de website samen tot in de puntjes compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
@@ -178,7 +178,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>€ 299,- pas betalen als je enthousiast bent</span>
+                    <span>€ 399,- pas betalen als je enthousiast bent</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -197,7 +197,7 @@ export default function Hero() {
             <div className="text-xs text-brand-sandDim mt-1">Gratis voorbeeld op locatie</div>
           </div>
           <div className="p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">€ 299,-</div>
+            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">€ 399,-</div>
             <div className="text-xs text-brand-sandDim mt-1">Bij enthousiaste demo</div>
           </div>
           <div className="p-4 rounded-xl bg-brand-surface/60 border border-white/5">

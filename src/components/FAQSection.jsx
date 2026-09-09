@@ -10,8 +10,8 @@ export default function FAQSection() {
       a: 'Jazeker! Zodra je een aanvraag doet, bouw ik alvast een werkende, interactieve voorbeeldwebsite. Vervolgens kom ik persoonlijk bij je langs op kantoor of locatie om de website live op mijn laptop te demonstreren. Zo kunnen we direct sparren en jouw wensen bespreken.'
     },
     {
-      q: 'Wanneer betaal ik de eenmalige € 299,-?',
-      a: 'Tijdens het persoonlijke bezoek demonstreer ik het werkende voorbeeld. Ben je enthousiast over het concept en wil je dat we jouw website definitief gaan bouwen? Dan betaal je € 299,-. Vanaf dat moment ga ik direct aan de slag om de website tot in de puntjes compleet af te maken: alle pagina’s, afbeeldingen, teksten en functionaliteiten worden tot in perfectie ingericht.'
+      q: 'Wanneer betaal ik de eenmalige € 399,-?',
+      a: 'Tijdens het persoonlijke bezoek demonstreer ik het werkende voorbeeld. Ben je enthousiast over het concept en wil je dat we jouw website definitief gaan bouwen? Dan betaal je € 399,-. Vanaf dat moment ga ik direct aan de slag om de website tot in de puntjes compleet af te maken: alle pagina’s, afbeeldingen, teksten en functionaliteiten worden tot in perfectie ingericht.'
     },
     {
       q: 'Neem je ook bestaande websites van derden in beheer?',

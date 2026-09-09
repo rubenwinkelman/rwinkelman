@@ -159,7 +159,7 @@ export default function ContactSection() {
                     Bedankt voor je aanvraag!
                   </h3>
                   <p className="text-sm text-brand-sandMuted max-w-md mx-auto leading-relaxed">
-                    Ik ga aan de slag met een interactieve voorbeeldwebsite voor jouw bedrijf en neem binnen 24 uur contact met je op om het persoonlijke bezoek in te plannen.
+                    Ik ga aan de slag met een interactieve voorbeeldwebsite voor jouw bedrijf en neem zo snel mogelijk contact met je op om het persoonlijke bezoek in te plannen.
                   </p>
                   <button
                     type="button"

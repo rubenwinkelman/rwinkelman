@@ -10,7 +10,7 @@ export default function Workflow() {
       icon: MessageSquare,
       leadTime: 'Stap 1',
       description: 'Stuur een korte aanvraag via de website of WhatsApp. Vertel wie je bent, wat je bedrijf doet en welke uitstraling je zoekt. Dit kost je nog helemaal niets.',
-      highlights: ['Binnen 24 uur reactie', 'Korte inventarisatie van je wensen', 'Geen vooruitbetaling nodig']
+      highlights: ['Direct persoonlijk contact', 'Korte inventarisatie van je wensen', 'Geen vooruitbetaling nodig']
     },
     {
       step: '02',

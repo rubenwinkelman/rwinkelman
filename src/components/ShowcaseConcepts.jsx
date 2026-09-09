@@ -80,7 +80,7 @@ export default function ShowcaseConcepts() {
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </a>
               <span className="text-xs text-brand-sandDim">
-                Binnen 24 uur reactie &bull; Nul verplichtingen
+                100% vrijblijvend &bull; Nul verplichtingen
               </span>
             </div>
 

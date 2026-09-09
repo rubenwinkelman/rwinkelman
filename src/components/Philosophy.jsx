@@ -10,98 +10,104 @@ export default function Philosophy() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.philosophy-header',
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.philosophy-header',
-          start: 'top 85%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    const mm = gsap.matchMedia();
 
-    // Two cards entrance (left and right reveal)
-    gsap.fromTo(
-      '.philosophy-card-tech',
-      { opacity: 0, x: -35, scale: 0.98 },
-      {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.philosophy-grid',
-          start: 'top 80%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    mm.add("(min-width: 768px)", () => {
+      // Header entrance
+      gsap.fromTo(
+        '.philosophy-header',
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.philosophy-header',
+            start: 'top 85%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
 
-    gsap.fromTo(
-      '.philosophy-card-creative',
-      { opacity: 0, x: 35, scale: 0.98 },
-      {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.philosophy-grid',
-          start: 'top 80%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+      // Two cards entrance (left and right reveal)
+      gsap.fromTo(
+        '.philosophy-card-tech',
+        { opacity: 0, x: -35, scale: 0.98 },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.philosophy-grid',
+            start: 'top 80%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
 
-    // Stagger points inside cards
-    gsap.fromTo(
-      '.philosophy-point',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.08,
-        duration: 0.5,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.philosophy-grid',
-          start: 'top 75%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+      gsap.fromTo(
+        '.philosophy-card-creative',
+        { opacity: 0, x: 35, scale: 0.98 },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.philosophy-grid',
+            start: 'top 80%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
 
-    // Quote box reveal
-    gsap.fromTo(
-      '.philosophy-quote',
-      { opacity: 0, y: 30, scale: 0.97 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.philosophy-quote',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+      // Stagger points inside cards
+      gsap.fromTo(
+        '.philosophy-point',
+        { opacity: 0, y: 15 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08,
+          duration: 0.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.philosophy-grid',
+            start: 'top 75%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+
+      // Quote box reveal
+      gsap.fromTo(
+        '.philosophy-quote',
+        { opacity: 0, y: 30, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.philosophy-quote',
+            start: 'top 90%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, { scope: containerRef });
 
   const technicalPoints = [

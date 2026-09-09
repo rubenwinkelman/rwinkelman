@@ -10,61 +10,67 @@ export default function Workflow() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.workflow-header',
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.workflow-header',
-          start: 'top 85%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    const mm = gsap.matchMedia();
 
-    // Staggered step cards entrance
-    gsap.fromTo(
-      '.workflow-card',
-      { opacity: 0, y: 35, scale: 0.97 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.workflow-grid',
-          start: 'top 80%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    mm.add("(min-width: 768px)", () => {
+      // Header entrance
+      gsap.fromTo(
+        '.workflow-header',
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.workflow-header',
+            start: 'top 85%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
 
-    // Guarantee banner entrance
-    gsap.fromTo(
-      '.workflow-banner',
-      { opacity: 0, y: 25 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.workflow-banner',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+      // Staggered step cards entrance
+      gsap.fromTo(
+        '.workflow-card',
+        { opacity: 0, y: 35, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.workflow-grid',
+            start: 'top 80%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+
+      // Guarantee banner entrance
+      gsap.fromTo(
+        '.workflow-banner',
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.workflow-banner',
+            start: 'top 90%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, { scope: containerRef });
 
   const steps = [

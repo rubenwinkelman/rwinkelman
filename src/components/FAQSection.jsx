@@ -11,42 +11,48 @@ export default function FAQSection() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.faq-header',
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.faq-header',
-          start: 'top 85%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    const mm = gsap.matchMedia();
 
-    // Stagger FAQ cards entrance
-    gsap.fromTo(
-      '.faq-item',
-      { opacity: 0, y: 25 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.faq-list',
-          start: 'top 80%',
-          once: true
-        },
-        clearProps: 'transform'
-      }
-    );
+    mm.add("(min-width: 768px)", () => {
+      // Header entrance
+      gsap.fromTo(
+        '.faq-header',
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.faq-header',
+            start: 'top 85%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+
+      // Stagger FAQ cards entrance
+      gsap.fromTo(
+        '.faq-item',
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.faq-list',
+            start: 'top 80%',
+            once: true
+          },
+          clearProps: 'all'
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, { scope: containerRef });
 
   const faqs = [
@@ -120,7 +126,7 @@ export default function FAQSection() {
                     isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden min-h-0">
                     <div className="px-5 pb-5 pt-1 text-sm text-brand-sandMuted leading-relaxed border-t border-white/5">
                       {faq.a}
                     </div>

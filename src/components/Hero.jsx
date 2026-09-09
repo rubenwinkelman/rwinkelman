@@ -30,38 +30,45 @@ export default function Hero() {
       ease: 'sine.inOut'
     });
 
-    // 2. Coordinated entrance sequence on mount
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    // 2. Coordinated entrance on desktop (>=768px)
+    // On mobile (<768px), keep text 100% visible immediately without opacity delays
+    const mm = gsap.matchMedia();
 
-    tl.fromTo(
-      '.hero-title',
-      { opacity: 0, y: 35 },
-      { opacity: 1, y: 0, duration: 0.9 }
-    )
-      .fromTo(
-        '.hero-desc',
-        { opacity: 0, y: 25 },
-        { opacity: 1, y: 0, duration: 0.8 },
-        '-=0.6'
+    mm.add("(min-width: 768px)", () => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.fromTo(
+        '.hero-title',
+        { opacity: 0, y: 35 },
+        { opacity: 1, y: 0, duration: 0.8, clearProps: 'all' }
       )
-      .fromTo(
-        '.hero-btn',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, stagger: 0.12, duration: 0.6 },
-        '-=0.5'
-      )
-      .fromTo(
-        '.hero-card',
-        { opacity: 0, y: 30, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, clearProps: 'all' },
-        '-=0.4'
-      )
-      .fromTo(
-        '.hero-stat',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, clearProps: 'all' },
-        '-=0.5'
-      );
+        .fromTo(
+          '.hero-desc',
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.7, clearProps: 'all' },
+          '-=0.5'
+        )
+        .fromTo(
+          '.hero-btn',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.1, duration: 0.5, clearProps: 'all' },
+          '-=0.4'
+        )
+        .fromTo(
+          '.hero-card',
+          { opacity: 0, y: 30, scale: 0.98 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.7, clearProps: 'all' },
+          '-=0.3'
+        )
+        .fromTo(
+          '.hero-stat',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.08, duration: 0.5, clearProps: 'all' },
+          '-=0.4'
+        );
+    });
+
+    return () => mm.revert();
   }, { scope: heroRef });
 
   // 3. Smooth tab transition
@@ -71,57 +78,57 @@ export default function Hero() {
     if (tabContentRef.current) {
       gsap.fromTo(
         tabContentRef.current,
-        { opacity: 0.4, y: 8 },
-        { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+        { opacity: 0.5, y: 4 },
+        { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out', clearProps: 'all' }
       );
     }
     setActiveTab(newTab);
   };
 
   return (
-    <section ref={heroRef} className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+    <section ref={heroRef} className="relative pt-28 pb-20 md:pt-44 md:pb-32 overflow-hidden">
       {/* Warm Ambient Animated Glows */}
       <div className="hero-glow-1 absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-br from-brand-accent/20 via-brand-accent/5 to-transparent blur-[120px] pointer-events-none -z-10" />
       <div className="hero-glow-2 absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-sand/5 blur-[100px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Main Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
-          <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.08] mb-6">
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
+          <h1 className="hero-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-6">
             Eerst zien, dan pas beslissen.
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>
           </h1>
 
-          <p className="hero-desc text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="hero-desc text-base sm:text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
             Vraag vrijblijvend een offerte aan. Ik bouw een werkende voorbeeldwebsite om je enthousiast te maken en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het te laten zien. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en maken we de website samen <span className="text-brand-sand font-semibold">tot in de puntjes compleet af</span>.
           </p>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <a
             href="#contact"
-            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
+            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
           >
             <span>Vraag een gratis voorbeeld aan</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#werkwijze"
-            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-base transition-all duration-200 hover:border-white/20"
+            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
           >
             <span>Bekijk hoe ik werk (€ 399,-)</span>
           </a>
         </div>
 
         {/* Interactive Comparison Component */}
-        <div className="hero-card max-w-4xl mx-auto bg-brand-surface/90 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-sm">
+        <div className="hero-card max-w-4xl mx-auto bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
           {/* Segmented Switcher */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
-              <h2 className="text-lg font-bold text-brand-sand">
+              <h2 className="text-base sm:text-lg font-bold text-brand-sand">
                 Vergelijk het risico:
               </h2>
               <p className="text-xs text-brand-sandDim">
@@ -130,33 +137,33 @@ export default function Hero() {
             </div>
 
             {/* Custom Tab Selector */}
-            <div className="grid grid-cols-3 p-1.5 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto">
+            <div className="grid grid-cols-3 p-1 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto text-center">
               <button
                 type="button"
                 onClick={() => handleTabChange('traditioneel')}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'traditioneel'
                     ? 'bg-brand-elevated text-white shadow-sm'
                     : 'text-brand-sandDim hover:text-brand-sand'
                 }`}
               >
-                Traditioneel Bureau
+                <span className="hidden sm:inline">Traditioneel </span>Bureau
               </button>
               <button
                 type="button"
                 onClick={() => handleTabChange('zelf')}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'zelf'
                     ? 'bg-brand-elevated text-white shadow-sm'
                     : 'text-brand-sandDim hover:text-brand-sand'
                 }`}
               >
-                Zelf Klungelen
+                <span className="hidden sm:inline">Zelf </span>Klungelen
               </button>
               <button
                 type="button"
                 onClick={() => handleTabChange('rwinkelman')}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'rwinkelman'
                     ? 'bg-brand-accent text-white shadow-md'
                     : 'text-brand-sandDim hover:text-brand-sand'

@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal [text-wrap:balance]">
-            Ik bouw vooraf een werkend voorbeeld voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het live te demonstreren. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en werken we de website tot in de puntjes compleet af. Niet overtuigd? Dan betaal je <span className="text-brand-sand font-semibold">€ 0,-</span>.
+            Ik bouw vooraf een werkend voorstel voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom het persoonlijk demonstreren</span>. Bevalt het? Dan maken we het voor <span className="text-brand-accent font-bold">€ 399,-</span> compleet af. Niet overtuigd? Dan kost het je <span className="text-brand-sand font-semibold">€ 0,-</span>.
           </p>
         </div>
 

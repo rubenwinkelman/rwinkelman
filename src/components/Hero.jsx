@@ -169,7 +169,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Volledig ontzorgd als er in de toekomst wijzigingen moeten komen op de website</span>
+                    <span>Volledig ontzorgd: inclusief 1 tot 10 wijzigingen per maand</span>
                   </div>
                 </div>
               </div>
@@ -178,22 +178,22 @@ export default function Hero() {
         </div>
 
         {/* Quick Highlights Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto text-center">
-          <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-accent">€ 0,- Vooraf</div>
-            <div className="text-xs text-brand-sandDim mt-1">Gratis voorbeeld op locatie</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 max-w-5xl mx-auto text-center">
+          <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-brand-accent/20 backdrop-blur-sm hover:border-brand-accent/40 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
+            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-accent tracking-tight whitespace-nowrap">€ 0,- Vooraf</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Gratis voorbeeld op locatie</div>
           </div>
-          <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">€ 399,-</div>
-            <div className="text-xs text-brand-sandDim mt-1">Bij enthousiaste demo</div>
+          <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
+            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">€ 399,-</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Bij enthousiaste demo</div>
           </div>
-          <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">100% Maatwerk</div>
-            <div className="text-xs text-brand-sandDim mt-1">Compleet met jou afgestemd</div>
+          <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
+            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">100% Maatwerk</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Compleet met jou afgestemd</div>
           </div>
-          <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-mint">€ 29,99 /m</div>
-            <div className="text-xs text-brand-sandDim mt-1">Hosting + 1-10 wijzigingen</div>
+          <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-emerald-500/20 backdrop-blur-sm hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
+            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-emerald-400 tracking-tight whitespace-nowrap">€ 29,99 /m</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">1 - 10 wijzigingen per maand</div>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ export default function Workflow() {
   const steps = [
     {
       step: '01',
-      title: 'Vrijblijvende Aanvraag',
+      title: 'Vrijblijvende aanvraag',
       subtitle: 'Geen verplichtingen, direct contact',
       icon: MessageSquare,
       leadTime: 'Stap 1',
@@ -17,7 +17,7 @@ export default function Workflow() {
     },
     {
       step: '02',
-      title: 'Voorbeeld & Persoonlijke Demo',
+      title: 'Voorbeeld & persoonlijke demo',
       subtitle: 'Ruben komt persoonlijk langs op locatie',
       icon: Laptop,
       leadTime: 'Stap 2',
@@ -26,7 +26,7 @@ export default function Workflow() {
     },
     {
       step: '03',
-      title: 'Enthousiast? Betalen & Compleet Afbouwen',
+      title: 'Enthousiast? Betalen & compleet afbouwen',
       subtitle: 'Voor € 399,- bouwen we alles definitief af',
       icon: Sparkles,
       leadTime: 'Stap 3',
@@ -35,7 +35,7 @@ export default function Workflow() {
     },
     {
       step: '04',
-      title: 'Exclusief Beheer & Hosting (€ 29,99/mnd)',
+      title: 'Exclusief beheer & hosting (€ 29,99/mnd)',
       subtitle: 'Inclusief 1 tot 10 wijzigingen per maand',
       icon: RefreshCw,
       leadTime: 'Stap 4',
@@ -51,7 +51,7 @@ export default function Workflow() {
         {/* Section Header */}
         <div className="workflow-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
-            Hoe Ik Werk
+            Hoe ik werk
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
             Van vrijblijvend voorbeeld tot afgeronde website in 4 stappen.

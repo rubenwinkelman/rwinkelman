@@ -33,7 +33,7 @@ export default function ShowcaseConcepts() {
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-brand-sand">
-                Gratis Voorbeeld op Locatie
+                Gratis voorbeeld op locatie
               </span>
             </div>
 

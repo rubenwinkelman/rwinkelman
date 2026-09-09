@@ -181,7 +181,7 @@ export default function ContactSection() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <h3 className="text-xl font-bold text-brand-sand mb-4">
-                    Vrijblijvende Aanvraag &bull; Persoonlijke Demo
+                    Vrijblijvende aanvraag &bull; persoonlijke demo
                   </h3>
 
                   {errorMessage && (
@@ -197,7 +197,7 @@ export default function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-brand-sand mb-1.5">
-                        Jouw Naam *
+                        Jouw naam *
                       </label>
                       <input
                         type="text"
@@ -241,7 +241,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-brand-sand mb-1.5">
-                        Woonplaats / Vestiging
+                        Woonplaats / vestiging
                       </label>
                       <input
                         type="text"

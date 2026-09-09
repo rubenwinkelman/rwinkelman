@@ -7,30 +7,30 @@ export default function Philosophy() {
 
   const technicalPoints = [
     {
-      title: 'Schone & Solide Bouw',
+      title: 'Schone & solide bouw',
       description: 'Volledig met de hand gebouwd in heldere code. Geen knip-en-plakwerk, maar een website die jarenlang snel, stabiel en veilig blijft.'
     },
     {
-      title: 'Directe Laadsnelheid',
+      title: 'Directe laadsnelheid',
       description: 'Elke pagina verschijnt in een oogwenk op het scherm. Bezoekers hoeven nooit te wachten en vinden meteen wat ze zoeken.'
     },
     {
-      title: 'Perfect op Elk Scherm',
+      title: 'Perfect op elk scherm',
       description: 'Van smartphone en tablet tot laptop en breedbeeldmonitor: overal haarscherp, overzichtelijk en gemakkelijk te bedienen.'
     }
   ];
 
   const creativePoints = [
     {
-      title: 'Uniek Maatwerk',
+      title: 'Uniek maatwerk',
       description: 'Geen standaard sjablonen die iedereen al heeft, maar een eigen stijl met passende kleuren, een rustige indeling en een herkenbaar gezicht.'
     },
     {
-      title: 'Duidelijk voor de Bezoeker',
+      title: 'Duidelijk voor de bezoeker',
       description: 'We nemen twijfels bij je bezoeker meteen weg. Heldere informatie en logische stappen zorgen dat klanten sneller contact opnemen.'
     },
     {
-      title: 'Heldere & Eerlijke Taal',
+      title: 'Heldere en eerlijke taal',
       description: 'Geen ingewikkelde vaktermen of loze kreten, maar begrijpelijke taal die jouw klanten direct aanspreekt en overtuigt.'
     }
   ];
@@ -63,12 +63,12 @@ export default function Philosophy() {
                   <Code2 className="w-6 h-6 text-brand-sand" />
                 </div>
                 <span className="text-xs font-semibold text-brand-sandDim uppercase tracking-wider">
-                  Fundament &amp; Snelheid
+                  Fundament &amp; snelheid
                 </span>
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand mb-3">
-                1. Doordachte Techniek
+                1. Doordachte techniek
               </h3>
               <p className="text-sm text-brand-sandMuted mb-6 leading-relaxed">
                 De motor onder de motorkap. Jouw website wordt van de grond af opgebouwd in zuivere code, zonder trage systemen of overbodige toevoegingen die je website vertragen.
@@ -102,12 +102,12 @@ export default function Philosophy() {
                   <Palette className="w-6 h-6 text-brand-accent" />
                 </div>
                 <span className="text-xs font-semibold text-brand-accent uppercase tracking-wider">
-                  Uitstraling &amp; Vertrouwen
+                  Uitstraling &amp; vertrouwen
                 </span>
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand mb-3">
-                2. Karakter &amp; Overtuiging
+                2. Karakter &amp; overtuiging
               </h3>
               <p className="text-sm text-brand-sandMuted mb-6 leading-relaxed">
                 Een sterke website begint met een scherp oog voor stijl. We vertalen jouw bedrijf naar een uitstraling die direct autoriteit uitstraalt en vertrouwen wekt.

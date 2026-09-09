@@ -144,7 +144,7 @@ export default function Hero() {
                 <div>
                   <div className="flex items-center gap-2 text-brand-accent text-sm font-semibold mb-2">
                     <Sparkles className="w-4 h-4" />
-                    <span>De Slimste &amp; Meest Eerlijke Route</span>
+                    <span>De slimste en meest eerlijke route</span>
                   </div>
                   <h3 className="text-xl font-bold text-brand-sand">
                     Persoonlijke demo &bull; Pas betalen bij enthousiasme

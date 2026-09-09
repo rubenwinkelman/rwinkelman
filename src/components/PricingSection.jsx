@@ -12,7 +12,7 @@ export default function PricingSection() {
         {/* Section Header */}
         <div className="pricing-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
-            Tarieven &amp; Investering
+            Tarieven &amp; investering
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
             Eerst zien, pas betalen als je enthousiast bent.
@@ -29,11 +29,11 @@ export default function PricingSection() {
           <div className="pricing-card reveal-item delay-1 bg-brand-surface border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 relative shadow-xl hover:-translate-y-1">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-brand-sandDim mb-2">
-                Stap 1: Demonstratie &amp; Bouw
+                Stap 1: Demonstratie &amp; bouw
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand">
-                Website Bouw &amp; Afronding
+                Website bouw &amp; afronding
               </h3>
               <p className="text-xs text-brand-sandMuted mt-1 mb-6 leading-relaxed">
                 Een professionele, onderscheidende website die jouw merk direct autoriteit geeft.
@@ -88,15 +88,15 @@ export default function PricingSection() {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <div className="text-xs font-bold uppercase tracking-wider text-brand-accent">
-                  Stap 2: Beheer &amp; Onderhoud
+                  Stap 2: Beheer &amp; onderhoud
                 </div>
                 <span className="text-[11px] font-semibold text-brand-accent">
-                  100% Ontzorgd
+                  100% ontzorgd
                 </span>
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand">
-                Hosting &amp; Actief Contentbeheer
+                Hosting &amp; actief contentbeheer
               </h3>
               
               <div className="text-xs text-brand-accent font-medium mt-1 mb-4 flex items-center gap-1.5">

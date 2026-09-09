@@ -38,9 +38,9 @@ export default function Hero() {
           </a>
           <a
             href="#werkwijze"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
           >
-            <span>Bekijk hoe ik werk (€ 399,-)</span>
+            <span>Bekijk werkwijze</span>
           </a>
         </div>
 

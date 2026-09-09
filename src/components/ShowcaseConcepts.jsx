@@ -46,7 +46,7 @@ export default function ShowcaseConcepts() {
           <div className="space-y-6">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-brand-accent mb-2">
-                Bespoke Maatwerk
+                100% Maatwerk
               </div>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
                 Jouw website hier?

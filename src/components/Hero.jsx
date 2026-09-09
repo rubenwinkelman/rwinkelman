@@ -79,7 +79,7 @@ export default function Hero() {
                     : 'text-brand-sandDim hover:text-brand-sand'
                 }`}
               >
-                <span className="hidden sm:inline">Zelf </span>Klungelen
+                <span className="hidden sm:inline">Zelf </span>Bouwen
               </button>
               <button
                 type="button"
@@ -132,7 +132,7 @@ export default function Hero() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3 pt-2 text-xs text-brand-sandDim">
                   <div>✗ Tientallen uren eigen tijd kwijt</div>
-                  <div>✗ Trage laadtijden door zware pagebuilders</div>
+                  <div>✗ Trage laadtijden door zware sjablonen en plugins</div>
                   <div>✗ Ziet er vaak uit als een standaard template</div>
                   <div>✗ Zelf verantwoordelijk voor beveiliging &amp; updates</div>
                 </div>

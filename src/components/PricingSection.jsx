@@ -10,67 +10,60 @@ export default function PricingSection() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
+    // Header entrance
+    gsap.fromTo(
+      '.pricing-header',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.pricing-header',
+          start: 'top 92%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-    mm.add("(min-width: 768px)", () => {
-      // Header entrance
-      gsap.fromTo(
-        '.pricing-header',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.pricing-header',
-            start: 'top 85%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
+    // Cards entrance (staggered rise & settle)
+    gsap.fromTo(
+      '.pricing-card',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.pricing-grid',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-      // Cards entrance (staggered rise & settle)
-      gsap.fromTo(
-        '.pricing-card',
-        { opacity: 0, y: 40, scale: 0.96 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.pricing-grid',
-            start: 'top 80%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-
-      // Reassurance banner entrance
-      gsap.fromTo(
-        '.pricing-reassurance',
-        { opacity: 0, y: 25 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.pricing-reassurance',
-            start: 'top 90%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-    });
-
-    return () => mm.revert();
+    // Reassurance banner entrance
+    gsap.fromTo(
+      '.pricing-reassurance',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.pricing-reassurance',
+          start: 'top 92%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
   }, { scope: containerRef });
 
   return (

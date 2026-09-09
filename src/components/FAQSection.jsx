@@ -11,48 +11,42 @@ export default function FAQSection() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
+    // Header entrance
+    gsap.fromTo(
+      '.faq-header',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.faq-header',
+          start: 'top 92%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-    mm.add("(min-width: 768px)", () => {
-      // Header entrance
-      gsap.fromTo(
-        '.faq-header',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.faq-header',
-            start: 'top 85%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-
-      // Stagger FAQ cards entrance
-      gsap.fromTo(
-        '.faq-item',
-        { opacity: 0, y: 25 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.faq-list',
-            start: 'top 80%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-    });
-
-    return () => mm.revert();
+    // Stagger FAQ cards entrance
+    gsap.fromTo(
+      '.faq-item',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        stagger: 0.07,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.faq-list',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
   }, { scope: containerRef });
 
   const faqs = [

@@ -10,77 +10,61 @@ export default function ShowcaseConcepts() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    // Ambient glow breathing (subtle, doesn't affect content)
-    gsap.to('.showcase-glow', {
-      scale: 1.3,
-      opacity: 0.25,
-      duration: 7,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
+    // Header entrance
+    gsap.fromTo(
+      '.showcase-header',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.showcase-header',
+          start: 'top 92%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-    const mm = gsap.matchMedia();
+    // Spotlight card entrance
+    gsap.fromTo(
+      '.showcase-card',
+      { opacity: 0, y: 15, scale: 0.99 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.showcase-card',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-    mm.add("(min-width: 768px)", () => {
-      // Header entrance
-      gsap.fromTo(
-        '.showcase-header',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.showcase-header',
-            start: 'top 85%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-
-      // Spotlight card entrance
-      gsap.fromTo(
-        '.showcase-card',
-        { opacity: 0, y: 40, scale: 0.96 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.85,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.showcase-card',
-            start: 'top 80%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-
-      // Stagger guarantees
-      gsap.fromTo(
-        '.showcase-guarantee',
-        { opacity: 0, x: -15 },
-        {
-          opacity: 1,
-          x: 0,
-          stagger: 0.12,
-          duration: 0.5,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.showcase-card',
-            start: 'top 75%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-    });
-
-    return () => mm.revert();
+    // Stagger guarantees
+    gsap.fromTo(
+      '.showcase-guarantee',
+      { opacity: 0, y: 10 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.06,
+        duration: 0.35,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.showcase-card',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
   }, { scope: containerRef });
 
   return (

@@ -21,66 +21,59 @@ export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
+    // Header entrance
+    gsap.fromTo(
+      '.contact-header',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.contact-header',
+          start: 'top 92%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-    mm.add("(min-width: 768px)", () => {
-      // Header entrance
-      gsap.fromTo(
-        '.contact-header',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-header',
-            start: 'top 85%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
+    // Left info column
+    gsap.fromTo(
+      '.contact-left',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.contact-grid',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
 
-      // Left info column
-      gsap.fromTo(
-        '.contact-left',
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-grid',
-            start: 'top 80%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-
-      // Right form card
-      gsap.fromTo(
-        '.contact-form-box',
-        { opacity: 0, x: 30, scale: 0.98 },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-grid',
-            start: 'top 80%',
-            once: true
-          },
-          clearProps: 'all'
-        }
-      );
-    });
-
-    return () => mm.revert();
+    // Right form card
+    gsap.fromTo(
+      '.contact-form-box',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.contact-grid',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'all'
+      }
+    );
   }, { scope: containerRef });
 
   const handleSubmit = async (e) => {

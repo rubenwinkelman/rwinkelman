@@ -9,66 +9,38 @@ export default function Hero() {
   const tabContentRef = useRef(null);
 
   useGSAP(() => {
-    // 1. Idle ambient glow breathing animation
-    gsap.to('.hero-glow-1', {
-      x: 40,
-      y: -30,
-      scale: 1.15,
-      duration: 8,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
+    // Ultra-snappy entrance on mobile & desktop (loads fast, beautiful motion)
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    gsap.to('.hero-glow-2', {
-      x: -30,
-      y: 20,
-      scale: 0.9,
-      duration: 6,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-
-    // 2. Coordinated entrance on desktop (>=768px)
-    // On mobile (<768px), keep text 100% visible immediately without opacity delays
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-      tl.fromTo(
-        '.hero-title',
-        { opacity: 0, y: 35 },
-        { opacity: 1, y: 0, duration: 0.8, clearProps: 'all' }
+    tl.fromTo(
+      '.hero-title',
+      { opacity: 0, y: 15 },
+      { opacity: 1, y: 0, duration: 0.45, clearProps: 'all' }
+    )
+      .fromTo(
+        '.hero-desc',
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.4, clearProps: 'all' },
+        '-=0.35'
       )
-        .fromTo(
-          '.hero-desc',
-          { opacity: 0, y: 25 },
-          { opacity: 1, y: 0, duration: 0.7, clearProps: 'all' },
-          '-=0.5'
-        )
-        .fromTo(
-          '.hero-btn',
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, stagger: 0.1, duration: 0.5, clearProps: 'all' },
-          '-=0.4'
-        )
-        .fromTo(
-          '.hero-card',
-          { opacity: 0, y: 30, scale: 0.98 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.7, clearProps: 'all' },
-          '-=0.3'
-        )
-        .fromTo(
-          '.hero-stat',
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, stagger: 0.08, duration: 0.5, clearProps: 'all' },
-          '-=0.4'
-        );
-    });
-
-    return () => mm.revert();
+      .fromTo(
+        '.hero-btn',
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, stagger: 0.06, duration: 0.35, clearProps: 'all' },
+        '-=0.3'
+      )
+      .fromTo(
+        '.hero-card',
+        { opacity: 0, y: 15, scale: 0.99 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.45, clearProps: 'all' },
+        '-=0.25'
+      )
+      .fromTo(
+        '.hero-stat',
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, stagger: 0.05, duration: 0.35, clearProps: 'all' },
+        '-=0.3'
+      );
   }, { scope: heroRef });
 
   // 3. Smooth tab transition

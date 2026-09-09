@@ -67,7 +67,7 @@ export default function PricingSection() {
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Lighthouse 98+ optimalisatie &amp; mobielvriendelijk</span>
+                  <span>Bliksemsnel ladend &amp; perfect op ieder beeldscherm</span>
                 </div>
               </div>
             </div>

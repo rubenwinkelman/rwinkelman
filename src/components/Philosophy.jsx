@@ -7,31 +7,31 @@ export default function Philosophy() {
 
   const technicalPoints = [
     {
-      title: 'Vlijmscherpe Code-architectuur',
-      description: 'Handgeschreven, moderne Tailwind-componenten zonder overtollige plugins of trage bibliotheken. Schone markup die jarenlang meegaat.'
+      title: 'Schone & Solide Bouw',
+      description: 'Volledig met de hand gebouwd in heldere code. Geen knip-en-plakwerk, maar een website die jarenlang snel, stabiel en veilig blijft.'
     },
     {
-      title: 'Extreme Laadsnelheid (Lighthouse 95+)',
-      description: 'Directe optimalisatie voor Core Web Vitals. Bezoekers hebben geen geduld; een snelle website converteert direct beter.'
+      title: 'Directe Laadsnelheid',
+      description: 'Elke pagina verschijnt in een oogwenk op het scherm. Bezoekers hoeven nooit te wachten en vinden meteen wat ze zoeken.'
     },
     {
-      title: 'Feilloze Responsiviteit & Toegankelijkheid',
-      description: 'Elk schermformaat &mdash; van smartphone tot ultrawide monitor &mdash; wordt met pixelprecisie getest en geoptimaliseerd.'
+      title: 'Perfect op Elk Scherm',
+      description: 'Van smartphone en tablet tot laptop en breedbeeldmonitor: overal haarscherp, overzichtelijk en gemakkelijk te bedienen.'
     }
   ];
 
   const creativePoints = [
     {
-      title: 'Bespoke Art Direction & Kleurengevoel',
-      description: 'Een website moet je merk ademen. Geen voorgebakken sjablonen, maar doordachte typografie, witruimte en visuele hiërarchie.'
+      title: 'Uniek Maatwerk',
+      description: 'Geen standaard sjablonen die iedereen al heeft, maar een eigen stijl met passende kleuren, een rustige indeling en een herkenbaar gezicht.'
     },
     {
-      title: 'Conversiepsychologie & Empathie',
-      description: 'Begrijpen wat jouw klanten beweegt en twijfels wegnemen. Een bezoeker koopt niet van functies, maar van helderheid en vertrouwen.'
+      title: 'Duidelijk voor de Bezoeker',
+      description: 'We nemen twijfels bij je bezoeker meteen weg. Heldere informatie en logische stappen zorgen dat klanten sneller contact opnemen.'
     },
     {
-      title: 'Tekst & Toon die Raakt',
-      description: 'Geen holle marketingspreuken of containerbegrippen, maar krachtige, heldere teksten die meteen duidelijk maken wat je waard bent.'
+      title: 'Heldere & Eerlijke Taal',
+      description: 'Geen ingewikkelde vaktermen of loze kreten, maar begrijpelijke taal die jouw klanten direct aanspreekt en overtuigt.'
     }
   ];
 
@@ -68,10 +68,10 @@ export default function Philosophy() {
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand mb-3">
-                1. Vlijmscherpe Techniek
+                1. Doordachte Techniek
               </h3>
               <p className="text-sm text-brand-sandMuted mb-6 leading-relaxed">
-                De motor onder de motorkap. We bouwen met de modernste frontend-standaarden, zonder de ballast van logge pagebuilders of honderden plugins.
+                De motor onder de motorkap. Jouw website wordt van de grond af opgebouwd in zuivere code, zonder trage systemen of overbodige toevoegingen die je website vertragen.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-white/10">
@@ -90,7 +90,7 @@ export default function Philosophy() {
             </div>
 
             <div className="mt-8 pt-4 border-t border-white/5 text-xs text-brand-sandDim">
-              Focus: Bliksemsnel, veilig, schaalbaar en feilloos op ieder apparaat.
+              Resultaat: Razendsnel, veilig en betrouwbaar op elk apparaat.
             </div>
           </div>
 
@@ -102,15 +102,15 @@ export default function Philosophy() {
                   <Palette className="w-6 h-6 text-brand-accent" />
                 </div>
                 <span className="text-xs font-semibold text-brand-accent uppercase tracking-wider">
-                  Smaak, Emotie &amp; Strategie
+                  Uitstraling &amp; Vertrouwen
                 </span>
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand mb-3">
-                2. Menselijk Meesterschap
+                2. Karakter &amp; Overtuiging
               </h3>
               <p className="text-sm text-brand-sandMuted mb-6 leading-relaxed">
-                Het oog van de ontwerper bepaalt wat stijlvol is. We vertalen jouw ambities naar een uitstraling die autoriteit uitstraalt en direct vertrouwen wekt.
+                Een sterke website begint met een scherp oog voor stijl. We vertalen jouw bedrijf naar een uitstraling die direct autoriteit uitstraalt en vertrouwen wekt.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-white/10">
@@ -129,7 +129,7 @@ export default function Philosophy() {
             </div>
 
             <div className="mt-8 pt-4 border-t border-white/5 text-xs text-brand-accent font-medium">
-              Focus: Onderscheidend vermogen, merkbeleving en maximale conversie.
+              Resultaat: Een herkenbaar merk dat vertrouwen wekt en klanten oplevert.
             </div>
           </div>
 
@@ -143,7 +143,7 @@ export default function Philosophy() {
             </div>
             <div>
               <blockquote className="text-lg md:text-xl font-medium text-brand-sand leading-relaxed">
-                &ldquo;Een goede website is geen wiskundig trucje en ook geen holle template. Het is de harmonie tussen vlijmscherpe code die direct laadt, en een uitstraling die jouw bezoeker raakt en overtuigt.&rdquo;
+                &ldquo;Een goede website is geen technisch trucje en ook geen hol sjabloon. Het is de balans tussen zuivere code die direct laadt, en een uitstraling die jouw bezoeker raakt en overtuigt.&rdquo;
               </blockquote>
               <div className="mt-3 flex items-center gap-3 text-sm">
                 <span className="font-bold text-brand-sand">Ruben Winkelman</span>

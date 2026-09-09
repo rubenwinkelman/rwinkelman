@@ -17,7 +17,7 @@ export default function FAQSection() {
     },
     {
       q: 'Neem je ook bestaande websites van derden in beheer?',
-      a: 'Nee. Het hosting- en beheerpakket van € 29,99 per maand is exclusief voorbehouden aan websites die ik zelf heb ontworpen en gebouwd. Omdat ik mijn eigen websites van de grond af in zuivere, moderne code opzet zonder trage WordPress-plugins of ballast, kan ik garanderen dat jouw website altijd razendsnel (98+ PageSpeed) en veilig blijft, en kan ik jouw 1-10 maandelijkse wijzigingen direct foutloos uitvoeren.'
+      a: 'Nee. Het hosting- en beheerpakket van € 29,99 per maand is exclusief voorbehouden aan websites die ik zelf heb ontworpen en gebouwd. Omdat ik mijn eigen websites van de grond af in zuivere code opzet zonder trage systemen of overbodige toevoegingen, kan ik garanderen dat jouw website altijd razendsnel en veilig blijft, en kan ik jouw 1-10 maandelijkse wijzigingen direct foutloos uitvoeren.'
     },
     {
       q: 'Wat valt er onder de € 29,99/maand en de 1 tot 10 wijzigingen?',

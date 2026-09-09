@@ -1,16 +1,91 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowRight, CheckCircle2, Laptop, Sparkles, MapPin } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ShowcaseConcepts() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Ambient glow breathing
+    gsap.to('.showcase-glow', {
+      scale: 1.3,
+      opacity: 0.25,
+      duration: 7,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    // Header entrance
+    gsap.fromTo(
+      '.showcase-header',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.showcase-header',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Spotlight card entrance
+    gsap.fromTo(
+      '.showcase-card',
+      { opacity: 0, y: 40, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.85,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.showcase-card',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Stagger guarantees
+    gsap.fromTo(
+      '.showcase-guarantee',
+      { opacity: 0, x: -15 },
+      {
+        opacity: 1,
+        x: 0,
+        stagger: 0.12,
+        duration: 0.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.showcase-card',
+          start: 'top 75%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+  }, { scope: containerRef });
+
   return (
-    <section id="showcase" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
+    <section ref={containerRef} id="showcase" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
       {/* Subtle warm ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-accent/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="showcase-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-accent/10 blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
+        <div className="showcase-header max-w-3xl mb-12">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Portfolio &amp; Voorbeelden
           </div>
@@ -23,7 +98,7 @@ export default function ShowcaseConcepts() {
         </div>
 
         {/* Single Prominent Spotlight Card */}
-        <div className="max-w-4xl mx-auto relative rounded-3xl bg-brand-surface/90 border border-white/10 hover:border-brand-accent/50 p-8 sm:p-12 md:p-16 shadow-2xl transition-all duration-300 backdrop-blur-sm group">
+        <div className="showcase-card max-w-4xl mx-auto relative rounded-3xl bg-brand-surface/90 border border-white/10 hover:border-brand-accent/50 p-8 sm:p-12 md:p-16 shadow-2xl transition-all duration-300 backdrop-blur-sm group">
           
           {/* Top Bar: URL & Status */}
           <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-white/10 gap-4">
@@ -56,15 +131,15 @@ export default function ShowcaseConcepts() {
 
             {/* 3 Key Guarantees */}
             <div className="pt-2 pb-4 space-y-3">
-              <div className="flex items-start gap-3 text-sm text-brand-sand">
+              <div className="showcase-guarantee flex items-start gap-3 text-sm text-brand-sand">
                 <CheckCircle2 className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
                 <span>100% vrijblijvend werkend voorbeeld vooraf gebouwd</span>
               </div>
-              <div className="flex items-start gap-3 text-sm text-brand-sand">
+              <div className="showcase-guarantee flex items-start gap-3 text-sm text-brand-sand">
                 <CheckCircle2 className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
                 <span>Persoonlijke demonstratie op jouw kantoor of locatie</span>
               </div>
-              <div className="flex items-start gap-3 text-sm text-brand-sand">
+              <div className="showcase-guarantee flex items-start gap-3 text-sm text-brand-sand">
                 <CheckCircle2 className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
                 <span>Pas betalen bij enthousiasme (€ 399,-) &amp; flexibel maandelijks beheer (€ 29,99/mnd)</span>
               </div>

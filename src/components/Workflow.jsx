@@ -1,7 +1,72 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MessageSquare, Laptop, Sparkles, Rocket, Clock, CheckCircle, MapPin, RefreshCw } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Workflow() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Header entrance
+    gsap.fromTo(
+      '.workflow-header',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.workflow-header',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Staggered step cards entrance
+    gsap.fromTo(
+      '.workflow-card',
+      { opacity: 0, y: 35, scale: 0.97 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.workflow-grid',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Guarantee banner entrance
+    gsap.fromTo(
+      '.workflow-banner',
+      { opacity: 0, y: 25 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.workflow-banner',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+  }, { scope: containerRef });
+
   const steps = [
     {
       step: '01',
@@ -42,11 +107,11 @@ export default function Workflow() {
   ];
 
   return (
-    <section id="werkwijze" className="py-24 md:py-32 bg-brand-dark relative">
+    <section ref={containerRef} id="werkwijze" className="py-24 md:py-32 bg-brand-dark relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="workflow-header max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Hoe Ik Werk
           </div>
@@ -59,13 +124,13 @@ export default function Workflow() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="workflow-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-brand-surface/70 border border-white/10 hover:border-brand-accent/40 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 shadow-lg"
+                className="workflow-card p-6 rounded-2xl bg-brand-surface/70 border border-white/10 hover:border-brand-accent/40 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -104,7 +169,7 @@ export default function Workflow() {
         </div>
 
         {/* Guarantee Banner */}
-        <div className="mt-12 p-6 rounded-xl bg-brand-surface border border-brand-accentBorder flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+        <div className="workflow-banner mt-12 p-6 rounded-xl bg-brand-surface border border-brand-accentBorder flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-lg bg-brand-accent/20 flex items-center justify-center text-brand-accent flex-shrink-0">
               <Sparkles className="w-5 h-5" />

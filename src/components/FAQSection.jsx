@@ -1,8 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState(0);
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Header entrance
+    gsap.fromTo(
+      '.faq-header',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.faq-header',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Stagger FAQ cards entrance
+    gsap.fromTo(
+      '.faq-item',
+      { opacity: 0, y: 25 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.faq-list',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+  }, { scope: containerRef });
 
   const faqs = [
     {
@@ -32,10 +77,10 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-24 bg-brand-surface/30 border-t border-white/5 relative">
+    <section ref={containerRef} className="py-24 bg-brand-surface/30 border-t border-white/5 relative">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
         
-        <div className="text-center mb-16">
+        <div className="faq-header text-center mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Veelgestelde Vragen
           </div>
@@ -47,13 +92,13 @@ export default function FAQSection() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="faq-list space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="rounded-xl bg-brand-surface border border-white/10 overflow-hidden transition-all duration-200"
+                className="faq-item rounded-xl bg-brand-surface border border-white/10 overflow-hidden transition-all duration-200"
               >
                 <button
                   type="button"
@@ -70,11 +115,17 @@ export default function FAQSection() {
                   />
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-sm text-brand-sandMuted leading-relaxed border-t border-white/5 animate-in fade-in duration-200">
-                    {faq.a}
+                <div 
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-1 text-sm text-brand-sandMuted leading-relaxed border-t border-white/5">
+                      {faq.a}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

@@ -1,13 +1,78 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Check, ShieldCheck, Sparkles, Server, MessageSquare, ArrowRight, Clock, HelpCircle, RefreshCw, Lock } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PricingSection() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Header entrance
+    gsap.fromTo(
+      '.pricing-header',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.pricing-header',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Cards entrance (staggered rise & settle)
+    gsap.fromTo(
+      '.pricing-card',
+      { opacity: 0, y: 40, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.pricing-grid',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Reassurance banner entrance
+    gsap.fromTo(
+      '.pricing-reassurance',
+      { opacity: 0, y: 25 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.pricing-reassurance',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+  }, { scope: containerRef });
+
   return (
-    <section id="tarieven" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5">
+    <section ref={containerRef} id="tarieven" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="pricing-header max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Tarieven &amp; Investering
           </div>
@@ -20,10 +85,10 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+        <div className="pricing-grid grid lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           
           {/* Card 1: Eenmalige Oplevering */}
-          <div className="bg-brand-surface border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 relative shadow-xl hover:-translate-y-1">
+          <div className="pricing-card bg-brand-surface border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 relative shadow-xl hover:-translate-y-1">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-brand-sandDim mb-2">
                 Stap 1: Demonstratie &amp; Bouw
@@ -81,7 +146,7 @@ export default function PricingSection() {
           </div>
 
           {/* Card 2: Zorgeloos Hosting & Contentbeheer */}
-          <div className="bg-brand-surface border-2 border-brand-accent/60 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-accent transition-all duration-300 relative shadow-2xl shadow-brand-accent/10 hover:-translate-y-1">
+          <div className="pricing-card bg-brand-surface border-2 border-brand-accent/60 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-accent transition-all duration-300 relative shadow-2xl shadow-brand-accent/10 hover:-translate-y-1">
             <div>
               <div className="flex items-center justify-between mb-2">
                 <div className="text-xs font-bold uppercase tracking-wider text-brand-accent">
@@ -154,7 +219,7 @@ export default function PricingSection() {
         </div>
 
         {/* Reassurance Banner */}
-        <div className="max-w-4xl mx-auto mt-12 p-6 rounded-2xl bg-brand-surface/70 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="pricing-reassurance max-w-4xl mx-auto mt-12 p-6 rounded-2xl bg-brand-surface/70 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-brand-accentLight border border-brand-accentBorder flex items-center justify-center text-brand-accent flex-shrink-0">
               <ShieldCheck className="w-6 h-6" />

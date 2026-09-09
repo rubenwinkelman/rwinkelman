@@ -1,7 +1,109 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Palette, Check, Eye, Code2, Zap, Layout, ShieldCheck } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Philosophy() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Header entrance
+    gsap.fromTo(
+      '.philosophy-header',
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.philosophy-header',
+          start: 'top 85%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Two cards entrance (left and right reveal)
+    gsap.fromTo(
+      '.philosophy-card-tech',
+      { opacity: 0, x: -35, scale: 0.98 },
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.philosophy-grid',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    gsap.fromTo(
+      '.philosophy-card-creative',
+      { opacity: 0, x: 35, scale: 0.98 },
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.philosophy-grid',
+          start: 'top 80%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Stagger points inside cards
+    gsap.fromTo(
+      '.philosophy-point',
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.philosophy-grid',
+          start: 'top 75%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+
+    // Quote box reveal
+    gsap.fromTo(
+      '.philosophy-quote',
+      { opacity: 0, y: 30, scale: 0.97 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.philosophy-quote',
+          start: 'top 90%',
+          once: true
+        },
+        clearProps: 'transform'
+      }
+    );
+  }, { scope: containerRef });
+
   const technicalPoints = [
     {
       title: 'Vlijmscherpe Code-architectuur',
@@ -33,11 +135,11 @@ export default function Philosophy() {
   ];
 
   return (
-    <section id="filosofie" className="py-24 md:py-32 relative bg-brand-dark overflow-hidden">
+    <section ref={containerRef} id="filosofie" className="py-24 md:py-32 relative bg-brand-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="philosophy-header max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             De Filosofie
           </div>
@@ -50,10 +152,10 @@ export default function Philosophy() {
         </div>
 
         {/* The Two Halves: Technical Precision vs Creative Mastery */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="philosophy-grid grid lg:grid-cols-2 gap-8 mb-16">
           
           {/* Card 1: Technical Precision */}
-          <div className="bg-brand-surface/90 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-xl hover:-translate-y-1">
+          <div className="philosophy-card-tech bg-brand-surface/90 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-xl hover:-translate-y-1">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-xl bg-brand-elevated border border-white/10 flex items-center justify-center">
@@ -73,7 +175,7 @@ export default function Philosophy() {
 
               <div className="space-y-4 pt-4 border-t border-white/10">
                 {technicalPoints.map((point, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                  <div key={idx} className="philosophy-point flex items-start gap-3">
                     <div className="mt-1 w-5 h-5 rounded-md bg-brand-dark border border-white/10 flex items-center justify-center flex-shrink-0">
                       <span className="text-xs font-bold text-brand-sand">{idx + 1}</span>
                     </div>
@@ -92,7 +194,7 @@ export default function Philosophy() {
           </div>
 
           {/* Card 2: Creative Mastery */}
-          <div className="bg-brand-surface/90 border border-brand-accent/30 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-accent/60 transition-all duration-300 relative shadow-xl shadow-brand-accent/5 hover:-translate-y-1">
+          <div className="philosophy-card-creative bg-brand-surface/90 border border-brand-accent/30 rounded-2xl p-8 flex flex-col justify-between hover:border-brand-accent/60 transition-all duration-300 relative shadow-xl shadow-brand-accent/5 hover:-translate-y-1">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-xl bg-brand-accentLight border border-brand-accentBorder flex items-center justify-center">
@@ -112,7 +214,7 @@ export default function Philosophy() {
 
               <div className="space-y-4 pt-4 border-t border-white/10">
                 {creativePoints.map((point, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                  <div key={idx} className="philosophy-point flex items-start gap-3">
                     <div className="mt-1 w-5 h-5 rounded-md bg-brand-accentLight border border-brand-accentBorder flex items-center justify-center flex-shrink-0">
                       <Check className="w-3.5 h-3.5 text-brand-accent" />
                     </div>
@@ -133,7 +235,7 @@ export default function Philosophy() {
         </div>
 
         {/* Manifesto / Quote Box */}
-        <div className="rounded-2xl p-8 md:p-10 bg-gradient-to-r from-brand-surface via-brand-elevated to-brand-surface border border-white/10 shadow-xl">
+        <div className="philosophy-quote rounded-2xl p-8 md:p-10 bg-gradient-to-r from-brand-surface via-brand-elevated to-brand-surface border border-white/10 shadow-xl">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
             <div className="w-16 h-16 rounded-2xl bg-brand-accent/15 border border-brand-accentBorder flex items-center justify-center flex-shrink-0">
               <Eye className="w-8 h-8 text-brand-accent" />

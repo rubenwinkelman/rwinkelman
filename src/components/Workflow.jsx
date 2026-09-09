@@ -80,7 +80,7 @@ export default function Workflow() {
     {
       step: '02',
       title: 'Voorbeeld & Persoonlijke Demo',
-      subtitle: 'Ruben komt je enthousiast maken op locatie',
+      subtitle: 'Ruben komt persoonlijk langs op locatie',
       icon: Laptop,
       leadTime: 'Stap 2',
       description: 'Ik bouw alvast een werkende voorbeeldwebsite om je enthousiast te maken. Vervolgens kom ik persoonlijk bij je langs op locatie om het interactieve concept live op mijn laptop te laten zien.',

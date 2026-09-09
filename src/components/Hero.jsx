@@ -53,13 +53,13 @@ export default function Hero() {
       .fromTo(
         '.hero-card',
         { opacity: 0, y: 30, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.8, clearProps: 'all' },
         '-=0.4'
       )
       .fromTo(
         '.hero-stat',
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, stagger: 0.08, duration: 0.6 },
+        { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, clearProps: 'all' },
         '-=0.5'
       );
   }, { scope: heroRef });

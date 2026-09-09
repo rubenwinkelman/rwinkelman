@@ -12,16 +12,11 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Main Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-          
-          {/* Eyebrow Trust Badge */}
-          <div className="anim-hero-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface border border-brand-accent/30 text-xs font-semibold text-brand-sand mb-4 sm:mb-6 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
-            <span>Gratis interactief voorbeeld op locatie</span>
-          </div>
-
-          <h1 className="anim-hero-1 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.14] sm:leading-[1.08] mb-4 sm:mb-6 [text-wrap:balance]">
-            Eerst zien, dan pas beslissen.
+        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
+          <h1 className="anim-hero-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.1] mb-4 sm:mb-6">
+            <span className="block">
+              Eerst zien,<br className="sm:hidden" /> dan pas beslissen.
+            </span>
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>

@@ -1,102 +1,49 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers, Sparkles, SlidersHorizontal, Users, MapPin, Eye } from 'lucide-react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('rwinkelman');
-  const heroRef = useRef(null);
-  const tabContentRef = useRef(null);
-
-  useGSAP(() => {
-    // Ultra-snappy entrance on mobile & desktop (loads fast, beautiful motion)
-    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-    tl.fromTo(
-      '.hero-title',
-      { opacity: 0, y: 15 },
-      { opacity: 1, y: 0, duration: 0.45, clearProps: 'all' }
-    )
-      .fromTo(
-        '.hero-desc',
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.4, clearProps: 'all' },
-        '-=0.35'
-      )
-      .fromTo(
-        '.hero-btn',
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, stagger: 0.06, duration: 0.35, clearProps: 'all' },
-        '-=0.3'
-      )
-      .fromTo(
-        '.hero-card',
-        { opacity: 0, y: 15, scale: 0.99 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.45, clearProps: 'all' },
-        '-=0.25'
-      )
-      .fromTo(
-        '.hero-stat',
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, stagger: 0.05, duration: 0.35, clearProps: 'all' },
-        '-=0.3'
-      );
-  }, { scope: heroRef });
-
-  // 3. Smooth tab transition
-  const handleTabChange = (newTab) => {
-    if (newTab === activeTab) return;
-    
-    if (tabContentRef.current) {
-      gsap.fromTo(
-        tabContentRef.current,
-        { opacity: 0.5, y: 4 },
-        { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out', clearProps: 'all' }
-      );
-    }
-    setActiveTab(newTab);
-  };
 
   return (
-    <section ref={heroRef} className="relative pt-28 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-      {/* Warm Ambient Animated Glows */}
-      <div className="hero-glow-1 absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-br from-brand-accent/20 via-brand-accent/5 to-transparent blur-[120px] pointer-events-none -z-10" />
-      <div className="hero-glow-2 absolute top-1/3 right-10 w-[300px] h-[300px] bg-brand-sand/5 blur-[100px] pointer-events-none -z-10" />
+    <section className="relative pt-28 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+      {/* Warm Ambient Radial Glows (Zero GPU blur overhead) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_transparent_70%)] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,_rgba(244,236,225,0.06)_0%,_transparent_70%)] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Main Headline */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-          <h1 className="hero-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-6">
+          <h1 className="anim-hero-1 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-6">
             Eerst zien, dan pas beslissen.
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>
           </h1>
 
-          <p className="hero-desc text-base sm:text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="anim-hero-2 text-base sm:text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
             Vraag vrijblijvend een offerte aan. Ik bouw een werkende voorbeeldwebsite om je enthousiast te maken en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het te laten zien. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en maken we de website samen <span className="text-brand-sand font-semibold">tot in de puntjes compleet af</span>.
           </p>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+        <div className="anim-hero-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <a
             href="#contact"
-            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
+            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
           >
             <span>Vraag een gratis voorbeeld aan</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#werkwijze"
-            className="hero-btn w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/10 text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
           >
             <span>Bekijk hoe ik werk (€ 399,-)</span>
           </a>
         </div>
 
         {/* Interactive Comparison Component */}
-        <div className="hero-card max-w-4xl mx-auto bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
+        <div className="anim-hero-4 max-w-4xl mx-auto bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
           {/* Segmented Switcher */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
@@ -112,7 +59,7 @@ export default function Hero() {
             <div className="grid grid-cols-3 p-1 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto text-center">
               <button
                 type="button"
-                onClick={() => handleTabChange('traditioneel')}
+                onClick={() => setActiveTab('traditioneel')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'traditioneel'
                     ? 'bg-brand-elevated text-white shadow-sm'
@@ -123,7 +70,7 @@ export default function Hero() {
               </button>
               <button
                 type="button"
-                onClick={() => handleTabChange('zelf')}
+                onClick={() => setActiveTab('zelf')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'zelf'
                     ? 'bg-brand-elevated text-white shadow-sm'
@@ -134,7 +81,7 @@ export default function Hero() {
               </button>
               <button
                 type="button"
-                onClick={() => handleTabChange('rwinkelman')}
+                onClick={() => setActiveTab('rwinkelman')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'rwinkelman'
                     ? 'bg-brand-accent text-white shadow-md'
@@ -147,7 +94,7 @@ export default function Hero() {
           </div>
 
           {/* Tab Content Panels */}
-          <div ref={tabContentRef} className="pt-6">
+          <div className="pt-6">
             {activeTab === 'traditioneel' && (
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-red-400 text-sm font-semibold">

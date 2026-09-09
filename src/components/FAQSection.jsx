@@ -1,53 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState(0);
-  const containerRef = useRef(null);
-
-  useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.faq-header',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.faq-header',
-          start: 'top 92%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-
-    // Stagger FAQ cards entrance
-    gsap.fromTo(
-      '.faq-item',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        stagger: 0.07,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.faq-list',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-  }, { scope: containerRef });
+  const containerRef = useScrollReveal();
 
   const faqs = [
     {
@@ -80,7 +37,7 @@ export default function FAQSection() {
     <section ref={containerRef} className="py-24 bg-brand-surface/30 border-t border-white/5 relative">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
         
-        <div className="faq-header text-center mb-16">
+        <div className="faq-header reveal-item text-center mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Veelgestelde Vragen
           </div>
@@ -95,10 +52,11 @@ export default function FAQSection() {
         <div className="faq-list space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
+            const delayClass = idx < 2 ? 'delay-1' : idx < 4 ? 'delay-2' : 'delay-3';
             return (
               <div
                 key={idx}
-                className="faq-item rounded-xl bg-brand-surface border border-white/10 overflow-hidden transition-all duration-200"
+                className={`faq-item reveal-item ${delayClass} rounded-xl bg-brand-surface border border-white/10 overflow-hidden transition-all duration-200`}
               >
                 <button
                   type="button"

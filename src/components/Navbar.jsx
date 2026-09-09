@@ -35,8 +35,8 @@ export default function Navbar() {
       <div
         className={`max-w-7xl mx-auto flex items-center justify-between transition-all duration-300 ease-out border rounded-2xl px-5 sm:px-7 ${
           isScrolled
-            ? 'bg-[#121620]/95 backdrop-blur-2xl border-white/10 shadow-2xl shadow-black/70 py-3'
-            : 'bg-[#121620]/60 backdrop-blur-xl border-white/10 py-4 shadow-lg shadow-black/20'
+            ? 'bg-[#121620]/95 backdrop-blur-md border-white/10 shadow-2xl shadow-black/70 py-3'
+            : 'bg-[#121620]/75 backdrop-blur-md border-white/10 py-4 shadow-lg shadow-black/20'
         }`}
       >
         {/* Brand identity */}

@@ -1,13 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Send, CheckCircle2, MessageSquare, Phone, Mail, Clock, ArrowRight, ShieldCheck, MapPin, Loader2, AlertCircle } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ContactSection() {
-  const containerRef = useRef(null);
+  const containerRef = useScrollReveal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,62 +15,6 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
-
-  useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.contact-header',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.contact-header',
-          start: 'top 92%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-
-    // Left info column
-    gsap.fromTo(
-      '.contact-left',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.contact-grid',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-
-    // Right form card
-    gsap.fromTo(
-      '.contact-form-box',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.contact-grid',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-  }, { scope: containerRef });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -127,7 +67,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="contact-header max-w-3xl mb-16">
+        <div className="contact-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Persoonlijk Bezoek &bull; 100% Vrijblijvend
           </div>
@@ -142,7 +82,7 @@ export default function ContactSection() {
         <div className="contact-grid grid lg:grid-cols-12 gap-8">
           
           {/* Left: Contact Options (5 cols) */}
-          <div className="contact-left lg:col-span-5 space-y-6">
+          <div className="contact-left reveal-item delay-1 lg:col-span-5 space-y-6">
             
             {/* Quick WhatsApp Action */}
             <a
@@ -210,7 +150,7 @@ export default function ContactSection() {
 
           {/* Right: Interactive Form (7 cols) with Web3Forms */}
           <div className="lg:col-span-7">
-            <div className="contact-form-box bg-brand-surface border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <div className="contact-form-box reveal-item delay-2 bg-brand-surface border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
               
               {submitted ? (
                 <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">

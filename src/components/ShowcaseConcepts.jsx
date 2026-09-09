@@ -1,81 +1,19 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { ArrowRight, CheckCircle2, Laptop, Sparkles, MapPin } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ShowcaseConcepts() {
-  const containerRef = useRef(null);
-
-  useGSAP(() => {
-    // Header entrance
-    gsap.fromTo(
-      '.showcase-header',
-      { opacity: 0, y: 15 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.showcase-header',
-          start: 'top 92%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-
-    // Spotlight card entrance
-    gsap.fromTo(
-      '.showcase-card',
-      { opacity: 0, y: 15, scale: 0.99 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.showcase-card',
-          start: 'top 90%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-
-    // Stagger guarantees
-    gsap.fromTo(
-      '.showcase-guarantee',
-      { opacity: 0, y: 10 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.06,
-        duration: 0.35,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.showcase-card',
-          start: 'top 85%',
-          once: true
-        },
-        clearProps: 'all'
-      }
-    );
-  }, { scope: containerRef });
+  const containerRef = useScrollReveal();
 
   return (
     <section ref={containerRef} id="showcase" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
-      {/* Subtle warm ambient glow */}
-      <div className="showcase-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-accent/10 blur-[130px] pointer-events-none -z-10" />
+      {/* Subtle warm ambient glow using pure CSS radial gradient (0% blur overhead) */}
+      <div className="showcase-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-accent/15 via-transparent to-transparent pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="showcase-header max-w-3xl mb-12">
+        <div className="showcase-header reveal-item max-w-3xl mb-12">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
             Portfolio &amp; Voorbeelden
           </div>
@@ -88,7 +26,7 @@ export default function ShowcaseConcepts() {
         </div>
 
         {/* Single Prominent Spotlight Card */}
-        <div className="showcase-card max-w-4xl mx-auto relative rounded-3xl bg-brand-surface/90 border border-white/10 hover:border-brand-accent/50 p-8 sm:p-12 md:p-16 shadow-2xl transition-all duration-300 backdrop-blur-sm group">
+        <div className="showcase-card reveal-item delay-1 max-w-4xl mx-auto relative rounded-3xl bg-brand-surface/90 border border-white/10 hover:border-brand-accent/50 p-8 sm:p-12 md:p-16 shadow-2xl transition-all duration-300 group">
           
           {/* Top Bar: URL & Status */}
           <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-white/10 gap-4">

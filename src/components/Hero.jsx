@@ -239,6 +239,10 @@ export default function Hero() {
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
                     <span>Daarna maken we de website tot in de puntjes af</span>
                   </div>
+                  <div className="flex items-center gap-3 text-sm text-brand-sand">
+                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                    <span>Volledig ontzorgd als er in de toekomst wijzigingen moeten komen op de website</span>
+                  </div>
                 </div>
               </div>
             )}

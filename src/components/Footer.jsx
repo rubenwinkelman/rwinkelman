@@ -71,12 +71,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-brand-sandMuted">
               <li>
-                <a href="mailto:contact@rwinkelman.nl" className="hover:text-brand-accent transition-colors">
-                  contact@rwinkelman.nl
+                <a href="mailto:ruben.winkelman@outlook.com" className="hover:text-brand-accent transition-colors">
+                  ruben.winkelman@outlook.com
                 </a>
               </li>
               <li>
-                <span className="text-xs text-brand-sandDim block mt-2">
+                <a
+                  href="https://wa.me/31683589410"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  WhatsApp: +31 6 83589410
+                </a>
+              </li>
+              <li>
+                <span className="text-xs text-brand-sandDim block mt-1">
+                  KvK-nummer: 86631020
+                </span>
+              </li>
+              <li>
+                <span className="text-xs text-brand-sandDim block">
                   Maandag t/m Vrijdag: 09:00 &ndash; 18:00
                 </span>
               </li>
@@ -97,7 +112,7 @@ export default function Footer() {
         {/* Bottom Bar with Required "powered by rwinkelman.nl" Directive */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-sandDim">
           <div>
-            &copy; {new Date().getFullYear()} rwinkelman.nl. Alle rechten voorbehouden.
+            &copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Alle rechten voorbehouden.
           </div>
 
           {/* Mandatory rule implementation: Powered by rwinkelman.nl with bold highlighted clickable link */}

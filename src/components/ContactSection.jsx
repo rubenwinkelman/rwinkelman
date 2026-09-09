@@ -86,7 +86,7 @@ export default function ContactSection() {
             
             {/* Quick WhatsApp Action */}
             <a
-              href={`https://wa.me/31612345678?text=${whatsappMessage}`}
+              href={`https://wa.me/31683589410?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="p-6 rounded-2xl bg-brand-surface border border-white/10 hover:border-emerald-500/40 flex items-start gap-4 transition-all duration-300 group block shadow-xl"
@@ -102,8 +102,8 @@ export default function ContactSection() {
                 <p className="text-xs text-brand-sandMuted mt-1 leading-relaxed">
                   Stuur direct een appje om een afspraak of demo op locatie in te plannen.
                 </p>
-                <span className="text-xs font-semibold text-emerald-400 mt-3 inline-block">
-                  Stuur WhatsApp bericht &rarr;
+                <span className="text-xs font-semibold text-emerald-400 mt-3 inline-flex items-center gap-1.5">
+                  <span>Chat via +31 6 83589410 &rarr;</span>
                 </span>
               </div>
             </a>
@@ -119,10 +119,10 @@ export default function ContactSection() {
                   Stuur je briefing of bedrijfsinformatie rechtstreeks naar Ruben.
                 </p>
                 <a
-                  href="mailto:contact@rwinkelman.nl"
+                  href="mailto:ruben.winkelman@outlook.com"
                   className="text-sm font-semibold text-brand-accent hover:underline mt-2 inline-block"
                 >
-                  contact@rwinkelman.nl
+                  ruben.winkelman@outlook.com
                 </a>
               </div>
             </div>
@@ -143,6 +143,10 @@ export default function ContactSection() {
               <div className="flex items-center gap-2.5 text-xs text-brand-sandMuted">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
                 <span>Pas betalen bij enthousiasme tijdens de demo</span>
+              </div>
+              <div className="pt-3 border-t border-white/5 text-[11px] text-brand-sandDim flex items-center justify-between">
+                <span>KvK: 86631020</span>
+                <span>Gevestigd in Nederland</span>
               </div>
             </div>
 

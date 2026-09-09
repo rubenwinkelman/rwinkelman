@@ -189,7 +189,7 @@ export default function Hero() {
           </div>
           <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
             <div className="text-2xl lg:text-3xl font-bold text-brand-sand">100% Maatwerk</div>
-            <div className="text-xs text-brand-sandDim mt-1">Compleet voor jou afgebouwd</div>
+            <div className="text-xs text-brand-sandDim mt-1">Compleet met jou afgestemd</div>
           </div>
           <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
             <div className="text-2xl lg:text-3xl font-bold text-brand-mint">€ 29,99 /m</div>

@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-out ${
-        isScrolled ? 'pt-3 px-4 sm:px-6 md:px-8' : 'pt-5 px-4 sm:px-6 md:px-8'
+        isScrolled ? 'pt-3 px-4 sm:px-6 md:px-8' : 'pt-4 px-4 sm:px-6 md:px-8'
       }`}
     >
       <div
@@ -42,16 +42,16 @@ export default function Navbar() {
         {/* Brand identity */}
         <a
           href="#"
-          className="group flex items-center gap-3 text-brand-sand tracking-tight transition-colors py-1"
+          className="group flex items-center gap-2.5 sm:gap-3 text-brand-sand tracking-tight transition-colors py-1"
         >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-accent to-[#D44A29] flex items-center justify-center shadow-lg shadow-brand-accent/25 group-hover:scale-105 transition-transform duration-200 flex-shrink-0">
             <span className="text-white font-bold text-base tracking-wider">R</span>
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-bold text-lg leading-tight tracking-tight text-brand-sand group-hover:text-white transition-colors">
+            <span className="font-bold text-base sm:text-lg leading-tight tracking-tight text-brand-sand group-hover:text-white transition-colors">
               rwinkelman<span className="text-brand-accent">.nl</span>
             </span>
-            <span className="text-[11px] text-brand-sandDim font-medium tracking-wide leading-tight mt-0.5">
+            <span className="text-[11px] text-brand-sandDim font-medium tracking-wide leading-tight mt-0.5 whitespace-nowrap">
               Websites &bull; Persoonlijk op Locatie
             </span>
           </div>
@@ -83,17 +83,11 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu toggle button */}
-        <div className="flex items-center gap-2 sm:hidden">
-          <a
-            href="#contact"
-            className="px-3.5 py-1.5 rounded-lg bg-brand-accent text-white text-xs font-semibold"
-          >
-            Voorbeeld
-          </a>
+        <div className="flex items-center sm:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu openen"
-            className="p-2 rounded-lg bg-brand-elevated border border-white/10 text-brand-sand hover:text-white"
+            className="p-2.5 rounded-xl bg-brand-elevated border border-white/10 text-brand-sand hover:text-white transition-colors"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

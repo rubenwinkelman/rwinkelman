@@ -5,7 +5,7 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState('rwinkelman');
 
   return (
-    <section className="relative pt-28 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <section className="relative pt-36 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden">
       {/* Warm Ambient Radial Glows (Zero GPU blur overhead) */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_transparent_70%)] pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,_rgba(244,236,225,0.06)_0%,_transparent_70%)] pointer-events-none -z-10" />
@@ -13,15 +13,22 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Main Headline */}
         <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-          <h1 className="anim-hero-1 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-6">
+          
+          {/* Eyebrow Trust Badge */}
+          <div className="anim-hero-1 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface border border-brand-accent/30 text-xs font-semibold text-brand-sand mb-4 sm:mb-6 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
+            <span>Gratis interactief voorbeeld op locatie</span>
+          </div>
+
+          <h1 className="anim-hero-1 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.14] sm:leading-[1.08] mb-4 sm:mb-6 [text-wrap:balance]">
             Eerst zien, dan pas beslissen.
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>
           </h1>
 
-          <p className="anim-hero-2 text-base sm:text-lg md:text-xl text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
-            Vraag vrijblijvend een offerte aan. Ik bouw een werkende voorbeeldwebsite om je enthousiast te maken en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het te laten zien. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en maken we de website samen <span className="text-brand-sand font-semibold">tot in de puntjes compleet af</span>.
+          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal [text-wrap:balance]">
+            Ik bouw vooraf een werkend voorbeeld voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom persoonlijk bij je langs</span> om het live te demonstreren. Ben je enthousiast? Dan betaal je <span className="text-brand-accent font-bold">€ 399,-</span> en werken we de website tot in de puntjes compleet af. Niet overtuigd? Dan betaal je <span className="text-brand-sand font-semibold">€ 0,-</span>.
           </p>
         </div>
 

@@ -19,7 +19,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setErrorMessage('');
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || import.meta.env.VITE_WEB3FORMS_ACCESS || '';
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -29,7 +29,7 @@ export default function ContactSection() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: accessKey || 'YOUR_ACCESS_KEY_HERE',
+          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           phone: formData.phone || 'Niet opgegeven',

@@ -150,7 +150,7 @@ export default function Hero() {
                     Persoonlijke demo &bull; Pas betalen bij enthousiasme
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 399,- en maken we de website samen tot in de puntjes compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
+                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 399,- en bouwen we jouw website compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
@@ -165,7 +165,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Daarna maken we de website tot in de puntjes af</span>
+                    <span>Daarna bouwen we jouw website compleet af</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -188,8 +188,8 @@ export default function Hero() {
             <div className="text-xs text-brand-sandDim mt-1">Bij enthousiaste demo</div>
           </div>
           <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
-            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">Tot in Puntjes</div>
-            <div className="text-xs text-brand-sandDim mt-1">Volledig op maat afgebouwd</div>
+            <div className="text-2xl lg:text-3xl font-bold text-brand-sand">100% Maatwerk</div>
+            <div className="text-xs text-brand-sandDim mt-1">Compleet voor jou afgebouwd</div>
           </div>
           <div className="hero-stat p-4 rounded-xl bg-brand-surface/60 border border-white/5">
             <div className="text-2xl lg:text-3xl font-bold text-brand-mint">€ 29,99 /m</div>

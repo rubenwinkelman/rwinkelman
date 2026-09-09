@@ -13,7 +13,7 @@ export default function FAQSection() {
     },
     {
       q: 'Wanneer betaal ik de eenmalige € 399,-?',
-      a: 'Tijdens het persoonlijke bezoek demonstreer ik het werkende voorbeeld. Ben je enthousiast over het concept en wil je dat we jouw website definitief gaan bouwen? Dan betaal je € 399,-. Vanaf dat moment ga ik direct aan de slag om de website tot in de puntjes compleet af te maken: alle pagina’s, afbeeldingen, teksten en functionaliteiten worden tot in perfectie ingericht.'
+      a: 'Tijdens het persoonlijke bezoek demonstreer ik het werkende voorbeeld. Ben je enthousiast over het concept en wil je dat we jouw website definitief gaan bouwen? Dan betaal je € 399,-. Vanaf dat moment ga ik direct aan de slag om de website compleet af te bouwen: alle pagina’s, afbeeldingen, teksten en functionaliteiten worden tot in detail ingericht.'
     },
     {
       q: 'Neem je ook bestaande websites van derden in beheer?',

@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-brand-sandMuted max-w-md leading-relaxed">
-              Onderscheidende websites op maat. Ik bouw eerst een gratis werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs op locatie. Ben je enthousiast? Dan betaal je € 399,- en maken we de website tot in de puntjes compleet af.
+              Onderscheidende websites op maat. Ik bouw eerst een gratis werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs op locatie. Ben je enthousiast? Dan betaal je € 399,- en bouwen we jouw website compleet af.
             </p>
 
             <div className="flex items-center gap-4 text-xs text-brand-sandDim pt-2">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -86,6 +86,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-[#0A66C2] transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                  <span>LinkedIn profiel</span>
+                </a>
+              </li>
+              <li>
                 <span className="text-xs text-brand-sandDim block mt-1">
                   KvK-nummer: 86631020
                 </span>
@@ -115,15 +126,28 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Alle rechten voorbehouden.
           </div>
 
-          {/* Mandatory rule implementation: Powered by rwinkelman.nl with bold highlighted clickable link */}
-          <div className="flex items-center gap-1.5">
-            <span>Powered by</span>
+          <div className="flex items-center gap-3">
             <a
-              href="https://rwinkelman.nl"
-              className="font-bold text-brand-accent hover:text-brand-accentHover transition-colors underline decoration-brand-accent/40 underline-offset-4"
+              href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#0A66C2] transition-colors"
+              aria-label="LinkedIn profiel van Ruben Winkelman"
             >
-              rwinkelman.nl
+              <Linkedin className="w-3.5 h-3.5" />
+              <span>LinkedIn</span>
             </a>
+            <span>&bull;</span>
+            {/* Mandatory rule implementation: Powered by rwinkelman.nl with bold highlighted clickable link */}
+            <div className="flex items-center gap-1.5">
+              <span>Powered by</span>
+              <a
+                href="https://rwinkelman.nl"
+                className="font-bold text-brand-accent hover:text-brand-accentHover transition-colors underline decoration-brand-accent/40 underline-offset-4"
+              >
+                rwinkelman.nl
+              </a>
+            </div>
           </div>
         </div>
 

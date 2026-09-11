@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, MessageSquare, Phone, Mail, Clock, ArrowRight, ShieldCheck, MapPin, Loader2, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, MessageSquare, Phone, Mail, Clock, ArrowRight, ShieldCheck, MapPin, Loader2, AlertCircle, Linkedin } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function ContactSection() {
@@ -118,12 +118,23 @@ export default function ContactSection() {
                 <p className="text-xs text-brand-sandMuted mt-1">
                   Stuur je briefing of bedrijfsinformatie rechtstreeks naar Ruben.
                 </p>
-                <a
-                  href="mailto:ruben.winkelman@outlook.com"
-                  className="text-sm font-semibold text-brand-accent hover:underline mt-2 inline-block"
-                >
-                  ruben.winkelman@outlook.com
-                </a>
+                <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
+                  <a
+                    href="mailto:ruben.winkelman@outlook.com"
+                    className="text-sm font-semibold text-brand-accent hover:underline inline-block"
+                  >
+                    ruben.winkelman@outlook.com
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-brand-sandMuted hover:text-[#0A66C2] transition-colors"
+                  >
+                    <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Check, Eye, Code2, Zap, Layout, ShieldCheck } from 'lucide-react';
+import { Palette, Check, Eye, Code2, Zap, Layout, ShieldCheck, Linkedin } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Philosophy() {
@@ -145,10 +145,21 @@ export default function Philosophy() {
               <blockquote className="text-lg md:text-xl font-medium text-brand-sand leading-relaxed">
                 &ldquo;Een goede website is geen technisch trucje en ook geen hol sjabloon. Het is de balans tussen zuivere code die direct laadt, en een uitstraling die jouw bezoeker raakt en overtuigt.&rdquo;
               </blockquote>
-              <div className="mt-3 flex items-center gap-3 text-sm">
+              <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
                 <span className="font-bold text-brand-sand">Ruben Winkelman</span>
                 <span className="text-brand-sandDim">&bull;</span>
                 <span className="text-brand-sandMuted">Oprichter &amp; Webmaker</span>
+                <span className="text-brand-sandDim">&bull;</span>
+                <a
+                  href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-brand-sandDim hover:text-[#0A66C2] transition-colors"
+                  aria-label="LinkedIn profiel van Ruben Winkelman"
+                >
+                  <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                  <span>LinkedIn</span>
+                </a>
               </div>
             </div>
           </div>

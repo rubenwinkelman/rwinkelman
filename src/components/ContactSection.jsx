@@ -75,7 +75,7 @@ export default function ContactSection() {
             Vraag jouw voorbeeldwebsite aan.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Ik ga direct aan de slag met een interactief concept om je enthousiast te maken en kom persoonlijk bij je langs op locatie. Ben je enthousiast? Dan betaal je € 399,- en bouwen we jouw website compleet af.
+            Ik ga direct aan de slag met een interactief concept om je enthousiast te maken en kom persoonlijk bij je langs op locatie. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
           </p>
         </div>
 

@@ -69,7 +69,7 @@ export default function ShowcaseConcepts() {
               </div>
               <div className="showcase-guarantee flex items-start gap-3 text-sm text-brand-sand">
                 <CheckCircle2 className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
-                <span>Pas betalen bij enthousiasme (€ 399,-) &amp; flexibel maandelijks beheer (€ 29,99/mnd)</span>
+                <span>Pas betalen bij enthousiasme (€ 699,-) &amp; flexibel maandelijks beheer (€ 29,99/mnd)</span>
               </div>
             </div>
 

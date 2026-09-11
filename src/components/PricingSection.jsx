@@ -18,7 +18,7 @@ export default function PricingSection() {
             Eerst zien, pas betalen als je enthousiast bent.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Geen torenhoge offertes vooraf. Ik maak eerst een werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs. Ben je enthousiast? Dan betaal je € 399,- en bouwen we jouw website compleet af.
+            Geen torenhoge offertes vooraf. Ik maak eerst een werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function PricingSection() {
               </p>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-5xl font-extrabold text-brand-sand">€ 399</span>
+                <span className="text-5xl font-extrabold text-brand-sand">€ 699</span>
                 <span className="text-xs text-brand-sandDim uppercase tracking-wider font-semibold">eenmalig</span>
               </div>
               <div className="text-xs text-emerald-400 font-semibold mb-6 flex items-center gap-1.5">

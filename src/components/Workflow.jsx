@@ -27,10 +27,10 @@ export default function Workflow() {
     {
       step: '03',
       title: 'Enthousiast? Betalen & compleet afbouwen',
-      subtitle: 'Voor € 399,- bouwen we alles definitief af',
+      subtitle: 'Voor € 699,- bouwen we alles definitief af',
       icon: Sparkles,
       leadTime: 'Stap 3',
-      description: 'Ben je enthousiast tijdens de demonstratie en wil je doorgaan? Dan betaal je eenmalig € 399,-. Vanaf dat moment werk ik de website compleet voor je uit: alle pagina’s, afbeeldingen, teksten en formulieren worden tot in detail ingericht.',
+      description: 'Ben je enthousiast tijdens de demonstratie en wil je doorgaan? Dan betaal je eenmalig € 699,-. Vanaf dat moment werk ik de website compleet voor je uit: alle pagina’s, afbeeldingen, teksten en formulieren worden tot in detail ingericht.',
       highlights: ['Betaling pas bij enthousiasme op locatie', 'Website compleet en professioneel afgewerkt', 'Niet overtuigd? Dan betaal je € 0,-']
     },
     {

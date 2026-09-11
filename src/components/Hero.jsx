@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal [text-wrap:balance]">
-            Ik bouw vooraf een werkend voorstel voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom het persoonlijk demonstreren</span>. Bevalt het? Dan maken we het voor <span className="text-brand-accent font-bold">€ 399,-</span> compleet af. Niet overtuigd? Dan kost het je <span className="text-brand-sand font-semibold">€ 0,-</span>.
+            Ik bouw vooraf een werkend voorstel voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom het persoonlijk demonstreren</span>. Bevalt het? Dan maken we het voor <span className="text-brand-accent font-bold">€ 699,-</span> compleet af. Niet overtuigd? Dan kost het je <span className="text-brand-sand font-semibold">€ 0,-</span>.
           </p>
         </div>
 
@@ -150,7 +150,7 @@ export default function Hero() {
                     Persoonlijke demo &bull; Pas betalen bij enthousiasme
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 399,- en bouwen we jouw website compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
+                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
@@ -161,7 +161,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>€ 399,- pas betalen als je enthousiast bent</span>
+                    <span>€ 699,- pas betalen als je enthousiast bent</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -184,7 +184,7 @@ export default function Hero() {
             <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Gratis voorbeeld op locatie</div>
           </div>
           <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
-            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">€ 399,-</div>
+            <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">€ 699,-</div>
             <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Bij enthousiaste demo</div>
           </div>
           <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">

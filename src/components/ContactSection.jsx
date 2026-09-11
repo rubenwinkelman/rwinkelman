@@ -63,11 +63,11 @@ export default function ContactSection() {
   );
 
   return (
-    <section ref={containerRef} id="contact" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
+    <section ref={containerRef} id="contact" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden isolate">
       {/* Warm Ambient Breathing Glow (GPU Compositor) */}
-      <div className="anim-ambient-glow-1 absolute bottom-10 right-0 sm:right-10 w-[500px] sm:w-[650px] h-[450px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.12)_0%,_transparent_70%)] pointer-events-none -z-10" />
+      <div className="anim-ambient-glow-1 absolute bottom-10 right-0 sm:right-10 w-[500px] sm:w-[750px] h-[450px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.22)_0%,_rgba(240,101,67,0.05)_50%,_transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}
         <div className="contact-header reveal-item max-w-3xl mb-16">

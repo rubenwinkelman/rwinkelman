@@ -11,10 +11,10 @@ export default function Footer({ onOpenLegal }) {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 pb-12 border-b border-white/10">
           
           {/* Brand Info */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="space-y-4 max-w-lg">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-accent to-[#D44A29] flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-accent/20">
                 R
@@ -24,7 +24,7 @@ export default function Footer({ onOpenLegal }) {
               </span>
             </div>
 
-            <p className="text-sm text-brand-sandMuted max-w-md leading-relaxed">
+            <p className="text-sm text-brand-sandMuted leading-relaxed">
               Onderscheidende websites op maat. Ik bouw eerst een gratis werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs op locatie. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
             </p>
 
@@ -35,55 +35,8 @@ export default function Footer({ onOpenLegal }) {
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-sand mb-4">
-              Navigatie
-            </h4>
-            <ul className="space-y-2.5 text-sm text-brand-sandMuted">
-              <li>
-                <a href="#werkwijze" className="hover:text-brand-sand transition-colors">
-                  Werkwijze (Persoonlijk Bezoek)
-                </a>
-              </li>
-              <li>
-                <a href="#tarieven" className="hover:text-brand-sand transition-colors">
-                  Tarieven (€ 699,- &amp; Beheer)
-                </a>
-              </li>
-              <li>
-                <a href="#showcase" className="hover:text-brand-sand transition-colors">
-                  Showcase &amp; Voorbeelden
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-brand-sand transition-colors">
-                  Direct Contact Opnemen
-                </a>
-              </li>
-              <li className="pt-2 border-t border-white/5">
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal && onOpenLegal('voorwaarden')}
-                  className="hover:text-brand-sand transition-colors text-left block w-full"
-                >
-                  Algemene Voorwaarden
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegal && onOpenLegal('privacy')}
-                  className="hover:text-brand-sand transition-colors text-left block w-full"
-                >
-                  Privacybeleid (AVG)
-                </button>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Details */}
-          <div>
+          <div className="md:min-w-[240px]">
             <h4 className="text-xs font-bold uppercase tracking-wider text-brand-sand mb-4">
               Contact &amp; Kennismaking
             </h4>
@@ -114,22 +67,13 @@ export default function Footer({ onOpenLegal }) {
                   <span>LinkedIn profiel</span>
                 </a>
               </li>
-              <li>
-                <span className="text-xs text-brand-sandDim block mt-1">
+              <li className="pt-2 border-t border-white/5">
+                <span className="text-xs text-brand-sandDim block">
                   KvK: 86631020 &bull; Btw: NL004282307B29
                 </span>
                 <span className="text-xs text-brand-sandDim block">
                   Gevestigd in Drachten
                 </span>
-              </li>
-              <li className="pt-2">
-                <button
-                  onClick={scrollToTop}
-                  className="inline-flex items-center gap-2 text-xs text-brand-sand hover:text-brand-accent transition-colors font-medium"
-                >
-                  <ArrowUp className="w-3.5 h-3.5" />
-                  <span>Terug naar boven</span>
-                </button>
               </li>
             </ul>
           </div>
@@ -144,7 +88,7 @@ export default function Footer({ onOpenLegal }) {
             <button
               type="button"
               onClick={() => onOpenLegal && onOpenLegal('voorwaarden')}
-              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2"
+              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2 cursor-pointer"
             >
               Algemene Voorwaarden
             </button>
@@ -152,13 +96,23 @@ export default function Footer({ onOpenLegal }) {
             <button
               type="button"
               onClick={() => onOpenLegal && onOpenLegal('privacy')}
-              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2"
+              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2 cursor-pointer"
             >
               Privacybeleid
             </button>
           </div>
 
           <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 text-brand-sandMuted hover:text-brand-accent transition-colors font-medium cursor-pointer"
+              title="Terug naar boven"
+            >
+              <ArrowUp className="w-3.5 h-3.5 text-brand-accent" />
+              <span>Naar boven</span>
+            </button>
+            <span>&bull;</span>
             <a
               href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
               target="_blank"

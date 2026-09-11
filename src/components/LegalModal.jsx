@@ -93,7 +93,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                   Algemene Voorwaarden
                 </h2>
                 <p className="text-xs text-brand-sandDim mt-1">
-                  Ruben Winkelman &bull; Gevestigd te Drachten &bull; KvK-nummer: 86631020
+                  Ruben Winkelman &bull; Gevestigd te Drachten &bull; KvK-nummer: 86631020 &bull; Btw-id: NL004282307B29
                 </p>
               </div>
 
@@ -103,7 +103,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     Artikel 1 &mdash; Definities &amp; Bedrijfsgegevens
                   </h3>
                   <p>
-                    <strong>1.1. Opdrachtnemer:</strong> Ruben Winkelman, handelend onder de naam <em>rwinkelman.nl</em>, gevestigd te Drachten, ingeschreven in het Handelsregister van de Kamer van Koophandel onder KvK-nummer <strong>86631020</strong>.<br />
+                    <strong>1.1. Opdrachtnemer:</strong> Ruben Winkelman, handelend onder de naam <em>rwinkelman.nl</em>, gevestigd te Drachten, ingeschreven in het Handelsregister van de Kamer van Koophandel onder KvK-nummer <strong>86631020</strong>, Btw-identificatienummer: <strong>NL004282307B29</strong>.<br />
                     <strong>1.2. Opdrachtgever:</strong> De natuurlijke of rechtspersoon die een overeenkomst aangaat met rwinkelman.nl voor de ontwikkeling van een website en/of hosting en contentbeheer.<br />
                     <strong>1.3. Overeenkomst:</strong> De afspraak tussen opdrachtgever en rwinkelman.nl op basis van deze algemene voorwaarden.
                   </p>
@@ -196,7 +196,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     1. Wie is verantwoordelijk voor de gegevensverwerking?
                   </h3>
                   <p>
-                    Ruben Winkelman, handelend onder <strong>rwinkelman.nl</strong>, gevestigd te Drachten (KvK 86631020), is de verwerkingsverantwoordelijke voor de verwerking van persoonsgegevens via deze website.<br />
+                    Ruben Winkelman, handelend onder <strong>rwinkelman.nl</strong>, gevestigd te Drachten (KvK-nummer 86631020, Btw-identificatienummer NL004282307B29), is de verwerkingsverantwoordelijke voor de verwerking van persoonsgegevens via deze website.<br />
                     Contact: <a href="mailto:ruben.winkelman@outlook.com" className="text-brand-accent hover:underline">ruben.winkelman@outlook.com</a> of telefonisch via <strong>+31 6 83589410</strong>.
                   </p>
                 </section>

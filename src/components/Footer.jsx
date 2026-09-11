@@ -116,7 +116,10 @@ export default function Footer({ onOpenLegal }) {
               </li>
               <li>
                 <span className="text-xs text-brand-sandDim block mt-1">
-                  KvK: 86631020 &bull; Gevestigd in Drachten
+                  KvK: 86631020 &bull; Btw: NL004282307B29
+                </span>
+                <span className="text-xs text-brand-sandDim block">
+                  Gevestigd in Drachten
                 </span>
               </li>
               <li className="pt-2">
@@ -136,7 +139,7 @@ export default function Footer({ onOpenLegal }) {
         {/* Bottom Bar with Required "powered by rwinkelman.nl" Directive */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-sandDim">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5">
-            <span>&copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Alle rechten voorbehouden.</span>
+            <span>&copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Btw: NL004282307B29 &bull; Alle rechten voorbehouden.</span>
             <span className="hidden sm:inline">&bull;</span>
             <button
               type="button"

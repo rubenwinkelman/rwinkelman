@@ -113,17 +113,6 @@ export default function Footer({ onOpenLegal }) {
               <span>Naar boven</span>
             </button>
             <span>&bull;</span>
-            <a
-              href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#0A66C2] transition-colors"
-              aria-label="LinkedIn profiel van Ruben Winkelman"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-            </a>
-            <span>&bull;</span>
             {/* Mandatory rule implementation: Powered by rwinkelman.nl with bold highlighted clickable link */}
             <div className="flex items-center gap-1.5">
               <span>Powered by</span>

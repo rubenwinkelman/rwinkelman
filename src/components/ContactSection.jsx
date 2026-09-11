@@ -160,7 +160,7 @@ export default function ContactSection() {
               </div>
               <div className="pt-3 border-t border-white/5 text-[11px] text-brand-sandDim flex items-center justify-between">
                 <span>KvK: 86631020</span>
-                <span>Gevestigd in Nederland</span>
+                <span>Gevestigd in Drachten</span>
               </div>
             </div>
 

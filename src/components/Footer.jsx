@@ -98,12 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="text-xs text-brand-sandDim block mt-1">
-                  KvK-nummer: 86631020
-                </span>
-              </li>
-              <li>
-                <span className="text-xs text-brand-sandDim block">
-                  Maandag t/m Vrijdag: 09:00 &ndash; 18:00
+                  KvK-nummer: 86631020 &bull; Gevestigd in Drachten
                 </span>
               </li>
               <li className="pt-2">

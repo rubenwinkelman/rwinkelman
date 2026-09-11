@@ -6,9 +6,10 @@ export default function Hero() {
 
   return (
     <section className="relative pt-36 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden">
-      {/* Warm Ambient Radial Glows (Zero GPU blur overhead) */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_transparent_70%)] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,_rgba(244,236,225,0.06)_0%,_transparent_70%)] pointer-events-none -z-10" />
+      {/* Warm Breathing Ambient Radial Glows (GPU Compositor, 0% CPU overhead) */}
+      <div className="anim-ambient-glow-1 absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-[450px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.22)_0%,_rgba(240,101,67,0.05)_45%,_transparent_70%)] pointer-events-none -z-10" />
+      <div className="anim-ambient-glow-2 absolute top-1/3 right-0 sm:right-10 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(244,236,225,0.07)_0%,_rgba(240,101,67,0.04)_50%,_transparent_70%)] pointer-events-none -z-10" />
+      <div className="anim-ambient-glow-1 absolute -bottom-10 -left-20 sm:left-10 w-[350px] sm:w-[450px] h-[350px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.12)_0%,_transparent_70%)] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Main Headline */}

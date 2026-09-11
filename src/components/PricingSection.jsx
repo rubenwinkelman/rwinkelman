@@ -6,7 +6,10 @@ export default function PricingSection() {
   const containerRef = useScrollReveal();
 
   return (
-    <section ref={containerRef} id="tarieven" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5">
+    <section ref={containerRef} id="tarieven" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
+      {/* Warm Ambient Breathing Glow (GPU Compositor) */}
+      <div className="anim-ambient-glow-2 absolute top-1/2 right-0 sm:right-1/4 -translate-y-1/2 w-[500px] sm:w-[650px] h-[400px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.14)_0%,_transparent_70%)] pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Section Header */}

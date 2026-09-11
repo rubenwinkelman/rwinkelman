@@ -7,8 +7,8 @@ export default function ShowcaseConcepts() {
 
   return (
     <section ref={containerRef} id="showcase" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5 overflow-hidden">
-      {/* Subtle warm ambient glow using pure CSS radial gradient (0% blur overhead) */}
-      <div className="showcase-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-accent/15 via-transparent to-transparent pointer-events-none -z-10" />
+      {/* Subtle warm ambient breathing glow using pure CSS radial gradient (GPU Compositor, 0% CPU) */}
+      <div className="anim-ambient-glow-1 showcase-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[350px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_rgba(240,101,67,0.04)_50%,_transparent_70%)] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         

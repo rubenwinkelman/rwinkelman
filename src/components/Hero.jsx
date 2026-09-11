@@ -186,7 +186,7 @@ export default function Hero() {
           </div>
           <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
             <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">€ 699,-</div>
-            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Bij enthousiaste demo</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">Bij enthousiaste demo &bull; excl. btw</div>
           </div>
           <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-white/10 backdrop-blur-sm hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
             <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-brand-sand tracking-tight whitespace-nowrap">100% Maatwerk</div>
@@ -194,7 +194,7 @@ export default function Hero() {
           </div>
           <div className="hero-stat group p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-brand-surface/90 to-brand-surface/50 border border-emerald-500/20 backdrop-blur-sm hover:border-emerald-500/40 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-center items-center shadow-lg shadow-black/20">
             <div className="text-lg sm:text-xl lg:text-[1.65rem] font-extrabold text-emerald-400 tracking-tight whitespace-nowrap">€ 29,99 /m</div>
-            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">1 - 10 wijzigingen per maand</div>
+            <div className="text-xs sm:text-[13px] text-brand-sandMuted mt-1.5 font-medium leading-tight">1 - 10 updates &bull; excl. btw</div>
           </div>
         </div>
 

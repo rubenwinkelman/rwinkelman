@@ -21,7 +21,7 @@ export default function PricingSection() {
             Eerst zien, pas betalen als je enthousiast bent.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Geen torenhoge offertes vooraf. Ik maak eerst een werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
+            Geen torenhoge offertes vooraf. Ik maak eerst een werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af. <span className="text-xs text-brand-sandDim block mt-1.5">Alle vermelde tarieven zijn exclusief 21% btw.</span>
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function PricingSection() {
 
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-5xl font-extrabold text-brand-sand">€ 699</span>
-                <span className="text-xs text-brand-sandDim uppercase tracking-wider font-semibold">eenmalig</span>
+                <span className="text-xs text-brand-sandDim uppercase tracking-wider font-semibold">eenmalig &bull; excl. btw</span>
               </div>
               <div className="text-xs text-emerald-400 font-semibold mb-6 flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4" />
@@ -113,7 +113,7 @@ export default function PricingSection() {
 
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-5xl font-extrabold text-brand-sand">€ 29<span className="text-3xl">,99</span></span>
-                <span className="text-xs text-brand-sandDim uppercase tracking-wider font-semibold">per maand</span>
+                <span className="text-xs text-brand-sandDim uppercase tracking-wider font-semibold">per maand &bull; excl. btw</span>
               </div>
               <div className="text-xs text-brand-sandDim mb-6 flex items-center gap-1.5">
                 <RefreshCw className="w-4 h-4 text-brand-accent" />

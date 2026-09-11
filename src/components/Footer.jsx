@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUp, Linkedin } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -61,6 +61,24 @@ export default function Footer() {
                   Direct Contact Opnemen
                 </a>
               </li>
+              <li className="pt-2 border-t border-white/5">
+                <button
+                  type="button"
+                  onClick={() => onOpenLegal && onOpenLegal('voorwaarden')}
+                  className="hover:text-brand-sand transition-colors text-left block w-full"
+                >
+                  Algemene Voorwaarden
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onOpenLegal && onOpenLegal('privacy')}
+                  className="hover:text-brand-sand transition-colors text-left block w-full"
+                >
+                  Privacybeleid (AVG)
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -98,7 +116,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="text-xs text-brand-sandDim block mt-1">
-                  KvK-nummer: 86631020 &bull; Gevestigd in Drachten
+                  KvK: 86631020 &bull; Gevestigd in Drachten
                 </span>
               </li>
               <li className="pt-2">
@@ -117,8 +135,24 @@ export default function Footer() {
 
         {/* Bottom Bar with Required "powered by rwinkelman.nl" Directive */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-sandDim">
-          <div>
-            &copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Alle rechten voorbehouden.
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5">
+            <span>&copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Alle rechten voorbehouden.</span>
+            <span className="hidden sm:inline">&bull;</span>
+            <button
+              type="button"
+              onClick={() => onOpenLegal && onOpenLegal('voorwaarden')}
+              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2"
+            >
+              Algemene Voorwaarden
+            </button>
+            <span>&bull;</span>
+            <button
+              type="button"
+              onClick={() => onOpenLegal && onOpenLegal('privacy')}
+              className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2"
+            >
+              Privacybeleid
+            </button>
           </div>
 
           <div className="flex items-center gap-3">

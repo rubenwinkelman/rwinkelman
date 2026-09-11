@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Check, Eye, Code2, Zap, Layout, ShieldCheck, Linkedin } from 'lucide-react';
+import { Palette, Check, Code2, Zap, Layout, ShieldCheck } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Philosophy() {
@@ -133,36 +133,6 @@ export default function Philosophy() {
             </div>
           </div>
 
-        </div>
-
-        {/* Manifesto / Quote Box */}
-        <div className="philosophy-quote reveal-item delay-1 rounded-2xl p-8 md:p-10 bg-gradient-to-r from-brand-surface via-brand-elevated to-brand-surface border border-white/10 shadow-xl">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
-            <div className="w-16 h-16 rounded-2xl bg-brand-accent/15 border border-brand-accentBorder flex items-center justify-center flex-shrink-0">
-              <Eye className="w-8 h-8 text-brand-accent" />
-            </div>
-            <div>
-              <blockquote className="text-lg md:text-xl font-medium text-brand-sand leading-relaxed">
-                &ldquo;Een goede website is geen technisch trucje en ook geen hol sjabloon. Het is de balans tussen zuivere code die direct laadt, en een uitstraling die jouw bezoeker raakt en overtuigt.&rdquo;
-              </blockquote>
-              <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
-                <span className="font-bold text-brand-sand">Ruben Winkelman</span>
-                <span className="text-brand-sandDim">&bull;</span>
-                <span className="text-brand-sandMuted">Oprichter &amp; Webmaker</span>
-                <span className="text-brand-sandDim">&bull;</span>
-                <a
-                  href="https://www.linkedin.com/in/ruben-winkelman-902ba01b4/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-brand-sandDim hover:text-[#0A66C2] transition-colors"
-                  aria-label="LinkedIn profiel van Ruben Winkelman"
-                >
-                  <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
-                  <span>LinkedIn</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>

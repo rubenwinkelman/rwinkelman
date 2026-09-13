@@ -18,10 +18,10 @@ export default function PricingSection() {
             Tarieven &amp; investering
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Eerst zien, pas betalen als je enthousiast bent.
+            Eerst zien. Dan beslissen.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Geen torenhoge offertes vooraf. Ik maak eerst een werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af. <span className="text-xs text-brand-sandDim block mt-1.5">Alle vermelde tarieven zijn exclusief 21% btw.</span>
+            Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="text-emerald-400 font-semibold">No cure, no pay</span>. <span className="text-xs text-brand-sandDim block mt-1.5">Alle vermelde tarieven zijn exclusief 21% btw.</span>
           </p>
         </div>
 
@@ -32,11 +32,11 @@ export default function PricingSection() {
           <div className="pricing-card reveal-item delay-1 bg-brand-surface border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 relative shadow-xl hover:-translate-y-1">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-brand-sandDim mb-2">
-                Stap 1: Demonstratie &amp; bouw
+                Stap 1: Demonstratie &amp; afbouwen
               </div>
 
               <h3 className="text-2xl font-bold text-brand-sand">
-                Website bouw &amp; afronding
+                Website bouw &amp; afwerking
               </h3>
               <p className="text-xs text-brand-sandMuted mt-1 mb-6 leading-relaxed">
                 Een professionele, onderscheidende website die jouw merk direct autoriteit geeft.
@@ -48,21 +48,21 @@ export default function PricingSection() {
               </div>
               <div className="text-xs text-emerald-400 font-semibold mb-6 flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Te betalen als je enthousiast bent bij de demonstratie op locatie</span>
+                <span>No cure, no pay &bull; Pas betalen als het ontwerp bevalt</span>
               </div>
 
               <div className="space-y-3 pt-6 border-t border-white/10">
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Vrijblijvende voorbeeldwebsite vooraf gebouwd</span>
+                  <span>Professionele voorbeeldwebsite vooraf gebouwd</span>
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Persoonlijke presentatie &amp; demonstratie op jouw locatie</span>
+                  <span>Persoonlijke demonstratie op jouw locatie</span>
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand font-semibold text-brand-accent">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Bij akkoord direct compleet voor jou ingericht en opgeleverd</span>
+                  <span>Bevalt het ontwerp? Volledig afgebouwd voor € 699,-</span>
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
@@ -70,7 +70,7 @@ export default function PricingSection() {
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Bliksemsnel ladend &amp; perfect op ieder beeldscherm</span>
+                  <span>Niet overtuigd van website of aanpak? Geen kosten (€ 0,-)</span>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function PricingSection() {
                 href="#contact"
                 className="w-full py-3.5 rounded-xl bg-brand-elevated hover:bg-brand-card border border-white/15 text-brand-sand font-semibold text-sm transition-all flex items-center justify-center gap-2 hover:text-white"
               >
-                <span>Vraag gratis voorbeeld aan</span>
+                <span>Vraag jouw voorbeeldwebsite aan</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

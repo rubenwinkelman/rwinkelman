@@ -72,13 +72,13 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="contact-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
-            Persoonlijk Bezoek &bull; 100% Vrijblijvend
+            Eerst Zien &bull; Dan Beslissen
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Vraag jouw voorbeeldwebsite aan.
+            Vraag jouw persoonlijke voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Ik ga direct aan de slag met een interactief concept om je enthousiast te maken en kom persoonlijk bij je langs op locatie. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
+            Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 
@@ -296,13 +296,13 @@ export default function ContactSection() {
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Vraag gratis voorbeeldwebsite &amp; bezoek aan</span>
+                        <span>Vraag jouw persoonlijke voorbeeldwebsite aan</span>
                       </>
                     )}
                   </button>
 
                   <div className="text-center text-[11px] text-brand-sandDim pt-2">
-                    100% vrijblijvend &bull; Geen verplichtingen &bull; Eerst zien, dan pas beslissen
+                    100% vrijblijvend &bull; Eerst zien. Dan beslissen &bull; No cure, no pay
                   </div>
                 </form>
               )}

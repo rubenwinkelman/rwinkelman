@@ -25,13 +25,13 @@ export default function Footer({ onOpenLegal }) {
             </div>
 
             <p className="text-sm text-brand-sandMuted leading-relaxed">
-              Onderscheidende websites op maat. Ik bouw eerst een gratis werkend voorbeeld om je enthousiast te maken en kom persoonlijk langs op locatie. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af.
+              Onderscheidende websites op maat. Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. No cure, no pay.
             </p>
 
             <div className="flex items-center gap-4 text-xs text-brand-sandDim pt-2">
-              <span>Persoonlijk bezoek op locatie</span>
+              <span>Eerst zien. Dan beslissen</span>
               <span>&bull;</span>
-              <span>Eerst zien, dan pas beslissen</span>
+              <span>No cure, no pay</span>
             </div>
           </div>
 

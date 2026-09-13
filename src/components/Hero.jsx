@@ -16,15 +16,15 @@ export default function Hero() {
         <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
           <h1 className="anim-hero-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.1] mb-4 sm:mb-6">
             <span className="block">
-              Eerst zien,<br className="sm:hidden" /> dan pas beslissen.
+              Eerst zien. Dan beslissen.
             </span>
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>
           </h1>
 
-          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal [text-wrap:balance]">
-            Ik bouw vooraf een werkend voorstel voor jouw bedrijf en <span className="text-brand-sand font-semibold">kom het persoonlijk demonstreren</span>. Bevalt het? Dan maken we het voor <span className="text-brand-accent font-bold">€ 699,-</span> compleet af. Niet overtuigd? Dan kost het je <span className="text-brand-sand font-semibold">€ 0,-</span>.
+          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-3xl mx-auto font-normal [text-wrap:balance]">
+            Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span> die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="text-brand-accent font-bold">€ 699,-</span> (excl. btw) en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function Hero() {
             href="#contact"
             className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
           >
-            <span>Vraag een gratis voorbeeld aan</span>
+            <span>Vraag jouw persoonlijke voorbeeldwebsite aan</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -148,29 +148,33 @@ export default function Hero() {
                     <span>De slimste en meest eerlijke route</span>
                   </div>
                   <h3 className="text-xl font-bold text-brand-sand">
-                    Persoonlijke demo &bull; Pas betalen bij enthousiasme
+                    Eerst zien. Dan beslissen &bull; No cure, no pay
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Ik bouw eerst een voorbeeld om je enthousiast te maken en kom persoonlijk bij je langs. Bevalt het niet? Dan betaal je niets. Ben je enthousiast? Dan betaal je € 699,- en bouwen we jouw website compleet af, inclusief hosting en maandelijks contentbeheer voor € 29,99/mnd.
+                    Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? No cure, no pay.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
                   <div className="text-xs text-brand-accent uppercase tracking-wider font-semibold">Jouw voordelen:</div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                    <span>Voorbeeldwebsite volledig afgestemd op jouw bedrijf</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-brand-sand">
+                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
                     <span>Persoonlijke demo op jouw kantoor of locatie</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>€ 699,- pas betalen als je enthousiast bent</span>
+                    <span>Bevalt het ontwerp? Afbouwen voor € 699,- (excl. btw)</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Daarna bouwen we jouw website compleet af</span>
+                    <span>Niet overtuigd? No cure, no pay (€ 0,-)</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Volledig ontzorgd: inclusief 1 tot 10 wijzigingen per maand</span>
+                    <span>Onderhoud en aanpassingen (1 tot 10/mnd) volledig uit handen</span>
                   </div>
                 </div>
               </div>

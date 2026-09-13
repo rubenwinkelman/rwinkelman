@@ -12,35 +12,35 @@ export default function Workflow() {
       subtitle: 'Geen verplichtingen, direct contact',
       icon: MessageSquare,
       leadTime: 'Stap 1',
-      description: 'Stuur een korte aanvraag via de website of WhatsApp. Vertel wie je bent, wat je bedrijf doet en welke uitstraling je zoekt. Dit kost je nog helemaal niets.',
+      description: 'Vraag jouw persoonlijke voorbeeldwebsite eenvoudig aan via het formulier of WhatsApp. Vertel kort wie je bent en wat je zoekt. Dit kost je nog helemaal niets.',
       highlights: ['Direct persoonlijk contact', 'Korte inventarisatie van je wensen', 'Geen vooruitbetaling nodig']
     },
     {
       step: '02',
-      title: 'Voorbeeld & persoonlijke demo',
-      subtitle: 'Ruben komt persoonlijk langs op locatie',
+      title: 'Voorbeeldwebsite op maat',
+      subtitle: 'Persoonlijke demo op jouw locatie',
       icon: Laptop,
       leadTime: 'Stap 2',
-      description: 'Ik bouw alvast een werkende voorbeeldwebsite om je enthousiast te maken. Vervolgens kom ik persoonlijk bij je langs op locatie om het interactieve concept live op mijn laptop te laten zien.',
-      highlights: ['Werkend prototype op maat', 'Persoonlijk gesprek op jouw locatie', 'Eerst zien, dan pas beslissen']
+      description: 'Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf. Ik kom persoonlijk bij je langs om het interactieve concept live te laten zien.',
+      highlights: ['Volledig afgestemd op jouw bedrijf', 'Persoonlijke demo op locatie', 'Eerst zien. Dan beslissen.']
     },
     {
       step: '03',
-      title: 'Enthousiast? Betalen & compleet afbouwen',
-      subtitle: 'Voor € 699,- bouwen we alles definitief af',
+      title: 'Bevalt het? Afbouwen voor € 699,-',
+      subtitle: 'No cure, no pay garantie',
       icon: Sparkles,
       leadTime: 'Stap 3',
-      description: 'Ben je enthousiast tijdens de demonstratie en wil je doorgaan? Dan betaal je eenmalig € 699,-. Vanaf dat moment werk ik de website compleet voor je uit: alle pagina’s, afbeeldingen, teksten en formulieren worden tot in detail ingericht.',
-      highlights: ['Betaling pas bij enthousiasme op locatie', 'Website compleet en professioneel afgewerkt', 'Niet overtuigd? Dan betaal je € 0,-']
+      description: 'Bevalt het ontwerp? Dan bouwen we hem compleet af voor € 699,- (excl. btw): alle pagina’s, afbeeldingen, teksten en formulieren tot in detail ingericht. Niet overtuigd van de website of onze aanpak? No cure, no pay.',
+      highlights: ['Afbouwen voor € 699,- excl. btw', 'No cure, no pay (€ 0,-)', 'Pas betalen bij akkoord']
     },
     {
       step: '04',
-      title: 'Exclusief beheer & hosting (€ 29,99/mnd)',
-      subtitle: 'Inclusief 1 tot 10 wijzigingen per maand',
+      title: 'Onderhoud & aanpassingen uit handen',
+      subtitle: 'Zorgeloos beheer & hosting (€ 29,99/mnd)',
       icon: RefreshCw,
       leadTime: 'Stap 4',
-      description: 'Omdat ik jouw website zelf in zuivere code heb gebouwd, beheer ik hem met de hoogste zorg. Wil je teksten aanpassen, foto’s toevoegen of een actie updaten? Je hebt 1 tot 10 wijzigingen per maand inbegrepen. Eén appje naar Ruben en het is gefixt.',
-      highlights: ['Exclusief voor eigen gebouwde sites', 'Premium hosting & 1-10 wijzigingen/mnd', 'Altijd direct contact met Ruben']
+      description: 'We nemen ook al het onderhoud en de aanpassingen volledig uit handen. Wil je teksten updaten, foto’s wijzigen of een actie plaatsen? Je hebt 1 tot 10 wijzigingen per maand inbegrepen. Eén appje en het is gefixt.',
+      highlights: ['Onderhoud volledig uit handen', '1 tot 10 wijzigingen per maand', 'Altijd direct contact via WhatsApp']
     }
   ];
 
@@ -51,13 +51,13 @@ export default function Workflow() {
         {/* Section Header */}
         <div className="workflow-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
-            Hoe ik werk
+            Eerst Zien. Dan Beslissen.
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Van vrijblijvend voorbeeld tot afgeronde website in 4 stappen.
+            Wij maken eerst een professionele voorbeeldwebsite.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Geen ingewikkelde offertetrajecten of administratieve rompslomp. Zo eenvoudig en transparant verloopt onze samenwerking.
+            Volledig afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. In 4 transparante stappen naar een converterende website:
           </p>
         </div>
 

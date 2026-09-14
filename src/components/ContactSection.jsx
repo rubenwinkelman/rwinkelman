@@ -78,7 +78,7 @@ export default function ContactSection() {
             Vraag jouw persoonlijke voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="text-emerald-400 font-semibold">No cure, no pay</span>.
+            Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 
@@ -295,8 +295,10 @@ export default function ContactSection() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" />
-                        <span>Vraag jouw persoonlijke voorbeeldwebsite aan</span>
+                        <Send className="w-4 h-4 flex-shrink-0" />
+                        <span className="whitespace-nowrap">
+                          Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
+                        </span>
                       </>
                     )}
                   </button>

@@ -23,8 +23,8 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-3xl mx-auto font-normal [text-wrap:balance]">
-            Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span> die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="text-brand-accent font-bold">€ 699,-</span> (excl. btw) en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="text-emerald-400 font-semibold">No cure, no pay</span>.
+          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-3xl mx-auto font-normal">
+            Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span> die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 
@@ -32,14 +32,16 @@ export default function Hero() {
         <div className="anim-hero-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <a
             href="#contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2.5 sm:gap-3 px-5 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
           >
-            <span>Vraag jouw persoonlijke voorbeeldwebsite aan</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span>
+              Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
+            </span>
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </a>
           <a
             href="#werkwijze"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20 whitespace-nowrap"
           >
             <span>Bekijk werkwijze</span>
           </a>
@@ -151,7 +153,7 @@ export default function Hero() {
                     Eerst zien. Dan beslissen &bull; No cure, no pay
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor € 699,- en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? No cure, no pay.
+                    Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
@@ -166,7 +168,7 @@ export default function Hero() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Bevalt het ontwerp? Afbouwen voor € 699,- (excl. btw)</span>
+                    <span>Bevalt het ontwerp? Afbouwen voor <span className="whitespace-nowrap font-semibold">€&nbsp;699,-</span> (excl. btw)</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-brand-sand">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />

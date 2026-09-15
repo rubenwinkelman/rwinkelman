@@ -29,7 +29,12 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-3xl bg-[#121620] border border-white/15 rounded-2xl shadow-2xl overflow-hidden z-10 my-auto flex flex-col max-h-[90vh]">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Juridische informatie"
+        className="relative w-full max-w-3xl bg-[#121620] border border-white/15 rounded-2xl shadow-2xl overflow-hidden z-10 my-auto flex flex-col max-h-[90vh]"
+      >
         
         {/* Header Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-brand-surface/80">

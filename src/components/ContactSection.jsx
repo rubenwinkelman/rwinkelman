@@ -206,7 +206,7 @@ export default function ContactSection() {
                   )}
 
                   {/* Anti-spam honeypot */}
-                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" aria-label="Spam preventie" />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>

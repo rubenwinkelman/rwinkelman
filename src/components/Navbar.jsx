@@ -41,7 +41,8 @@ export default function Navbar() {
       >
         {/* Brand identity */}
         <a
-          href="#"
+          href="/"
+          aria-label="Ruben Winkelman homepage"
           className="group flex items-center gap-2.5 sm:gap-3 text-brand-sand tracking-tight transition-colors py-1"
         >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-accent to-[#D44A29] flex items-center justify-center shadow-lg shadow-brand-accent/25 group-hover:scale-105 transition-transform duration-200 flex-shrink-0">

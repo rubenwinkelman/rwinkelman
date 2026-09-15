@@ -61,6 +61,9 @@ export default function FAQSection() {
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? -1 : idx)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${idx}`}
+                  id={`faq-question-${idx}`}
                   className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-brand-elevated/50 transition-colors"
                 >
                   <span className="font-bold text-base text-brand-sand">
@@ -74,6 +77,9 @@ export default function FAQSection() {
                 </button>
 
                 <div 
+                  id={`faq-answer-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${idx}`}
                   className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
                     isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}

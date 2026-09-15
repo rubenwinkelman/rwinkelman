@@ -210,10 +210,11 @@ export default function ContactSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-brand-sand mb-1.5">
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-brand-sand mb-1.5">
                         Jouw naam *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         name="name"
                         required
@@ -224,10 +225,11 @@ export default function ContactSection() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-brand-sand mb-1.5">
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-brand-sand mb-1.5">
                         E-mailadres *
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         required
@@ -241,10 +243,11 @@ export default function ContactSection() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-brand-sand mb-1.5">
+                      <label htmlFor="contact-phone" className="block text-xs font-bold text-brand-sand mb-1.5">
                         Telefoonnummer (voor WhatsApp/afspraak)
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         name="phone"
                         value={formData.phone}
@@ -254,10 +257,11 @@ export default function ContactSection() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-brand-sand mb-1.5">
+                      <label htmlFor="contact-location" className="block text-xs font-bold text-brand-sand mb-1.5">
                         Woonplaats / vestiging
                       </label>
                       <input
+                        id="contact-location"
                         type="text"
                         name="location"
                         value={formData.location}
@@ -269,10 +273,11 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-brand-sand mb-1.5">
+                    <label htmlFor="contact-message" className="block text-xs font-bold text-brand-sand mb-1.5">
                       Vertel kort over je bedrijf &amp; huidige website *
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       required
                       rows={3}

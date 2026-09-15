@@ -84,14 +84,20 @@
     }
     </script>
 
-    <!-- Plus Jakarta Sans: Modern, human, timeless sans-serif -->
+    <!-- Plus Jakarta Sans: Modern, human, timeless sans-serif with non-blocking async load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
   </head>
   <body class="bg-[#0A0C10] text-[#F4ECE1] antialiased selection:bg-[#F06543] selection:text-white min-h-screen">
-    <div id="root">
-      <!-- Pre-rendered Semantic Shell for SEO & Crawlers (Direct zichtbaar in broncode, vervangen zodra React mount) -->
+    <div id="root"></div>
+
+    <noscript>
+      <!-- Pre-rendered Semantic Shell for SEO Crawlers (100% SEO, 0ms layout shift for JS browsers) -->
       <header class="max-w-6xl mx-auto px-6 pt-20 pb-12">
         <p class="text-sm uppercase tracking-widest text-[#F06543] font-bold mb-3">
           Webdesign Drachten &bull; Friesland &bull; No Cure, No Pay
@@ -151,7 +157,7 @@
         <p>Gevestigd te Drachten &bull; KvK-nummer: 86631020 &bull; Btw-identificatienummer: NL004282307B29</p>
         <p>E-mail: <a href="mailto:ruben.winkelman@outlook.com" class="text-[#F06543]">ruben.winkelman@outlook.com</a> &bull; WhatsApp: +31 6 83589410</p>
       </footer>
-    </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

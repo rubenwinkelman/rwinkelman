@@ -61,9 +61,13 @@ export default function Hero() {
             </div>
 
             {/* Custom Tab Selector */}
-            <div className="grid grid-cols-3 p-1 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto text-center">
+            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto text-center">
               <button
                 type="button"
+                role="tab"
+                id="tab-traditioneel"
+                aria-controls="panel-traditioneel"
+                aria-selected={activeTab === 'traditioneel'}
                 onClick={() => setActiveTab('traditioneel')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'traditioneel'
@@ -75,6 +79,10 @@ export default function Hero() {
               </button>
               <button
                 type="button"
+                role="tab"
+                id="tab-zelf"
+                aria-controls="panel-zelf"
+                aria-selected={activeTab === 'zelf'}
                 onClick={() => setActiveTab('zelf')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'zelf'
@@ -86,6 +94,10 @@ export default function Hero() {
               </button>
               <button
                 type="button"
+                role="tab"
+                id="tab-rwinkelman"
+                aria-controls="panel-rwinkelman"
+                aria-selected={activeTab === 'rwinkelman'}
                 onClick={() => setActiveTab('rwinkelman')}
                 className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
                   activeTab === 'rwinkelman'
@@ -99,7 +111,7 @@ export default function Hero() {
           </div>
 
           {/* Tab Content Panels */}
-          <div className="pt-6">
+          <div className="pt-6" role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
             {activeTab === 'traditioneel' && (
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-red-400 text-sm font-semibold">

@@ -70,6 +70,10 @@ export default function PricingSection() {
                 </div>
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
+                  <span>Maximale PageSpeed score &amp; technische SEO-basis</span>
+                </div>
+                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                  <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Niet overtuigd van website of aanpak? Geen kosten (€ 0,-)</span>
                 </div>
               </div>
@@ -104,7 +108,7 @@ export default function PricingSection() {
               
               <div className="text-xs text-brand-accent font-medium mt-1 mb-4 flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-brand-accent" />
-                <span>Exclusief voor door mijzelf gebouwde websites</span>
+                <span>Exclusief voor eigen projecten</span>
               </div>
 
               <p className="text-xs text-brand-sandMuted mb-6 leading-relaxed">
@@ -157,29 +161,6 @@ export default function PricingSection() {
             </div>
           </div>
 
-        </div>
-
-        {/* Reassurance Banner */}
-        <div className="pricing-reassurance reveal-item delay-1 max-w-4xl mx-auto mt-12 p-6 rounded-2xl bg-brand-surface/70 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-accentLight border border-brand-accentBorder flex items-center justify-center text-brand-accent flex-shrink-0">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-brand-sand">
-                Niet enthousiast na de demonstratie?
-              </h4>
-              <p className="text-xs text-brand-sandMuted mt-0.5">
-                Dan betaal je helemaal niets. Geen factuur, geen verplichtingen. Alle risico ligt bij mij.
-              </p>
-            </div>
-          </div>
-          <a
-            href="#contact"
-            className="whitespace-nowrap px-6 py-3 rounded-xl bg-brand-surface hover:bg-brand-elevated border border-white/15 text-brand-sand font-semibold text-xs transition-colors"
-          >
-            Vraag je voorbeeld aan
-          </a>
         </div>
 
       </div>

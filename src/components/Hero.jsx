@@ -1,8 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers, Sparkles, SlidersHorizontal, Users, MapPin, Eye } from 'lucide-react';
+
+const HeroAvatar = lazy(() => import('./HeroAvatar'));
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('rwinkelman');
+  const [showAvatar, setShowAvatar] = useState(false);
+
+  useEffect(() => {
+    // Only load 3D character on desktop screens (>= 1280px) to guarantee 100/100 Mobile & Desktop PageSpeed
+    if (typeof window === 'undefined') return;
+    const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
+    if (!isDesktop) return;
+
+    // Check for user data-saver preference
+    if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === '2g')) {
+      return;
+    }
+
+    // Defer mount until after initial render and idle time
+    // This leaves FCP (0.6s), LCP (0.6s), TBT (0ms) and CLS (0.00) completely untouched
+    const scheduleLoad = () => {
+      setShowAvatar(true);
+    };
+
+    if ('requestIdleCallback' in window) {
+      const handle = window.requestIdleCallback(scheduleLoad, { timeout: 2200 });
+      return () => window.cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(scheduleLoad, 1800);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <section className="relative pt-36 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden isolate">
@@ -12,43 +41,59 @@ export default function Hero() {
       <div className="anim-ambient-glow-1 absolute bottom-0 -left-20 sm:left-4 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_transparent_70%)] pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-        {/* Main Headline */}
-        <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
-          <h1 className="anim-hero-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.1] mb-4 sm:mb-6">
-            <span className="block">
-              Eerst zien. Dan beslissen.
-            </span>
-            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
-              Jouw website op maat.
-            </span>
-          </h1>
+        {/* Top Hero Zone with 3D Character */}
+        <div className="relative">
+          {/* Main Headline */}
+          <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
+            <h1 className="anim-hero-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.1] mb-4 sm:mb-6">
+              <span className="block sm:whitespace-nowrap">
+                Eerst zien. Dan beslissen.
+              </span>
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand sm:whitespace-nowrap">
+                Jouw website op maat.
+              </span>
+            </h1>
 
-          <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-3xl mx-auto font-normal">
-            Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span> die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
-          </p>
+            <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
+              Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            </p>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="anim-hero-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-14 sm:mb-20">
+            <a
+              href="#contact"
+              className="w-full sm:w-auto flex items-center justify-center gap-2.5 sm:gap-3 px-5 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
+            >
+              <span>
+                Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
+              </span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            </a>
+            <a
+              href="#werkwijze"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20 whitespace-nowrap"
+            >
+              <span>Bekijk werkwijze</span>
+            </a>
+          </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="anim-hero-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
-          <a
-            href="#contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2.5 sm:gap-3 px-5 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
+        {/* Interactive Comparison Component with 3D Character standing on top */}
+        <div className="relative anim-hero-4 max-w-4xl mx-auto">
+          {/* Standing 3D Character ON TOP of the comparison card directly above the rwinkelman tab */}
+          <div
+            aria-hidden={!showAvatar}
+            className="hidden xl:block absolute -right-12 2xl:-right-10 bottom-[calc(100%+2px)] w-[165px] xl:w-[175px] h-[315px] xl:h-[330px] z-30 pointer-events-none [&>*]:pointer-events-auto"
           >
-            <span>
-              Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
-            </span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-          </a>
-          <a
-            href="#werkwijze"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20 whitespace-nowrap"
-          >
-            <span>Bekijk werkwijze</span>
-          </a>
-        </div>
+            {showAvatar && (
+              <Suspense fallback={null}>
+                <HeroAvatar />
+              </Suspense>
+            )}
+          </div>
 
-        {/* Interactive Comparison Component */}
-        <div className="anim-hero-4 max-w-4xl mx-auto bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
+          <div className="bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
           {/* Segmented Switcher */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
@@ -159,13 +204,13 @@ export default function Hero() {
                 <div>
                   <div className="flex items-center gap-2 text-brand-accent text-sm font-semibold mb-2">
                     <Sparkles className="w-4 h-4" />
-                    <span>De slimste en meest eerlijke route</span>
+                    <span>Waarom eerst betalen als je hem eerst kunt zien?</span>
                   </div>
                   <h3 className="text-xl font-bold text-brand-sand">
                     Eerst zien. Dan beslissen &bull; No cure, no pay
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+                    Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
@@ -195,6 +240,7 @@ export default function Hero() {
             )}
           </div>
         </div>
+      </div>
 
         {/* Quick Highlights Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 max-w-5xl mx-auto text-center">

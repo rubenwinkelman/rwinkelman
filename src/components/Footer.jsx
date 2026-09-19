@@ -25,7 +25,7 @@ export default function Footer({ onOpenLegal }) {
             </div>
 
             <p className="text-sm text-brand-sandMuted leading-relaxed">
-              Onderscheidende websites op maat. Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. <span className="whitespace-nowrap">No cure, no pay</span>.
+              Onderscheidende websites op maat. Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. <span className="whitespace-nowrap">No cure, no pay</span>.
             </p>
 
             <div className="flex items-center gap-4 text-xs text-brand-sandDim pt-2">

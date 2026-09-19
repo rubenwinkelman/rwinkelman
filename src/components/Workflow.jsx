@@ -21,7 +21,7 @@ export default function Workflow() {
       subtitle: 'Persoonlijke demo op jouw locatie',
       icon: Laptop,
       leadTime: 'Stap 2',
-      description: 'Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf. Ik kom persoonlijk bij je langs om het interactieve concept live te laten zien.',
+      description: 'Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf. Ik kom persoonlijk bij je langs om het interactieve concept live te laten zien.',
       highlights: ['Volledig afgestemd op jouw bedrijf', 'Persoonlijke demo op locatie', 'Eerst zien. Dan beslissen.']
     },
     {

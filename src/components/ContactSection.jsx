@@ -78,7 +78,7 @@ export default function ContactSection() {
             Vraag jouw persoonlijke voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Wij maken eerst een professionele voorbeeldwebsite die volledig is afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Workflow from './components/Workflow';
@@ -9,6 +9,7 @@ import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
+
 
 export default function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
@@ -51,6 +52,7 @@ export default function App() {
 
       {/* Footer strictly adhering to master rules */}
       <Footer onOpenLegal={openLegal} />
+
 
       {/* Legal & Compliance Modal (Mollie & AVG compliant) */}
       <LegalModal

@@ -117,7 +117,7 @@ export default function Footer({ onOpenLegal }) {
             <div className="flex items-center gap-1.5">
               <span>Powered by</span>
               <a
-                href="https://rwinkelman.nl"
+                href="https://www.rwinkelman.nl"
                 className="font-bold text-brand-accent hover:text-brand-accentHover transition-colors underline decoration-brand-accent/40 underline-offset-4"
               >
                 rwinkelman.nl

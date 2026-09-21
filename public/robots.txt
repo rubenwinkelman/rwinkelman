@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rwinkelman.nl/sitemap.xml
+Sitemap: https://www.rwinkelman.nl/sitemap.xml

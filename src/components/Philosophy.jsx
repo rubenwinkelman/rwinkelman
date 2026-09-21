@@ -184,7 +184,7 @@ export default function Philosophy() {
               {/* Direct Live Test Link */}
               <div className="pt-2">
                 <a
-                  href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Frwinkelman.nl%2F"
+                  href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.rwinkelman.nl%2F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"

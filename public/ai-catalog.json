@@ -1,0 +1,54 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Ruben Winkelman | Websites op Maat",
+    "identifier": "did:web:www.rwinkelman.nl",
+    "documentationUrl": "https://www.rwinkelman.nl/llms.txt",
+    "logoUrl": "https://www.rwinkelman.nl/favicon.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:rwinkelman.nl:service:website-op-maat",
+      "displayName": "Websites op Maat & Webdesign",
+      "type": "text/markdown",
+      "url": "https://www.rwinkelman.nl/llms.txt",
+      "description": "Professionele voorbeeldwebsite op maat voor ondernemers en het MKB. Eerst zien, dan pas beslissen. No cure no pay.",
+      "tags": [
+        "webdesign",
+        "website-laten-maken",
+        "mkb",
+        "drachten"
+      ],
+      "capabilities": [
+        "CustomWebsites",
+        "WebdesignServices"
+      ],
+      "representativeQueries": [
+        "website laten maken drachten",
+        "professionele voorbeeldwebsite aanvragen",
+        "kosten website mkb ruben winkelman"
+      ]
+    },
+    {
+      "identifier": "urn:air:rwinkelman.nl:service:contact",
+      "displayName": "Contact & Aanvraag Voorbeeldwebsite",
+      "type": "text/html",
+      "url": "https://www.rwinkelman.nl/#contact",
+      "description": "Vrijblijvende aanvraag van een persoonlijke voorbeeldwebsite op maat of direct contact via WhatsApp en e-mail.",
+      "tags": [
+        "contact",
+        "aanvraag",
+        "voorbeeldwebsite"
+      ],
+      "capabilities": [
+        "LeadGeneration",
+        "CustomerContact"
+      ],
+      "representativeQueries": [
+        "contact opnemen met ruben winkelman",
+        "gratis voorbeeldwebsite aanvragen",
+        "whatsapp ruben winkelman drachten"
+      ]
+    }
+  ]
+}

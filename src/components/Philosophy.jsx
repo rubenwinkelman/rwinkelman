@@ -1,9 +1,10 @@
-import React from 'react';
-import { Palette, Check, Code2, Zap, Layout, ShieldCheck, ExternalLink, Gauge, Search, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Palette, Check, Code2, Zap, Layout, ShieldCheck, ExternalLink, Gauge, Search, Sparkles, Lock } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Philosophy() {
   const containerRef = useScrollReveal();
+  const [activeProof, setActiveProof] = useState('performance');
 
   const technicalPoints = [
     {
@@ -138,71 +139,160 @@ export default function Philosophy() {
 
         </div>
 
-        {/* Feature Spotlight: 100/100 Google PageSpeed & SEO Proof */}
+        {/* Feature Spotlight: 100/100 Google PageSpeed & A+ Security Proof */}
         <div className="philosophy-proof reveal-item delay-3 bg-brand-surface/95 border border-emerald-500/25 rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden">
           
           {/* Subtle green ambient accent behind the card */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 blur-3xl pointer-events-none" />
 
+          {/* Interactive Switcher Header */}
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-brand-accent">
+                Onafhankelijk geverifieerd bewijs
+              </div>
+              <div className="text-xs text-brand-sandDim mt-1">
+                Kies een officiële audit om de live resultaten te bekijken:
+              </div>
+            </div>
+
+            {/* Pill Toggle Switcher */}
+            <div className="relative inline-flex p-1 bg-brand-dark/95 rounded-xl border border-white/10 self-start sm:self-auto shadow-inner">
+              <button
+                type="button"
+                onClick={() => setActiveProof('performance')}
+                className={`relative z-10 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 ${
+                  activeProof === 'performance'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-md shadow-emerald-500/10'
+                    : 'text-brand-sandMuted hover:text-brand-sand border border-transparent'
+                }`}
+              >
+                <Zap className={`w-3.5 h-3.5 transition-transform duration-300 ${activeProof === 'performance' ? 'scale-110 text-emerald-400' : 'text-brand-sandDim'}`} />
+                <span>Google PageSpeed (100/100)</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveProof('security')}
+                className={`relative z-10 flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 ${
+                  activeProof === 'security'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-md shadow-emerald-500/10'
+                    : 'text-brand-sandMuted hover:text-brand-sand border border-transparent'
+                }`}
+              >
+                <ShieldCheck className={`w-3.5 h-3.5 transition-transform duration-300 ${activeProof === 'security' ? 'scale-110 text-emerald-400' : 'text-brand-sandDim'}`} />
+                <span>SecurityHeaders (A+ Grade)</span>
+              </button>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
             
-            {/* Left: Text, metrics & value */}
-            <div className="lg:col-span-6 space-y-6">
+            {/* Left: Text, metrics & value with smooth remount crossfade */}
+            <div key={activeProof} className="lg:col-span-6 space-y-6 anim-proof-fade">
               
-              <div className="text-xs font-bold uppercase tracking-widest text-brand-accent">
-                Bewezen Google PageSpeed &amp; SEO
-              </div>
+              {activeProof === 'performance' ? (
+                <>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-sand tracking-tight leading-tight">
+                      Niet alleen mooie beloftes. <br className="hidden sm:inline" />
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-brand-sand">
+                        Zwart-op-wit maximale performance.
+                      </span>
+                    </h3>
+                    <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
+                      Veel bureaus leveren trage sjablonen af die 4 tot 6 seconden nodig hebben om te laden. Wij ontwikkelen elke website volledig op maat met moderne frameworks en ultra-lichte code. Het resultaat? Een perfecte score op <span className="text-brand-sand font-semibold">Google PageSpeed</span> en <span className="text-brand-sand font-semibold">SEO-vindbaarheid</span>.
+                    </p>
+                  </div>
 
-              <div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-sand tracking-tight leading-tight">
-                  Niet alleen mooie beloftes. <br className="hidden sm:inline" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-brand-sand">
-                    Zwart-op-wit maximale performance.
-                  </span>
-                </h3>
-                <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
-                  Veel bureaus leveren trage sjablonen af die 4 tot 6 seconden nodig hebben om te laden. Wij ontwikkelen elke website volledig op maat met moderne frameworks en ultra-lichte code. Het resultaat? Een perfecte score op <span className="text-brand-sand font-semibold">Google PageSpeed</span> en <span className="text-brand-sand font-semibold">SEO-vindbaarheid</span>.
-                </p>
-              </div>
+                  {/* 3 Metric Pills */}
+                  <div className="grid grid-cols-3 gap-3 pt-2">
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">0,6s</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Laadtijd (FCP)</div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">100</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Google SEO</div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">0 ms</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Wachttijd (TBT)</div>
+                    </div>
+                  </div>
 
-              {/* 3 Metric Pills */}
-              <div className="grid grid-cols-3 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">0,6s</div>
-                  <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Laadtijd (FCP)</div>
-                </div>
-                <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">100</div>
-                  <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Google SEO</div>
-                </div>
-                <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">0 ms</div>
-                  <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Wachttijd (TBT)</div>
-                </div>
-              </div>
+                  {/* Direct Live Test Link */}
+                  <div className="pt-2">
+                    <a
+                      href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.rwinkelman.nl%2F"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
+                    >
+                      <span>Test onze live score zelf op Google PageSpeed</span>
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-sand tracking-tight leading-tight">
+                      Geen kwetsbare plugins. <br className="hidden sm:inline" />
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-brand-sand">
+                        Waterdichte A+ beveiliging.
+                      </span>
+                    </h3>
+                    <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
+                      Standaard WordPress-sites scoren vrijwel altijd een <span className="text-rose-400 font-semibold">D of F</span> door kwetsbare plugins en verouderde systemen. Omdat wij bouwen in zuivere code zonder trage plugins, is jouw website standaard optimaal beschermd.
+                    </p>
+                  </div>
 
-              {/* Direct Live Test Link */}
-              <div className="pt-2">
-                <a
-                  href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fwww.rwinkelman.nl%2F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
-                >
-                  <span>Test onze live score zelf op Google PageSpeed</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              </div>
+                  {/* 3 Metric Pills */}
+                  <div className="grid grid-cols-3 gap-3 pt-2">
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">A+</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Security Grade</div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">6 / 6</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Strikte Headers</div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">0%</div>
+                      <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Datalekken</div>
+                    </div>
+                  </div>
+
+                  {/* Direct Live Test Link */}
+                  <div className="pt-2">
+                    <a
+                      href="https://securityheaders.com/?q=https%3A%2F%2Fwww.rwinkelman.nl%2F&followRedirects=on"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
+                    >
+                      <span>Verifieer onze live A+ score op SecurityHeaders.com</span>
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </div>
+                </>
+              )}
 
             </div>
 
-            {/* Right: Clean Image Card */}
+            {/* Right: Clean Image Card with smooth settling animation */}
             <div className="lg:col-span-6">
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl group/img bg-brand-dark/60">
                 <img
-                  src="/pagespeed-score.png"
-                  alt="Officiële Google PageSpeed 100/100 score van rwinkelman.nl"
-                  className="w-full h-auto block brightness-[0.84] contrast-[0.98] saturate-[0.92] group-hover/img:brightness-[0.95] transition-all duration-300"
+                  key={activeProof}
+                  src={activeProof === 'performance' ? '/pagespeed-score.png' : '/securityheaders-card.png'}
+                  alt={
+                    activeProof === 'performance'
+                      ? 'Officiële Google PageSpeed 100/100 score van www.rwinkelman.nl'
+                      : 'Officiële SecurityHeaders A+ score van www.rwinkelman.nl'
+                  }
+                  className="w-full h-auto block brightness-[0.88] contrast-[0.98] group-hover/img:brightness-[0.98] transition-all duration-300 anim-proof-img"
                   loading="lazy"
                   width="750"
                   height="585"

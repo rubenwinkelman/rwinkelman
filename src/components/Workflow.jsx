@@ -21,7 +21,7 @@ export default function Workflow() {
       subtitle: 'Persoonlijke demo op jouw locatie',
       icon: Laptop,
       leadTime: 'Stap 2',
-      description: 'Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf. Ik kom persoonlijk bij je langs om het interactieve concept live te laten zien.',
+      description: 'Ik ontwerp vooraf een professionele voorbeeldwebsite, afgestemd op jouw bedrijf. Vervolgens kom ik persoonlijk bij je langs om het interactieve concept live te laten zien.',
       highlights: ['Volledig afgestemd op jouw bedrijf', 'Persoonlijke demo op locatie', 'Eerst zien. Dan beslissen.']
     },
     {
@@ -30,7 +30,7 @@ export default function Workflow() {
       subtitle: 'No cure, no pay garantie',
       icon: Sparkles,
       leadTime: 'Stap 3',
-      description: 'Bevalt het ontwerp? Dan bouwen we hem compleet af voor € 699,- (excl. btw): alle pagina’s, afbeeldingen, teksten en formulieren tot in detail ingericht. Niet overtuigd van de website of onze aanpak? No cure, no pay.',
+      description: 'Bevalt het ontwerp? Dan bouw ik hem compleet af voor € 699,- (excl. btw): alle pagina’s, afbeeldingen, teksten en formulieren tot in detail ingericht. Niet overtuigd van de website of mijn aanpak? No cure, no pay.',
       highlights: ['Afbouwen voor € 699,- excl. btw', 'No cure, no pay (€ 0,-)', 'Pas betalen bij akkoord']
     },
     {
@@ -39,7 +39,7 @@ export default function Workflow() {
       subtitle: 'Zorgeloos beheer & hosting (€ 29,99/mnd)',
       icon: RefreshCw,
       leadTime: 'Stap 4',
-      description: 'We nemen ook al het onderhoud en de aanpassingen volledig uit handen. Wil je teksten updaten, foto’s wijzigen of een actie plaatsen? Je hebt 1 tot 10 wijzigingen per maand inbegrepen. Eén appje en het is gefixt.',
+      description: 'Ik neem ook al het onderhoud en de aanpassingen volledig uit handen. Wil je teksten updaten, foto’s wijzigen of een actie plaatsen? Je hebt 1 tot 10 wijzigingen per maand inbegrepen. Eén appje naar mij en het is geregeld.',
       highlights: ['Onderhoud volledig uit handen', '1 tot 10 wijzigingen per maand', 'Altijd direct contact via WhatsApp']
     }
   ];
@@ -54,7 +54,7 @@ export default function Workflow() {
             Eerst Zien. Dan Beslissen.
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Wij maken eerst een professionele voorbeeldwebsite.
+            Elk project start met een professionele voorbeeldwebsite.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
             Volledig afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. In 4 transparante stappen naar een converterende website:

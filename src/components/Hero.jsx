@@ -79,7 +79,7 @@ export default function Hero() {
             </h1>
 
             <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
-              Wij maken eerst een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+              Bij rwinkelman.nl start elk traject met een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
             </p>
           </div>
 
@@ -234,7 +234,7 @@ export default function Hero() {
                     Eerst zien. Dan beslissen &bull; No cure, no pay
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+                    Bij rwinkelman.nl start elk traject met een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of mijn aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
                   </p>
                 </div>
                 <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">

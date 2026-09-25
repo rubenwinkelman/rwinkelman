@@ -78,7 +78,7 @@ export default function ContactSection() {
             Vraag jouw persoonlijke voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Wij maken eerst een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouwen we hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en nemen we ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of onze aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            Bij rwinkelman.nl start elk traject met een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of mijn aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export default function ContactSection() {
             {/* Assurance Card */}
             <div className="p-6 rounded-2xl bg-brand-elevated/70 border border-white/5 space-y-3">
               <div className="text-xs uppercase tracking-wider text-brand-sandDim font-semibold">
-                Onze 3 beloftes:
+                Mijn 3 beloftes:
               </div>
               <div className="flex items-center gap-2.5 text-xs text-brand-sandMuted">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />

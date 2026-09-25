@@ -208,10 +208,10 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
 
                 <section>
                   <h3 className="text-base font-bold text-brand-sand mb-1.5">
-                    2. Welke persoonsgegevens verzamelen wij en waarom?
+                    2. Welke persoonsgegevens verzamel ik en waarom?
                   </h3>
                   <p>
-                    Wanneer je via het contactformulier een gratis voorbeeldwebsite aanvraagt of contact opneemt via WhatsApp of e-mail, verwerken wij:
+                    Wanneer je via het contactformulier een gratis voorbeeldwebsite aanvraagt of contact opneemt via WhatsApp of e-mail, verwerk ik:
                   </p>
                   <ul className="list-disc list-inside mt-1.5 space-y-1 text-brand-sand">
                     <li>Je naam</li>
@@ -221,7 +221,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     <li>De inhoud van jouw toelichting of bericht</li>
                   </ul>
                   <p className="mt-2">
-                    <strong>Doel &amp; Grondslag:</strong> Wij verwerken deze gegevens uitsluitend om je aanvraag voor een voorbeeldwebsite te beoordelen, contact op te nemen en de afspraak voor de persoonlijke demonstratie op locatie in te plannen (uitvoering van precontractuele maatregelen).
+                    <strong>Doel &amp; Grondslag:</strong> Ik verwerk deze gegevens uitsluitend om je aanvraag voor een voorbeeldwebsite te beoordelen, contact op te nemen en de afspraak voor de persoonlijke demonstratie op locatie in te plannen (uitvoering van precontractuele maatregelen).
                   </p>
                 </section>
 
@@ -230,7 +230,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     3. Bewaartermijn
                   </h3>
                   <p>
-                    Wij bewaren persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor je gegevens worden verzameld. Indien na de demonstratie geen samenwerking tot stand komt, worden jouw contactgegevens binnen 6 maanden verwijderd, tenzij je verzoekt om eerdere verwijdering.
+                    Ik bewaar persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor je gegevens worden verzameld. Indien na de demonstratie geen samenwerking tot stand komt, worden jouw contactgegevens binnen 6 maanden verwijderd, tenzij je verzoekt om eerdere verwijdering.
                   </p>
                 </section>
 
@@ -239,10 +239,10 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     4. Delen met derden (Verwerkers)
                   </h3>
                   <p>
-                    rwinkelman.nl verkoopt jouw gegevens <strong>nooit</strong> aan derden. Wij maken enkel gebruik van betrouwbare partners die noodzakelijk zijn voor de technische werking van de website:
+                    rwinkelman.nl verkoopt jouw gegevens <strong>nooit</strong> aan derden. Ik maak enkel gebruik van betrouwbare partners die noodzakelijk zijn voor de technische werking van de website:
                   </p>
                   <ul className="list-disc list-inside mt-1.5 space-y-1 text-brand-sand">
-                    <li><strong>Web3Forms / Cloudflare:</strong> Voor de beveiligde SSL-verzending van formulierberichten naar onze mailbox.</li>
+                    <li><strong>Web3Forms / Cloudflare:</strong> Voor de beveiligde SSL-verzending van formulierberichten naar mijn mailbox.</li>
                     <li><strong>Hostingprovider:</strong> Voor de veilige opslag en caching van de website binnen de Europese Unie.</li>
                   </ul>
                 </section>
@@ -261,7 +261,7 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
                     6. Jouw rechten (Inzage, correctie en verwijdering)
                   </h3>
                   <p>
-                    Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Stuur hiervoor simpelweg een e-mail naar <a href="mailto:ruben.winkelman@outlook.com" className="text-brand-accent hover:underline">ruben.winkelman@outlook.com</a>. Wij reageren altijd binnen 5 werkdagen.
+                    Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Stuur hiervoor simpelweg een e-mail naar <a href="mailto:ruben.winkelman@outlook.com" className="text-brand-accent hover:underline">ruben.winkelman@outlook.com</a>. Ik reageer altijd binnen 5 werkdagen.
                   </p>
                 </section>
 

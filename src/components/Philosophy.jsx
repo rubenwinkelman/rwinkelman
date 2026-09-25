@@ -9,7 +9,7 @@ export default function Philosophy() {
   const technicalPoints = [
     {
       title: 'Schone & solide bouw',
-      description: 'Volledig met de hand gebouwd in heldere code. Geen knip-en-plakwerk, maar een website die jarenlang snel, stabiel en veilig blijft.'
+      description: 'Gebouwd met de nieuwste technieken en zuivere code. Geen trage templates of knip-en-plakwerk, maar een website die jarenlang snel, stabiel en veilig blijft.'
     },
     {
       title: 'Directe laadsnelheid',
@@ -28,7 +28,7 @@ export default function Philosophy() {
     },
     {
       title: 'Duidelijk voor de bezoeker',
-      description: 'We nemen twijfels bij je bezoeker meteen weg. Heldere informatie en logische stappen zorgen dat klanten sneller contact opnemen.'
+      description: 'Ik neem twijfels bij je bezoeker meteen weg. Heldere informatie en logische stappen zorgen dat klanten sneller contact opnemen.'
     },
     {
       title: 'Heldere en eerlijke taal',
@@ -46,7 +46,7 @@ export default function Philosophy() {
         {/* Section Header */}
         <div className="philosophy-header reveal-item max-w-3xl mb-16">
           <div className="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">
-            Onze visie
+            Mijn visie
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
             Waarom techniek en creativiteit onafscheidelijk zijn.
@@ -114,7 +114,7 @@ export default function Philosophy() {
                 2. Karakter &amp; overtuiging
               </h3>
               <p className="text-sm text-brand-sandMuted mb-6 leading-relaxed">
-                Een sterke website begint met een scherp oog voor stijl. We vertalen jouw bedrijf naar een uitstraling die direct autoriteit uitstraalt en vertrouwen wekt.
+                Een sterke website begint met een scherp oog voor stijl. Ik vertaal jouw bedrijf naar een uitstraling die direct autoriteit uitstraalt en vertrouwen wekt.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-white/10">
@@ -201,7 +201,7 @@ export default function Philosophy() {
                       </span>
                     </h3>
                     <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
-                      Veel bureaus leveren trage sjablonen af die 4 tot 6 seconden nodig hebben om te laden. Wij ontwikkelen elke website volledig op maat met moderne frameworks en ultra-lichte code. Het resultaat? Een perfecte score op <span className="text-brand-sand font-semibold">Google PageSpeed</span> en <span className="text-brand-sand font-semibold">SEO-vindbaarheid</span>.
+                      Veel bureaus leveren trage sjablonen af die 4 tot 6 seconden nodig hebben om te laden. Ik ontwikkel elke website volledig op maat met de nieuwste technieken en ultra-lichte code. Het resultaat? Een perfecte score op <span className="text-brand-sand font-semibold">Google PageSpeed</span> en <span className="text-brand-sand font-semibold">SEO-vindbaarheid</span>.
                     </p>
                   </div>
 
@@ -229,7 +229,7 @@ export default function Philosophy() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
                     >
-                      <span>Test onze live score zelf op Google PageSpeed</span>
+                      <span>Test de live score zelf op Google PageSpeed</span>
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>
@@ -244,7 +244,7 @@ export default function Philosophy() {
                       </span>
                     </h3>
                     <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
-                      Standaard WordPress-sites scoren vrijwel altijd een <span className="text-rose-400 font-semibold">D of F</span> door kwetsbare plugins en verouderde systemen. Omdat wij bouwen in zuivere code zonder trage plugins, is jouw website standaard optimaal beschermd.
+                      Standaard WordPress-sites scoren vrijwel altijd een <span className="text-rose-400 font-semibold">D of F</span> door kwetsbare plugins en verouderde systemen. Omdat ik bouw in zuivere code zonder trage plugins, is jouw website standaard optimaal beschermd.
                     </p>
                   </div>
 
@@ -272,7 +272,7 @@ export default function Philosophy() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
                     >
-                      <span>Verifieer onze live A+ score op SecurityHeaders.com</span>
+                      <span>Verifieer de live A+ score op SecurityHeaders.com</span>
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>

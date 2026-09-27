@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
-import { X, ShieldCheck, FileText, Lock, ExternalLink, Printer } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { X, ShieldCheck, FileText, Lock, ExternalLink, Printer, Link2, Check } from 'lucide-react';
 
 export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab }) {
+  const [copied, setCopied] = useState(false);
+
   // Close on Escape
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -16,6 +18,15 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  const handleCopyLink = () => {
+    const path = activeTab === 'privacy' ? '/privacybeleid' : '/algemene-voorwaarden';
+    const url = `${window.location.origin}${path}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   if (!isOpen) return null;
 
@@ -63,7 +74,26 @@ export default function LegalModal({ isOpen, onClose, activeTab, setActiveTab })
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <button
+              type="button"
+              onClick={handleCopyLink}
+              className="px-2.5 py-1.5 text-brand-sandMuted hover:text-brand-sand rounded-lg hover:bg-white/5 transition-colors inline-flex items-center gap-1.5 text-xs font-medium"
+              title="Kopieer directe link"
+              aria-label="Kopieer directe link"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-400" />
+                  <span className="text-emerald-400 font-semibold">Gekopieerd!</span>
+                </>
+              ) : (
+                <>
+                  <Link2 className="w-4 h-4" />
+                  <span className="hidden sm:inline">Kopieer link</span>
+                </>
+              )}
+            </button>
             <button
               type="button"
               onClick={() => window.print()}

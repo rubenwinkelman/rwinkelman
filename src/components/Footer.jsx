@@ -85,21 +85,27 @@ export default function Footer({ onOpenLegal }) {
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5">
             <span>&copy; {new Date().getFullYear()} rwinkelman.nl &bull; KvK: 86631020 &bull; Btw: NL004282307B29 &bull; Alle rechten voorbehouden.</span>
             <span className="hidden sm:inline">&bull;</span>
-            <button
-              type="button"
-              onClick={() => onOpenLegal && onOpenLegal('voorwaarden')}
+            <a
+              href="/algemene-voorwaarden"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenLegal && onOpenLegal('voorwaarden');
+              }}
               className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2 cursor-pointer"
             >
               Algemene Voorwaarden
-            </button>
+            </a>
             <span>&bull;</span>
-            <button
-              type="button"
-              onClick={() => onOpenLegal && onOpenLegal('privacy')}
+            <a
+              href="/privacybeleid"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenLegal && onOpenLegal('privacy');
+              }}
               className="hover:text-brand-sand transition-colors underline decoration-white/20 underline-offset-2 cursor-pointer"
             >
               Privacybeleid
-            </button>
+            </a>
           </div>
 
           <div className="flex items-center gap-3">

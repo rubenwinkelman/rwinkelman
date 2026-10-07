@@ -78,7 +78,7 @@ export default function ContactSection() {
             Vraag jouw persoonlijke voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Bij rwinkelman.nl start elk traject met een professionele voorbeeldwebsite, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of mijn aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            Binnen 1 minuut aangevraagd. Ik ga direct aan de slag met een werkend concept voor jouw bedrijf en neem snel contact met je op voor een korte demonstratie op kantoor of via WhatsApp.
           </p>
         </div>
 

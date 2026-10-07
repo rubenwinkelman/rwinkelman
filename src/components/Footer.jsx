@@ -25,7 +25,7 @@ export default function Footer({ onOpenLegal }) {
             </div>
 
             <p className="text-sm text-brand-sandMuted leading-relaxed">
-              Onderscheidende websites op maat. Bij rwinkelman.nl start elk traject met een professionele voorbeeldwebsite op maat. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap">€&nbsp;699,-</span> en neem ik ook het onderhoud en de aanpassingen uit handen. <span className="whitespace-nowrap">No cure, no pay</span>.
+              Websites op maat voor ondernemers. Elk traject start met een gratis interactief concept op locatie. Pas betalen bij tevredenheid (<span className="whitespace-nowrap font-medium text-brand-sand">€&nbsp;699,-</span> excl. btw) &bull; <span className="whitespace-nowrap text-emerald-400 font-medium">No cure, no pay</span>.
             </p>
 
             <div className="flex items-center gap-4 text-xs text-brand-sandDim pt-2">

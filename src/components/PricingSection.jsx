@@ -21,7 +21,7 @@ export default function PricingSection() {
             Eerst zien. Dan beslissen.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
-            Bij rwinkelman.nl start elk traject met een professionele voorbeeldwebsite, afgestemd op jouw bedrijf. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap font-bold text-brand-sand">€&nbsp;699,-</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd van de website of mijn aanpak? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>. <span className="text-xs text-brand-sandDim block mt-1.5">Alle vermelde tarieven zijn exclusief 21% btw.</span>
+            Geen verborgen kosten, meerwerk of uurtje-factuurtje. Eén helder bedrag voor de complete website, inclusief razendsnelle code en technisch fundament. Bevalt de persoonlijke demonstratie niet? Dan betaal je letterlijk <span className="whitespace-nowrap text-emerald-400 font-semibold">€&nbsp;0,-</span>. <span className="text-xs text-brand-sandDim block mt-1.5">Alle vermelde tarieven zijn exclusief 21% btw.</span>
           </p>
         </div>
 

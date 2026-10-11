@@ -1,136 +1,235 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers, Sparkles, SlidersHorizontal, Users, MapPin, Eye } from 'lucide-react';
-
-const HeroAvatar = lazy(() => import('./HeroAvatar'));
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, Sparkles, Check, Building2, Wrench } from 'lucide-react';
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('rwinkelman');
-  const [showAvatar, setShowAvatar] = useState(false);
+  const [cardTilt, setCardTilt] = useState({ x: 0, y: 0 });
+  const [isCardHovered, setIsCardHovered] = useState(false);
 
-  useEffect(() => {
-    // Only load 3D character on desktop screens (>= 1280px) to guarantee 100/100 Mobile & Desktop PageSpeed
-    if (typeof window === 'undefined') return;
-    const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
-    if (!isDesktop) return;
+  const handleCardMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    // Subtiele verfijnde 3D tilt gecapt op max 3.5°
+    const rotateX = Math.max(-3.5, Math.min(3.5, ((centerY - y) / centerY) * 3.5));
+    const rotateY = Math.max(-3.5, Math.min(3.5, ((x - centerX) / centerX) * 3.5));
+    setCardTilt({ x: rotateX, y: rotateY });
+  };
 
-    // Check for user data-saver preference
-    if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === '2g')) {
-      return;
-    }
+  const handleCardMouseEnter = () => {
+    setIsCardHovered(true);
+  };
 
-    // Never load heavy 3D canvas during automated audits (Lighthouse / PageSpeed / headless bots)
-    // This eliminates synthetic TBT (Total Blocking Time) and maintains a 95-100 score
-    const isAuditBot =
-      navigator.webdriver ||
-      /Lighthouse|PageSpeed|HeadlessChrome|Chrome-Lighthouse|PTST|Google-InspectionTool|bingbot|Googlebot/i.test(
-        navigator.userAgent || ''
-      );
-    if (isAuditBot) return;
-
-    // Mount on first user interaction for human desktop visitors, with a safe fallback timer
-    let isTriggered = false;
-    let timerId = null;
-
-    const triggerAvatar = () => {
-      if (isTriggered) return;
-      isTriggered = true;
-      if (timerId) clearTimeout(timerId);
-      cleanup();
-      setShowAvatar(true);
-    };
-
-    const events = ['pointermove', 'mousemove', 'scroll', 'keydown', 'touchstart'];
-    const cleanup = () => {
-      events.forEach((evt) => window.removeEventListener(evt, triggerAvatar));
-    };
-
-    events.forEach((evt) => {
-      window.addEventListener(evt, triggerAvatar, { passive: true, once: true });
-    });
-
-    // Fallback timer for real human visitors who may not move mouse immediately
-    timerId = setTimeout(triggerAvatar, 4000);
-
-    return () => {
-      if (timerId) clearTimeout(timerId);
-      cleanup();
-    };
-  }, []);
+  const handleCardMouseLeave = () => {
+    setIsCardHovered(false);
+    setCardTilt({ x: 0, y: 0 });
+  };
 
   return (
     <section className="relative pt-36 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden isolate">
       {/* Warm Breathing Ambient Radial Glows (GPU Compositor, 0% CPU overhead) */}
       <div className="anim-ambient-glow-1 absolute top-12 sm:top-20 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] h-[450px] sm:h-[550px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.30)_0%,_rgba(240,101,67,0.08)_45%,_transparent_70%)] pointer-events-none z-0" />
-      <div className="anim-ambient-glow-2 absolute top-1/3 -right-20 sm:right-0 w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] bg-[radial-gradient(ellipse_at_center,_rgba(244,236,225,0.12)_0%,_rgba(240,101,67,0.08)_45%,_transparent_70%)] pointer-events-none z-0" />
+      <div className="anim-ambient-glow-2 absolute top-1/3 -right-20 sm:right-0 w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.08)_0%,_rgba(244,236,225,0.06)_45%,_transparent_70%)] pointer-events-none z-0" />
       <div className="anim-ambient-glow-1 absolute bottom-0 -left-20 sm:left-4 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.18)_0%,_transparent_70%)] pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-        {/* Top Hero Zone with 3D Character */}
-        <div className="relative">
-          {/* Main Headline */}
-          <div className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
-            <h1 className="anim-hero-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-sand leading-[1.12] sm:leading-[1.1] mb-4 sm:mb-6">
-              <span className="block sm:whitespace-nowrap">
+        {/* =========================================================================
+            DESKTOP HERO (md: and above)
+           ========================================================================= */}
+        <div className="hidden md:grid md:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-center mb-16 sm:mb-20">
+          {/* Left Column: Headlines & Actions */}
+          <div className="md:col-span-7 text-left">
+            <h1 className="anim-hero-1 text-5xl md:text-6xl xl:text-[4.2rem] font-black tracking-tight text-brand-sand leading-[1.08] mb-6">
+              <span className="block">
                 Eerst zien. Dan beslissen.
               </span>
-              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand sm:whitespace-nowrap">
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
                 Jouw website op maat.
               </span>
             </h1>
 
-            <p className="anim-hero-2 text-sm sm:text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-2xl mx-auto font-normal">
-              Bij rwinkelman.nl start elk traject met een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-xs sm:text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            <p className="anim-hero-2 text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-xl mb-8 font-normal">
+              Bij rwinkelman.nl start elk traject met een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
             </p>
+
+            {/* Action Buttons */}
+            <div className="anim-hero-3 flex items-center gap-4">
+              <a
+                href="#contact"
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
+              >
+                <span>
+                  Vraag gratis voorbeeldwebsite aan
+                </span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+              </a>
+              <a
+                href="#werkwijze"
+                className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-base transition-all duration-200 hover:border-white/20 whitespace-nowrap"
+              >
+                <span>Bekijk werkwijze</span>
+              </a>
+            </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="anim-hero-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-14 sm:mb-20">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 sm:gap-3 px-5 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
+          {/* Right Column: Ruben's Portrait Card with Apple Glass Frame & 3D Tilt */}
+          <div className="md:col-span-5 flex justify-end anim-hero-4">
+            <div
+              className="relative w-full max-w-[380px] xl:max-w-[420px]"
+              onMouseMove={handleCardMouseMove}
+              onMouseEnter={handleCardMouseEnter}
+              onMouseLeave={handleCardMouseLeave}
+              style={{ perspective: '1000px' }}
             >
-              <span>
-                Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
-              </span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-            </a>
-            <a
-              href="#werkwijze"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-brand-surface/40 hover:bg-brand-elevated border border-white/10 text-brand-sandMuted hover:text-brand-sand font-medium text-sm sm:text-base transition-all duration-200 hover:border-white/20 whitespace-nowrap"
-            >
-              <span>Bekijk werkwijze</span>
-            </a>
+              {/* Warm Ambient Rim-Glow Aura (Fractie intensere oranje gloed bij hover) */}
+              <div
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[400px] h-[340px] sm:h-[400px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.38)_0%,_rgba(240,101,67,0.10)_50%,_transparent_75%)] blur-2xl pointer-events-none transition-all duration-300 ${
+                  isCardHovered ? 'opacity-85 scale-105' : 'opacity-45 scale-100'
+                }`}
+                aria-hidden="true"
+              />
+
+              {/* Apple UI Glass Rounded Card Frame with Luminous Specular Rim, 3D Tilt & 4px Lift */}
+              <div
+                className={`relative rounded-[36px] bg-gradient-to-b from-white/[0.08] via-brand-surface/40 to-[#0A0C10] border border-white/10 ring-1 ring-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_35px_-5px_rgba(240,101,67,0.18)] backdrop-blur-xl overflow-hidden group will-change-transform ${
+                  isCardHovered
+                    ? 'shadow-[0_30px_70px_-10px_rgba(240,101,67,0.32),0_0_35px_-5px_rgba(240,101,67,0.22)]'
+                    : ''
+                }`}
+                style={{
+                  transform: isCardHovered
+                    ? `rotateX(${cardTilt.x.toFixed(2)}deg) rotateY(${cardTilt.y.toFixed(2)}deg) translateY(-4px)`
+                    : 'rotateX(0deg) rotateY(0deg) translateY(0px)',
+                  transition: isCardHovered
+                    ? 'transform 0.15s ease-out, box-shadow 0.2s ease-out'
+                    : 'transform 0.4s ease-out, box-shadow 0.3s ease-out',
+                }}
+              >
+                {/* Dual-Tone Specular Highlight Border at Top */}
+                <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#FA8B60]/40 via-white/40 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(240,101,67,0.18)_0%,_transparent_65%)] pointer-events-none" />
+
+                {/* Ruben's Cutout Photo */}
+                <div className="relative z-10 pt-8 flex justify-center">
+                  <img
+                    src="/ruben-winkelman.png"
+                    alt="Ruben Winkelman - Webdesigner & Developer"
+                    width={447}
+                    height={559}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-auto object-contain select-none pointer-events-none"
+                  />
+                </div>
+
+                {/* Seamless bottom fade into card and page background */}
+                <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0A0C10] via-[#0A0C10]/80 via-[#0A0C10]/30 to-transparent pointer-events-none z-20" />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Interactive Comparison Component with 3D Character standing on top */}
-        <div className="relative anim-hero-4 max-w-4xl mx-auto">
-          {/* Standing 3D Character ON TOP of the comparison card directly above the rwinkelman tab */}
-          <div
-            aria-hidden={!showAvatar}
-            className="hidden xl:block absolute -right-12 2xl:-right-10 bottom-[calc(100%+2px)] w-[165px] xl:w-[175px] h-[315px] xl:h-[330px] z-30 pointer-events-none [&>*]:pointer-events-auto"
-          >
-            {showAvatar && (
-              <Suspense fallback={null}>
-                <HeroAvatar />
-              </Suspense>
-            )}
+        {/* =========================================================================
+            MOBILE HERO (< md) - 100% Statisch voor soepele scroll en rustig beeld
+           ========================================================================= */}
+        <div className="md:hidden flex flex-col items-center text-center mb-8">
+          {/* Main Headline */}
+          <h1 className="anim-hero-1 text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-sand leading-[1.12] mb-3.5">
+            <span className="block">Eerst zien. Dan beslissen.</span>
+            <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
+              Jouw website op maat.
+            </span>
+          </h1>
+
+          {/* Intro Paragraph */}
+          <p className="anim-hero-2 text-sm sm:text-base text-brand-sandMuted leading-relaxed max-w-sm sm:max-w-md mx-auto mb-5 font-normal">
+            Ik bouw eerst een vrijblijvende <span className="text-brand-sand font-semibold">voorbeeldwebsite</span> voor jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit.
+          </p>
+
+          {/* 3 Checkmark Trust Bullets (Links-uitgelijnd binnen gecentreerd blok) */}
+          <div className="anim-hero-2 w-full flex justify-center mb-6">
+            <div className="inline-flex flex-col items-start gap-2.5 text-xs sm:text-sm text-brand-sand text-left">
+              <div className="flex items-center gap-2.5">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>Vrijblijvende voorbeeldwebsite op maat</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>Complete website voor <strong className="font-semibold text-brand-sand">€&nbsp;699,-</strong> <span className="text-[11px] sm:text-xs text-brand-sandDim">(excl.&nbsp;btw)</span></span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>No cure, no pay</span>
+              </div>
+            </div>
           </div>
 
+          {/* Pill CTA Button & Subtle Werkwijze Link */}
+          <div className="anim-hero-3 flex flex-col items-center gap-2.5 w-full max-w-xs mb-6">
+            <a
+              href="#contact"
+              className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm transition-all duration-200 shadow-xl shadow-brand-accent/30 active:scale-95 group ring-1 ring-white/10"
+            >
+              <span>Vraag gratis voorbeeld aan</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+            </a>
+            <a
+              href="#werkwijze"
+              className="inline-flex items-center gap-1.5 text-xs text-brand-sandMuted hover:text-brand-sand font-medium transition-colors py-1 px-3 group"
+            >
+              <span>Bekijk werkwijze</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">›</span>
+            </a>
+          </div>
+
+          {/* Ruben's Portrait Seamless Blend on Mobile (100% statisch voor rust en scroll-flow) */}
+          <div className="relative mx-auto w-full max-w-[270px] sm:max-w-[310px] flex justify-center anim-hero-4 -mb-3">
+            {/* Statische zachte studio rim glow */}
+            <div
+              className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[290px] h-[250px] sm:h-[290px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.35)_0%,_rgba(240,101,67,0.08)_50%,_transparent_75%)] blur-2xl pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Statische foto met vloeiende fade aan de onderzijde */}
+            <div className="relative z-10 w-full flex justify-center hero-portrait-fade">
+              <img
+                src="/ruben-winkelman.png"
+                alt="Ruben Winkelman - Webdesigner & Developer"
+                width={447}
+                height={559}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Comparison Component */}
+        <div className="relative anim-hero-5 max-w-4xl mx-auto">
           <div className="bg-brand-surface/90 border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-sm">
           {/* Segmented Switcher */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
-              <h2 className="text-base sm:text-lg font-bold text-brand-sand">
-                Vergelijk het risico:
-              </h2>
-              <p className="text-xs text-brand-sandDim">
-                Waarom vooraf duizenden euro's betalen als je eerst een werkende demo kunt zien?
+              <div className="flex items-center gap-2">
+                <h2 className="text-base sm:text-lg font-bold text-brand-sand">
+                  Vergelijk het risico:
+                </h2>
+                <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-brand-accent bg-brand-accent/10 border border-brand-accent/20 px-2 py-0.5 rounded-full">
+                  Kies een optie
+                </span>
+              </div>
+              <p className="text-xs text-brand-sandDim mt-0.5">
+                Klik op een van de 3 werkwijzen om het verschil te zien:
               </p>
             </div>
 
-            {/* Custom Tab Selector */}
-            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 rounded-xl bg-brand-dark/80 border border-white/5 w-full sm:w-auto text-center">
+            {/* Interactive Custom Tab Selector */}
+            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 sm:p-1.5 rounded-2xl bg-black/60 border border-white/10 ring-1 ring-white/5 w-full sm:w-auto text-center shadow-inner">
               <button
                 type="button"
                 role="tab"
@@ -138,13 +237,14 @@ export default function Hero() {
                 aria-controls="panel-traditioneel"
                 aria-selected={activeTab === 'traditioneel'}
                 onClick={() => setActiveTab('traditioneel')}
-                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
                   activeTab === 'traditioneel'
-                    ? 'bg-brand-elevated text-white shadow-sm'
-                    : 'text-brand-sandDim hover:text-brand-sand'
+                    ? 'bg-white/[0.14] text-white shadow-lg shadow-black/40 ring-1 ring-white/20 scale-[1.02]'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
                 }`}
               >
-                <span className="hidden sm:inline">Traditioneel </span>Bureau
+                <Building2 className="w-3.5 h-3.5 flex-shrink-0 text-red-400" />
+                <span><span className="hidden sm:inline">Traditioneel </span>Bureau</span>
               </button>
               <button
                 type="button"
@@ -153,13 +253,14 @@ export default function Hero() {
                 aria-controls="panel-zelf"
                 aria-selected={activeTab === 'zelf'}
                 onClick={() => setActiveTab('zelf')}
-                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
                   activeTab === 'zelf'
-                    ? 'bg-brand-elevated text-white shadow-sm'
-                    : 'text-brand-sandDim hover:text-brand-sand'
+                    ? 'bg-white/[0.14] text-white shadow-lg shadow-black/40 ring-1 ring-white/20 scale-[1.02]'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
                 }`}
               >
-                <span className="hidden sm:inline">Zelf </span>Bouwen
+                <Wrench className="w-3.5 h-3.5 flex-shrink-0 text-amber-400" />
+                <span><span className="hidden sm:inline">Zelf </span>Bouwen</span>
               </button>
               <button
                 type="button"
@@ -168,13 +269,14 @@ export default function Hero() {
                 aria-controls="panel-rwinkelman"
                 aria-selected={activeTab === 'rwinkelman'}
                 onClick={() => setActiveTab('rwinkelman')}
-                className={`px-2 sm:px-3 py-2 rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
                   activeTab === 'rwinkelman'
-                    ? 'bg-brand-accent text-white shadow-md'
-                    : 'text-brand-sandDim hover:text-brand-sand'
+                    ? 'bg-gradient-to-r from-brand-accent to-[#FF7754] text-white shadow-lg shadow-brand-accent/35 ring-1 ring-white/25 scale-[1.02]'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
                 }`}
               >
-                rwinkelman.nl
+                <Sparkles className="w-3.5 h-3.5 flex-shrink-0 text-white" />
+                <span>rwinkelman.nl</span>
               </button>
             </div>
           </div>

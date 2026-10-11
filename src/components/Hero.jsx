@@ -12,6 +12,7 @@ export default function Hero() {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
+
     // Subtiele verfijnde 3D tilt gecapt op max 3.5°
     const rotateX = Math.max(-3.5, Math.min(3.5, ((centerY - y) / centerY) * 3.5));
     const rotateY = Math.max(-3.5, Math.min(3.5, ((x - centerX) / centerX) * 3.5));
@@ -83,33 +84,34 @@ export default function Hero() {
               onMouseLeave={handleCardMouseLeave}
               style={{ perspective: '1000px' }}
             >
-              {/* Warm Ambient Rim-Glow Aura (Fractie intensere oranje gloed bij hover) */}
+              {/* Neutrale, zachte studio-diepte */}
               <div
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[400px] h-[340px] sm:h-[400px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(240,101,67,0.38)_0%,_rgba(240,101,67,0.10)_50%,_transparent_75%)] blur-2xl pointer-events-none transition-all duration-300 ${
-                  isCardHovered ? 'opacity-85 scale-105' : 'opacity-45 scale-100'
-                }`}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[380px] h-[340px] sm:h-[380px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.035)_0%,_transparent_70%)] blur-2xl pointer-events-none"
                 aria-hidden="true"
               />
 
-              {/* Apple UI Glass Rounded Card Frame with Luminous Specular Rim, 3D Tilt & 4px Lift */}
+              {/* Apple UI Dark Glass Card met 3D tilt & strakke randreflectie */}
               <div
-                className={`relative rounded-[36px] bg-gradient-to-b from-white/[0.08] via-brand-surface/40 to-[#0A0C10] border border-white/10 ring-1 ring-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_35px_-5px_rgba(240,101,67,0.18)] backdrop-blur-xl overflow-hidden group will-change-transform ${
+                className={`relative rounded-[36px] bg-gradient-to-b from-white/[0.05] via-[#12151D]/70 to-[#0A0C10] border transition-all duration-300 ring-1 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.85)] backdrop-blur-xl overflow-hidden group will-change-transform ${
                   isCardHovered
-                    ? 'shadow-[0_30px_70px_-10px_rgba(240,101,67,0.32),0_0_35px_-5px_rgba(240,101,67,0.22)]'
-                    : ''
+                    ? 'border-white/25 ring-brand-accent/20 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.92)]'
+                    : 'border-white/10 ring-white/5'
                 }`}
                 style={{
                   transform: isCardHovered
                     ? `rotateX(${cardTilt.x.toFixed(2)}deg) rotateY(${cardTilt.y.toFixed(2)}deg) translateY(-4px)`
                     : 'rotateX(0deg) rotateY(0deg) translateY(0px)',
                   transition: isCardHovered
-                    ? 'transform 0.15s ease-out, box-shadow 0.2s ease-out'
-                    : 'transform 0.4s ease-out, box-shadow 0.3s ease-out',
+                    ? 'transform 0.15s ease-out, border-color 0.2s ease-out, ring-color 0.2s ease-out, box-shadow 0.2s ease-out'
+                    : 'transform 0.4s ease-out, border-color 0.3s ease-out, ring-color 0.3s ease-out, box-shadow 0.3s ease-out',
                 }}
               >
-                {/* Dual-Tone Specular Highlight Border at Top */}
-                <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#FA8B60]/40 via-white/40 to-transparent z-20 pointer-events-none" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(240,101,67,0.18)_0%,_transparent_65%)] pointer-events-none" />
+                {/* Flinterdunne Apple specular highlightlijn aan de bovenzijde */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-20 pointer-events-none transition-opacity duration-300 ${
+                    isCardHovered ? 'opacity-100' : 'opacity-40'
+                  }`}
+                />
 
                 {/* Ruben's Cutout Photo */}
                 <div className="relative z-10 pt-8 flex justify-center">

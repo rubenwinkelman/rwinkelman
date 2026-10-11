@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Sparkles, Check, Building2, Wrench } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Check } from 'lucide-react';
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('rwinkelman');
@@ -51,9 +51,25 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="anim-hero-2 text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-xl mb-8 font-normal">
-              Bij rwinkelman.nl start elk traject met een <span className="text-brand-sand font-semibold">professionele voorbeeldwebsite</span>, afgestemd op jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit. Bevalt het ontwerp? Dan bouw ik hem af voor <span className="whitespace-nowrap text-brand-accent font-bold">€&nbsp;699,-</span> <span className="whitespace-nowrap text-sm text-brand-sandDim">(excl.&nbsp;btw)</span> en neem ik ook het onderhoud en de aanpassingen uit handen. Niet overtuigd? <span className="whitespace-nowrap text-emerald-400 font-semibold">No cure, no pay</span>.
+            <p className="anim-hero-2 text-base md:text-lg text-brand-sandMuted leading-relaxed max-w-xl mb-5 font-normal">
+              Ik bouw eerst een vrijblijvende <span className="text-brand-sand font-semibold">voorbeeldwebsite</span> voor jouw bedrijf, zodat je precies ziet wat je krijgt vóór je ergens aan vastzit.
             </p>
+
+            {/* 3 Checkmark Trust Bullets on Desktop */}
+            <div className="anim-hero-2 space-y-2.5 mb-8">
+              <div className="flex items-center gap-2.5 text-sm md:text-[15px] text-brand-sand">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>Vrijblijvende voorbeeldwebsite op maat</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm md:text-[15px] text-brand-sand">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>Complete website voor <strong className="font-semibold text-brand-sand">€&nbsp;699,-</strong> <span className="text-xs text-brand-sandDim">(excl.&nbsp;btw)</span></span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm md:text-[15px] text-brand-sand">
+                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" strokeWidth={2.5} />
+                <span>No cure, no pay</span>
+              </div>
+            </div>
 
             {/* Action Buttons */}
             <div className="anim-hero-3 flex items-center gap-4">
@@ -230,8 +246,8 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Interactive Custom Tab Selector */}
-            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 sm:p-1.5 rounded-2xl bg-black/60 border border-white/10 ring-1 ring-white/5 w-full sm:w-auto text-center shadow-inner">
+            {/* Interactive Custom Tab Selector - Strakke, minimalistische segment control zonder emoji/icoon-clichés */}
+            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 sm:p-1.5 rounded-xl bg-black/60 border border-white/10 ring-1 ring-white/5 w-full sm:w-auto text-center shadow-inner sm:min-w-[420px] md:min-w-[440px]">
               <button
                 type="button"
                 role="tab"
@@ -239,13 +255,12 @@ export default function Hero() {
                 aria-controls="panel-traditioneel"
                 aria-selected={activeTab === 'traditioneel'}
                 onClick={() => setActiveTab('traditioneel')}
-                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
                   activeTab === 'traditioneel'
-                    ? 'bg-white/[0.14] text-white shadow-lg shadow-black/40 ring-1 ring-white/20 scale-[1.02]'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-white/10 text-white shadow-md ring-1 ring-white/15'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
-                <Building2 className="w-3.5 h-3.5 flex-shrink-0 text-red-400" />
                 <span><span className="hidden sm:inline">Traditioneel </span>Bureau</span>
               </button>
               <button
@@ -255,13 +270,12 @@ export default function Hero() {
                 aria-controls="panel-zelf"
                 aria-selected={activeTab === 'zelf'}
                 onClick={() => setActiveTab('zelf')}
-                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
                   activeTab === 'zelf'
-                    ? 'bg-white/[0.14] text-white shadow-lg shadow-black/40 ring-1 ring-white/20 scale-[1.02]'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-white/10 text-white shadow-md ring-1 ring-white/15'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
-                <Wrench className="w-3.5 h-3.5 flex-shrink-0 text-amber-400" />
                 <span><span className="hidden sm:inline">Zelf </span>Bouwen</span>
               </button>
               <button
@@ -271,13 +285,12 @@ export default function Hero() {
                 aria-controls="panel-rwinkelman"
                 aria-selected={activeTab === 'rwinkelman'}
                 onClick={() => setActiveTab('rwinkelman')}
-                className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-200 cursor-pointer select-none active:scale-95 ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
                   activeTab === 'rwinkelman'
-                    ? 'bg-gradient-to-r from-brand-accent to-[#FF7754] text-white shadow-lg shadow-brand-accent/35 ring-1 ring-white/25 scale-[1.02]'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-brand-accent text-white shadow-md shadow-brand-accent/25'
+                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
-                <Sparkles className="w-3.5 h-3.5 flex-shrink-0 text-white" />
                 <span>rwinkelman.nl</span>
               </button>
             </div>
@@ -330,9 +343,8 @@ export default function Hero() {
             {activeTab === 'rwinkelman' && (
               <div className="space-y-6">
                 <div>
-                  <div className="flex items-center gap-2 text-brand-accent text-sm font-semibold mb-2">
-                    <Sparkles className="w-4 h-4" />
-                    <span>Waarom eerst betalen als je hem eerst kunt zien?</span>
+                  <div className="text-brand-accent text-sm font-semibold mb-2">
+                    Waarom eerst betalen als je hem eerst kunt zien?
                   </div>
                   <h3 className="text-xl font-bold text-brand-sand">
                     Eerst zien. Dan beslissen &bull; No cure, no pay

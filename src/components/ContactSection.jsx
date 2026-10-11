@@ -75,7 +75,7 @@ export default function ContactSection() {
             Eerst Zien &bull; Dan Beslissen
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Vraag jouw persoonlijke voorbeeldwebsite aan!
+            Vraag jouw gratis voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
             Binnen 1 minuut aangevraagd. Ik ga direct aan de slag met een werkend concept voor jouw bedrijf en neem snel contact met je op voor een korte demonstratie op kantoor of via WhatsApp.
@@ -92,21 +92,23 @@ export default function ContactSection() {
               href={`https://wa.me/31683589410?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-2xl bg-brand-surface border border-white/10 hover:border-emerald-500/40 flex items-start gap-4 transition-all duration-300 group block shadow-xl"
+              className="p-6 rounded-2xl bg-gradient-to-b from-emerald-500/[0.04] to-brand-surface border border-emerald-500/25 hover:border-emerald-500/50 flex items-start gap-4 transition-all duration-300 group block shadow-xl"
             >
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0 group-hover:scale-105 transition-transform">
                 <MessageSquare className="w-6 h-6" />
               </div>
               <div className="flex-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-base text-brand-sand">Snel contact via WhatsApp</h3>
-                  <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-bold text-base text-brand-sand">WhatsApp of bellen</h3>
+                  <span className="inline-flex items-center text-[10px] uppercase font-bold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded-full">
+                    Mijn voorkeur
+                  </span>
                 </div>
                 <p className="text-xs text-brand-sandMuted mt-1 leading-relaxed">
-                  Stuur direct een appje om een afspraak of demo op locatie in te plannen.
+                  Stuur een appje of bel gerust voor snelle reactie en een afspraak op locatie.
                 </p>
-                <span className="text-xs font-semibold text-emerald-400 mt-3 inline-flex items-center gap-1.5">
-                  <span>Chat via +31 6 83589410 &rarr;</span>
+                <span className="text-xs font-semibold text-emerald-400 mt-3 inline-flex items-center gap-1.5 group-hover:underline">
+                  <span>App of bel naar +31 6 83589410 &rarr;</span>
                 </span>
               </div>
             </a>
@@ -302,7 +304,7 @@ export default function ContactSection() {
                       <>
                         <Send className="w-4 h-4 flex-shrink-0" />
                         <span className="whitespace-nowrap">
-                          Vraag <span className="hidden min-[420px]:inline">jouw </span><span className="hidden sm:inline">persoonlijke </span>voorbeeldwebsite aan
+                          Vraag <span className="hidden sm:inline">jouw </span>gratis voorbeeldwebsite aan
                         </span>
                       </>
                     )}

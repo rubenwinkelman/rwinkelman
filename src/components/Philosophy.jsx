@@ -244,7 +244,7 @@ export default function Philosophy() {
                       </span>
                     </h3>
                     <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
-                      Standaard WordPress-sites scoren vrijwel altijd een <span className="text-rose-400 font-semibold">D of F</span> door kwetsbare plugins en verouderde systemen. Omdat ik bouw in zuivere code zonder trage plugins, is jouw website standaard optimaal beschermd.
+                      Standaard WordPress-sites scoren vrijwel altijd een <span className="text-rose-400 font-semibold">D</span> of <span className="text-rose-400 font-semibold">F</span> door kwetsbare plugins en verouderde systemen. Omdat ik bouw in zuivere code zonder trage plugins, is jouw website standaard optimaal beschermd.
                     </p>
                   </div>
 

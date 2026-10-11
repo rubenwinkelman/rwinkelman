@@ -75,7 +75,7 @@ export default function ContactSection() {
             Eerst Zien &bull; Dan Beslissen
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-sand tracking-tight leading-tight">
-            Vraag jouw gratis voorbeeldwebsite aan!
+            Vraag jouw voorbeeldwebsite aan!
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-sandMuted leading-relaxed">
             Binnen 1 minuut aangevraagd. Ik ga direct aan de slag met een werkend concept voor jouw bedrijf en neem snel contact met je op voor een korte demonstratie op kantoor of via WhatsApp.
@@ -304,7 +304,7 @@ export default function ContactSection() {
                       <>
                         <Send className="w-4 h-4 flex-shrink-0" />
                         <span className="whitespace-nowrap">
-                          Vraag <span className="hidden sm:inline">jouw </span>gratis voorbeeldwebsite aan
+                          Vraag <span className="hidden sm:inline">jouw </span>voorbeeldwebsite aan
                         </span>
                       </>
                     )}

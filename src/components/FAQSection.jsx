@@ -9,7 +9,7 @@ export default function FAQSection() {
   const faqs = [
     {
       q: 'Kom je echt persoonlijk bij mij langs om het voorbeeld te laten zien?',
-      a: 'Jazeker! Zodra je een aanvraag doet, bouw ik alvast een werkende, interactieve voorbeeldwebsite. Vervolgens kom ik persoonlijk bij je langs op kantoor of locatie om de website live op mijn laptop te demonstreren. Zo kunnen we direct sparren en jouw wensen bespreken.'
+      a: 'Jazeker! Zodra je een aanvraag doet, bouw ik alvast een werkende, interactieve voorbeeldwebsite. Vervolgens kom ik persoonlijk bij je langs op kantoor of locatie om de website live op mijn laptop te demonstreren. Zo nemen we direct jouw wensen door.'
     },
     {
       q: 'Wanneer betaal ik de eenmalige € 699,-?',

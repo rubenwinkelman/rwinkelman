@@ -238,7 +238,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="anim-shimmer flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-accent to-[#FF7754] text-white text-sm font-semibold shadow-lg shadow-brand-accent/30 active:scale-[0.98] transition-transform"
               >
-                <span>Vraag gratis voorbeeld aan</span>
+                <span>Vraag voorbeeld aan</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>

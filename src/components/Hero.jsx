@@ -78,7 +78,7 @@ export default function Hero() {
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-base transition-all duration-200 shadow-xl shadow-brand-accent/25 hover:shadow-brand-accent/40 active:scale-95 group whitespace-nowrap"
               >
                 <span>
-                  Vraag gratis voorbeeldwebsite aan
+                  Vraag voorbeeldwebsite aan
                 </span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </a>
@@ -191,7 +191,7 @@ export default function Hero() {
               href="#contact"
               className="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-brand-accent hover:bg-brand-accentHover text-white font-semibold text-sm transition-all duration-200 shadow-xl shadow-brand-accent/30 active:scale-95 group ring-1 ring-white/10"
             >
-              <span>Vraag gratis voorbeeld aan</span>
+              <span>Vraag vrijblijvend voorbeeld aan</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </a>
             <a
@@ -246,8 +246,8 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Interactive Custom Tab Selector - Strakke, minimalistische segment control zonder emoji/icoon-clichés */}
-            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 sm:p-1.5 rounded-xl bg-black/60 border border-white/10 ring-1 ring-white/5 w-full sm:w-auto text-center shadow-inner sm:min-w-[420px] md:min-w-[440px]">
+            {/* Interactive Custom Tab Selector - Strakke, minimalistische segment control zonder vertraging */}
+            <div role="tablist" aria-label="Vergelijkingsopties" className="grid grid-cols-3 p-1 sm:p-1.5 rounded-xl bg-black/60 border border-white/10 ring-1 ring-white/5 w-full sm:w-auto text-center shadow-inner sm:min-w-[420px] md:min-w-[440px] touch-manipulation">
               <button
                 type="button"
                 role="tab"
@@ -255,10 +255,10 @@ export default function Hero() {
                 aria-controls="panel-traditioneel"
                 aria-selected={activeTab === 'traditioneel'}
                 onClick={() => setActiveTab('traditioneel')}
-                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-colors duration-100 cursor-pointer select-none touch-manipulation whitespace-nowrap active:opacity-75 ${
                   activeTab === 'traditioneel'
-                    ? 'bg-white/10 text-white shadow-md ring-1 ring-white/15'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
+                    ? 'bg-white/15 text-white shadow-md ring-1 ring-white/20'
+                    : 'text-brand-sandMuted hover:text-white active:text-white'
                 }`}
               >
                 <span><span className="hidden sm:inline">Traditioneel </span>Bureau</span>
@@ -270,10 +270,10 @@ export default function Hero() {
                 aria-controls="panel-zelf"
                 aria-selected={activeTab === 'zelf'}
                 onClick={() => setActiveTab('zelf')}
-                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-medium transition-colors duration-100 cursor-pointer select-none touch-manipulation whitespace-nowrap active:opacity-75 ${
                   activeTab === 'zelf'
-                    ? 'bg-white/10 text-white shadow-md ring-1 ring-white/15'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
+                    ? 'bg-white/15 text-white shadow-md ring-1 ring-white/20'
+                    : 'text-brand-sandMuted hover:text-white active:text-white'
                 }`}
               >
                 <span><span className="hidden sm:inline">Zelf </span>Bouwen</span>
@@ -285,10 +285,10 @@ export default function Hero() {
                 aria-controls="panel-rwinkelman"
                 aria-selected={activeTab === 'rwinkelman'}
                 onClick={() => setActiveTab('rwinkelman')}
-                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer select-none active:scale-95 whitespace-nowrap ${
+                className={`flex items-center justify-center px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-[13px] font-semibold transition-colors duration-100 cursor-pointer select-none touch-manipulation whitespace-nowrap active:opacity-75 ${
                   activeTab === 'rwinkelman'
                     ? 'bg-brand-accent text-white shadow-md shadow-brand-accent/25'
-                    : 'text-brand-sandMuted hover:text-white hover:bg-white/[0.04]'
+                    : 'text-brand-sandMuted hover:text-white active:text-white'
                 }`}
               >
                 <span>rwinkelman.nl</span>
@@ -296,88 +296,90 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Tab Content Panels */}
-          <div className="pt-6" role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
-            {activeTab === 'traditioneel' && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-red-400 text-sm font-semibold">
-                  <div className="w-2 h-2 rounded-full bg-red-400" />
-                  <span>Hoog financieel risico, trage doorlooptijd</span>
-                </div>
-                <h3 className="text-xl font-bold text-brand-sand">
-                  Offertes van € 2.500 tot € 7.500 vooraf betalen
-                </h3>
-                <p className="text-sm text-brand-sandMuted leading-relaxed">
-                  Je betaalt vaak 50% aanbetaling voordat je ook maar één pixel hebt gezien. Vervolgens zit je in eindeloze feedbackrondes, bureaucratische meetings en duurt het maanden voordat er iets live staat.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3 pt-2 text-xs text-brand-sandDim">
-                  <div>✗ Weken wachten op een offerte</div>
-                  <div>✗ Hoge aanbetaling zonder garanties</div>
-                  <div>✗ Complexe CMS-systemen</div>
-                  <div>✗ Extra facturen voor elke kleine wijziging</div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'zelf' && (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-amber-400 text-sm font-semibold">
-                  <div className="w-2 h-2 rounded-full bg-amber-400" />
-                  <span>Tijdrovend, frustrerend en vaak net niet professioneel</span>
-                </div>
-                <h3 className="text-xl font-bold text-brand-sand">
-                  Uren stoeien met WordPress, Wix of Squarespace
-                </h3>
-                <p className="text-sm text-brand-sandMuted leading-relaxed">
-                  Het lijkt goedkoop, maar je verliest kostbare avonden en weekenden aan verspringende knoppen, trage templates en mobiele weergaves die niet kloppen. Het eindresultaat straalt zelden de autoriteit uit die je bedrijf verdient.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3 pt-2 text-xs text-brand-sandDim">
-                  <div>✗ Tientallen uren eigen tijd kwijt</div>
-                  <div>✗ Trage laadtijden door zware sjablonen en plugins</div>
-                  <div>✗ Ziet er vaak uit als een standaard template</div>
-                  <div>✗ Zelf verantwoordelijk voor beveiliging &amp; updates</div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'rwinkelman' && (
-              <div className="space-y-6">
-                <div>
-                  <div className="text-brand-accent text-sm font-semibold mb-2">
-                    Waarom eerst betalen als je hem eerst kunt zien?
+          {/* Tab Content Panels - Snelle GPU fade & stabiele hoogte tegen verspringen */}
+          <div className="pt-6 min-h-[380px] sm:min-h-[300px]" role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
+            <div key={activeTab} className="anim-tab-enter">
+              {activeTab === 'traditioneel' && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-red-400 text-sm font-semibold">
+                    <div className="w-2 h-2 rounded-full bg-red-400" />
+                    <span>Hoog financieel risico, trage doorlooptijd</span>
                   </div>
                   <h3 className="text-xl font-bold text-brand-sand">
-                    Eerst zien. Dan beslissen &bull; No cure, no pay
+                    Offertes van € 2.500 tot € 7.500 vooraf betalen
                   </h3>
                   <p className="text-sm text-brand-sandMuted leading-relaxed">
-                    Geen vage offertes, geen statische PDF-ontwerpen en nul risico. Ik kom persoonlijk bij je langs met een interactief concept dat al direct klikt en werkt op smartphone en laptop. Bevalt het niet? Dan kost het je helemaal niets.
+                    Je betaalt vaak 50% aanbetaling voordat je ook maar één pixel hebt gezien. Vervolgens zit je in eindeloze feedbackrondes, bureaucratische meetings en duurt het maanden voordat er iets live staat.
                   </p>
-                </div>
-                <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
-                  <div className="text-xs text-brand-accent uppercase tracking-wider font-semibold">Jouw voordelen:</div>
-                  <div className="flex items-center gap-3 text-sm text-brand-sand">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Voorbeeldwebsite volledig afgestemd op jouw bedrijf</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-brand-sand">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Persoonlijke demo op jouw kantoor of locatie</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-brand-sand">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Bevalt het ontwerp? Afbouwen voor <span className="whitespace-nowrap font-semibold">€&nbsp;699,-</span> (excl. btw)</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-brand-sand">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Niet overtuigd? No cure, no pay (€ 0,-)</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-brand-sand">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    <span>Onderhoud en aanpassingen (1 tot 10/mnd) volledig uit handen</span>
+                  <div className="grid sm:grid-cols-2 gap-3 pt-2 text-xs text-brand-sandDim">
+                    <div>✗ Weken wachten op een offerte</div>
+                    <div>✗ Hoge aanbetaling zonder garanties</div>
+                    <div>✗ Complexe CMS-systemen</div>
+                    <div>✗ Extra facturen voor elke kleine wijziging</div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+
+              {activeTab === 'zelf' && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-amber-400 text-sm font-semibold">
+                    <div className="w-2 h-2 rounded-full bg-amber-400" />
+                    <span>Tijdrovend, frustrerend en vaak net niet professioneel</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-sand">
+                    Uren stoeien met WordPress, Wix of Squarespace
+                  </h3>
+                  <p className="text-sm text-brand-sandMuted leading-relaxed">
+                    Het lijkt goedkoop, maar je verliest kostbare avonden en weekenden aan verspringende knoppen, trage templates en mobiele weergaves die niet kloppen. Het eindresultaat straalt zelden de autoriteit uit die je bedrijf verdient.
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3 pt-2 text-xs text-brand-sandDim">
+                    <div>✗ Tientallen uren eigen tijd kwijt</div>
+                    <div>✗ Trage laadtijden door zware sjablonen en plugins</div>
+                    <div>✗ Ziet er vaak uit als een standaard template</div>
+                    <div>✗ Zelf verantwoordelijk voor beveiliging &amp; updates</div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'rwinkelman' && (
+                <div className="space-y-6">
+                  <div>
+                    <div className="text-brand-accent text-sm font-semibold mb-2">
+                      Waarom eerst betalen als je hem eerst kunt zien?
+                    </div>
+                    <h3 className="text-xl font-bold text-brand-sand">
+                      Eerst zien. Dan beslissen &bull; No cure, no pay
+                    </h3>
+                    <p className="text-sm text-brand-sandMuted leading-relaxed">
+                      Geen vage offertes, geen statische PDF-ontwerpen en nul risico. Ik kom persoonlijk bij je langs met een interactief concept dat al direct klikt en werkt op smartphone en laptop. Bevalt het niet? Dan kost het je helemaal niets.
+                    </p>
+                  </div>
+                  <div className="bg-brand-elevated/90 rounded-xl p-5 border border-brand-accentBorder space-y-3">
+                    <div className="text-xs text-brand-accent uppercase tracking-wider font-semibold">Jouw voordelen:</div>
+                    <div className="flex items-center gap-3 text-sm text-brand-sand">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                      <span>Voorbeeldwebsite volledig afgestemd op jouw bedrijf</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-brand-sand">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                      <span>Persoonlijke demo op jouw kantoor of locatie</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-brand-sand">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                      <span>Bevalt het ontwerp? Afbouwen voor <span className="whitespace-nowrap font-semibold">€&nbsp;699,-</span> (excl. btw)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-brand-sand">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                      <span>Niet overtuigd? No cure, no pay (€ 0,-)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-brand-sand">
+                      <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
+                      <span>Onderhoud en aanpassingen (1 tot 10/mnd) volledig uit handen</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -97,6 +97,23 @@
   will-change: opacity, transform;
 }
 
+/* Snappy 0ms-lag tab panel switch */
+@keyframes tabEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 4px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.anim-tab-enter {
+  animation: tabEnter 0.14s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
 /* Scroll reveal classes - zero JS on scroll, native GPU compositor */
 .reveal-item {
   opacity: 0;

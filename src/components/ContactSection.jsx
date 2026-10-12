@@ -119,7 +119,7 @@ export default function ContactSection() {
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-bold text-base text-brand-sand">Direct per e-mail</h3>
+                <h3 className="font-bold text-base text-brand-sand">Neem contact op via e-mail</h3>
                 <p className="text-xs text-brand-sandMuted mt-1">
                   Stuur je briefing of bedrijfsinformatie rechtstreeks naar Ruben.
                 </p>

@@ -139,7 +139,7 @@ export default function Philosophy() {
 
         </div>
 
-        {/* Feature Spotlight: 100/100 Google PageSpeed & A+ Security Proof */}
+        {/* Feature Spotlight: 100/100 Google PageSpeed & A Security Proof */}
         <div className="philosophy-proof reveal-item delay-3 bg-brand-surface/95 border border-emerald-500/25 rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden">
           
           {/* Subtle green ambient accent behind the card */}
@@ -181,7 +181,7 @@ export default function Philosophy() {
                 }`}
               >
                 <ShieldCheck className={`w-3.5 h-3.5 transition-transform duration-300 ${activeProof === 'security' ? 'scale-110 text-emerald-400' : 'text-brand-sandDim'}`} />
-                <span>SecurityHeaders (A+ Grade)</span>
+                <span>SecurityHeaders (A Grade)</span>
               </button>
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function Philosophy() {
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-sand tracking-tight leading-tight">
                       Geen kwetsbare plugins. <br className="hidden sm:inline" />
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-brand-sand">
-                        Waterdichte A+ beveiliging.
+                        Waterdichte A beveiliging.
                       </span>
                     </h3>
                     <p className="mt-4 text-sm sm:text-base text-brand-sandMuted leading-relaxed">
@@ -251,7 +251,7 @@ export default function Philosophy() {
                   {/* 3 Metric Pills */}
                   <div className="grid grid-cols-3 gap-3 pt-2">
                     <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
-                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">A+</div>
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">A</div>
                       <div className="text-[11px] text-brand-sandDim font-medium mt-0.5">Security Grade</div>
                     </div>
                     <div className="p-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-center">
@@ -272,7 +272,7 @@ export default function Philosophy() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
                     >
-                      <span>Verifieer de live A+ score op SecurityHeaders.com</span>
+                      <span>Verifieer de live A score op SecurityHeaders.com</span>
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>
@@ -290,7 +290,7 @@ export default function Philosophy() {
                   alt={
                     activeProof === 'performance'
                       ? 'Officiële Google PageSpeed 100/100 score van www.rwinkelman.nl'
-                      : 'Officiële SecurityHeaders A+ score van www.rwinkelman.nl'
+                      : 'Officiële SecurityHeaders A score van www.rwinkelman.nl'
                   }
                   className="w-full h-auto block brightness-[0.88] contrast-[0.98] group-hover/img:brightness-[0.98] transition-all duration-300 anim-proof-img"
                   loading="lazy"

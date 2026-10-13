@@ -142,9 +142,9 @@ export default function PricingSection() {
                 <div className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <div className="flex flex-wrap items-center gap-2">
-                    <span>Supersnelle cloudhosting &amp; A+ beveiliging</span>
+                    <span>Supersnelle cloudhosting &amp; A beveiliging</span>
                     <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                      A+ Grade
+                      A Grade
                     </span>
                   </div>
                 </div>

@@ -9,6 +9,8 @@ import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
+import LandingModal from './components/LandingModal';
+import { SEO_LANDING_PAGES } from './data/seoLandingPages';
 
 const LEGAL_CONFIG = {
   voorwaarden: {
@@ -50,14 +52,24 @@ function getLegalTabFromLocation() {
   return null;
 }
 
+function getLandingPageFromLocation() {
+  if (typeof window === 'undefined') return null;
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+  const slug = path.replace(/^\//, '');
+
+  return SEO_LANDING_PAGES[slug] || null;
+}
+
 export default function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
   const [legalTab, setLegalTab] = useState('voorwaarden');
+  const [landingPage, setLandingPage] = useState(null);
 
   const openLegal = (tab = 'voorwaarden', pushHistory = true) => {
     const config = LEGAL_CONFIG[tab] || LEGAL_CONFIG.voorwaarden;
     setLegalTab(tab);
     setIsLegalOpen(true);
+    setLandingPage(null);
     document.title = config.title;
 
     if (pushHistory && window.location.pathname !== config.path) {
@@ -89,8 +101,38 @@ export default function App() {
     }
   };
 
+  const openLanding = (page, pushHistory = true) => {
+    setLandingPage(page);
+    setIsLegalOpen(false);
+    document.title = page.title;
+
+    if (pushHistory && window.location.pathname !== page.path) {
+      window.history.pushState({ landingModal: true, slug: page.slug }, '', page.path);
+    }
+  };
+
+  const closeLanding = () => {
+    setLandingPage(null);
+    document.title = DEFAULT_TITLE;
+
+    const currentLanding = getLandingPageFromLocation();
+    if (currentLanding) {
+      if (window.history.state && window.history.state.landingModal) {
+        window.history.back();
+      } else {
+        window.history.pushState(null, '', '/');
+      }
+    }
+  };
+
   useEffect(() => {
-    // 1. Initial check on mount (handles direct visits to /algemene-voorwaarden or /privacybeleid)
+    // 1. Initial check on mount
+    const initialLanding = getLandingPageFromLocation();
+    if (initialLanding) {
+      openLanding(initialLanding, false);
+      return;
+    }
+
     const initialTab = getLegalTabFromLocation();
     if (initialTab) {
       openLegal(initialTab, false);
@@ -98,18 +140,28 @@ export default function App() {
 
     // 2. Browser back and forward button handler (popstate)
     const handlePopState = () => {
+      const activeLanding = getLandingPageFromLocation();
+      if (activeLanding) {
+        setLandingPage(activeLanding);
+        setIsLegalOpen(false);
+        document.title = activeLanding.title;
+        return;
+      }
+
       const tab = getLegalTabFromLocation();
       if (tab) {
         setLegalTab(tab);
         setIsLegalOpen(true);
+        setLandingPage(null);
         document.title = LEGAL_CONFIG[tab]?.title || DEFAULT_TITLE;
       } else {
         setIsLegalOpen(false);
+        setLandingPage(null);
         document.title = DEFAULT_TITLE;
       }
     };
 
-    // 3. Hash change handler (for backward compatibility with #voorwaarden and #privacy)
+    // 3. Hash change handler
     const handleHashChange = () => {
       const tab = getLegalTabFromLocation();
       if (tab) {
@@ -143,6 +195,13 @@ export default function App() {
 
       {/* Footer strictly adhering to master rules */}
       <Footer onOpenLegal={openLegal} />
+
+      {/* Deep-Linked SEO Landing Pages Modal */}
+      <LandingModal
+        isOpen={Boolean(landingPage)}
+        onClose={closeLanding}
+        pageData={landingPage}
+      />
 
       {/* Legal & Compliance Modal (Mollie & AVG compliant with Intercepting Routes) */}
       <LegalModal

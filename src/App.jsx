@@ -21,7 +21,7 @@ const LEGAL_CONFIG = {
   },
 };
 
-const DEFAULT_TITLE = 'Website Laten Maken | Websites op Maat | Ruben Winkelman';
+const DEFAULT_TITLE = 'Website Laten Maken Drachten | Webdesign | Ruben Winkelman';
 
 function getLegalTabFromLocation() {
   if (typeof window === 'undefined') return null;

@@ -51,32 +51,32 @@ export default function PricingSection() {
                 <span>No cure, no pay &bull; Pas betalen als het ontwerp bevalt</span>
               </div>
 
-              <div className="space-y-3 pt-6 border-t border-white/10">
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+              <ul className="space-y-3 pt-6 border-t border-white/10 list-none p-0 m-0">
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Professionele voorbeeldwebsite vooraf gebouwd</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Persoonlijke demonstratie op jouw locatie</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand font-semibold text-brand-accent">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand font-semibold text-brand-accent">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Bevalt het ontwerp? Volledig afgebouwd voor € 699,-</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Alle pagina's, teksten, afbeeldingen en formulieren ingericht</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Maximale PageSpeed score &amp; technische SEO-basis</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Niet overtuigd van website of aanpak? Geen kosten (€ 0,-)</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/5">
@@ -124,30 +124,30 @@ export default function PricingSection() {
                 <span>Volledige flexibiliteit &bull; Maandelijks opzegbaar</span>
               </div>
 
-              <div className="space-y-3 pt-6 border-t border-white/10">
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+              <ul className="space-y-3 pt-6 border-t border-white/10 list-none p-0 m-0">
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span className="font-semibold text-brand-accent">
                     Inclusief 1 tot 10 contentwijzigingen per maand
                   </span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Teksten wijzigen, foto's toevoegen, acties &amp; openingstijden updaten</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Eenvoudig doorgeven via één appje of mailtje</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Supersnelle cloudhosting &amp; beveiliging</span>
-                </div>
-                <div className="flex items-start gap-3 text-sm text-brand-sand">
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-sand">
                   <Check className="w-4 h-4 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Dagelijkse back-ups, uptime-monitoring &amp; technisch onderhoud</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/5">
@@ -161,6 +161,47 @@ export default function PricingSection() {
             </div>
           </div>
 
+        </div>
+
+        {/* Semantische vergelijkingstabel voor zoekmachines & AI-crawlers (visueel verborgen via sr-only, 0 layout impact) */}
+        <div className="sr-only">
+          <table aria-label="Tarieven en pakketvergelijking">
+            <caption>Overzicht tarieven en specificaties website laten maken</caption>
+            <thead>
+              <tr>
+                <th scope="col">Onderdeel</th>
+                <th scope="col">Stap 1: Website Bouw &amp; Afwerking</th>
+                <th scope="col">Stap 2: Hosting &amp; Contentbeheer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Kosten</th>
+                <td>€ 699,- eenmalig (excl. btw)</td>
+                <td>€ 29,99 per maand (excl. btw)</td>
+              </tr>
+              <tr>
+                <th scope="row">Betalingsvoorwaarde</th>
+                <td>No cure, no pay (pas betalen bij tevredenheid demo)</td>
+                <td>Maandelijks opzegbaar, geen wurgcontract</td>
+              </tr>
+              <tr>
+                <th scope="row">Levering</th>
+                <td>Voorbeeldwebsite vooraf, demo op locatie, volledige afwerking</td>
+                <td>Supersnelle cloudhosting, dagelijkse back-ups, technisch onderhoud</td>
+              </tr>
+              <tr>
+                <th scope="row">Contentwijzigingen</th>
+                <td>Alle pagina's, teksten, afbeeldingen en formulieren ingericht</td>
+                <td>Inclusief 1 tot 10 wijzigingen per maand via WhatsApp of mail</td>
+              </tr>
+              <tr>
+                <th scope="row">Performance</th>
+                <td>100/100 Google PageSpeed, zuivere code, SEO-basis</td>
+                <td>Doorlopende uptime-monitoring &amp; beveiligingsupdates</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>

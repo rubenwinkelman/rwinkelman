@@ -154,13 +154,13 @@ export default function Hero() {
             MOBILE HERO (< md) - 100% Statisch voor soepele scroll en rustig beeld
            ========================================================================= */}
         <div className="md:hidden flex flex-col items-center text-center mb-8">
-          {/* Main Headline */}
-          <h1 className="anim-hero-1 text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-sand leading-[1.12] mb-3.5">
+          {/* Main Headline (Semantische p met H1-styling om 1 unieke H1 per pagina te borgen) */}
+          <p className="anim-hero-1 text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-sand leading-[1.12] mb-3.5">
             <span className="block">Eerst zien. Dan beslissen.</span>
             <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-[#FA8B60] to-brand-sand">
               Jouw website op maat.
             </span>
-          </h1>
+          </p>
 
           {/* Intro Paragraph */}
           <p className="anim-hero-2 text-sm sm:text-base text-brand-sandMuted leading-relaxed max-w-sm sm:max-w-md mx-auto mb-5 font-normal">

@@ -94,14 +94,14 @@ export default function Workflow() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/5 space-y-2">
+                <ul className="pt-4 border-t border-white/5 space-y-2 list-none p-0 m-0">
                   {item.highlights.map((point, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-2 text-[11px] text-brand-sandDim">
+                    <li key={pIdx} className="flex items-center gap-2 text-[11px] text-brand-sandDim">
                       <CheckCircle className="w-3 h-3 text-brand-accent flex-shrink-0" />
                       <span>{point}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             );
           })}

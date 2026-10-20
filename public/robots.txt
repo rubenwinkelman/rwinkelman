@@ -1,4 +1,8 @@
+# robots.txt voor rwinkelman.nl
+# Alle zoekmachines en AI-crawlers (zoals GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended) hebben volledige toegang.
+
 User-agent: *
 Allow: /
 
+# Sitemap locatie
 Sitemap: https://www.rwinkelman.nl/sitemap.xml
